@@ -18,7 +18,12 @@ jobs:
           port: 22
           script: |
             cd my-resume-site
-            git pull origin main
+            
+            # این دو خط جایگزین git pull می‌شوند
+            git fetch --all
+            git reset --hard origin/main
+            
+            # ادامه ماجرا...
             sudo docker build --no-cache -t resume-app .
             sudo docker stop my-website || true
             sudo docker rm my-website || true
