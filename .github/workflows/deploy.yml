@@ -19,7 +19,7 @@ jobs:
           script: |
             cd my-resume-site
             git pull origin main
-            sudo docker build -t resume-app .
+            sudo docker build --no-cache -t resume-app .
             sudo docker stop my-website || true
             sudo docker rm my-website || true
             sudo docker run -d -p 80:80 --restart always --name my-website resume-app
