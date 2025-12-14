@@ -1,45 +1,60 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="de" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DevOps Portfolio | Cloud Infrastructure Engineer</title>
+    <title>Mahdi Sharbaf | Cloud & DevOps Engineer</title>
     
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <!-- 🔴 لوگو در تب مرورگر (Favicon) -->
+    <link rel="icon" type="image/png" href="logo.png">
     
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- جلوگیری از ایندکس شدن آدرس شخصی -->
+    <meta name="robots" content="noindex, nofollow">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+
     <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
                     colors: {
-                        brand: {
-                            dark: '#0f172a', // Slate 900
-                            card: '#1e293b', // Slate 800
-                            cyan: '#22d3ee', // Cyan 400
-                            neon: '#00f2ff',
-                            muted: '#94a3b8' // Slate 400
+                        dark: {
+                            bg: '#0f172a',      // Slate 900
+                            card: '#1e293b',    // Slate 800
+                            text: '#f8fafc',    // Slate 50
+                            muted: '#94a3b8'    // Slate 400
+                        },
+                        accent: {
+                            blue: '#38bdf8',    // Sky 400
+                            purple: '#818cf8',  // Indigo 400
+                            green: '#4ade80'    // Green 400
                         }
                     },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        mono: ['JetBrains Mono', 'monospace'],
-                    },
                     animation: {
-                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                        'glow': 'glow 2s ease-in-out infinite alternate',
+                        'blob': 'blob 10s infinite',
+                        'float': 'float 6s ease-in-out infinite',
                     },
                     keyframes: {
-                        glow: {
-                            '0%': { boxShadow: '0 0 5px #22d3ee' },
-                            '100%': { boxShadow: '0 0 20px #22d3ee, 0 0 10px #22d3ee' },
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
                         }
                     }
                 }
@@ -48,381 +63,340 @@
     </script>
 
     <style>
-        /* Custom scrollbar for Webkit */
+        /* استایل‌های شیشه‌ای و نئونی */
+        .glass {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .text-glow {
+            text-shadow: 0 0 20px rgba(56, 189, 248, 0.5);
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        /* اسکرول بار سفارشی */
         ::-webkit-scrollbar {
             width: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #0f172a; 
+            background: #0f172a;
         }
         ::-webkit-scrollbar-thumb {
-            background: #1e293b; 
+            background: #334155;
             border-radius: 4px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #22d3ee; 
-        }
-        
-        .glass-nav {
-            background: rgba(15, 23, 42, 0.85);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(34, 211, 238, 0.1);
-        }
-
-        .tech-card:hover i {
-            color: #22d3ee;
-            transform: scale(1.1);
-            transition: all 0.3s ease;
-        }
-
-        .timeline-dot {
-            box-shadow: 0 0 0 4px rgba(34, 211, 238, 0.2);
+            background: #475569;
         }
     </style>
 </head>
-<body class="bg-brand-dark text-slate-200 font-sans antialiased selection:bg-brand-cyan selection:text-brand-dark relative overflow-x-hidden">
+<body class="bg-dark-bg text-dark-text selection:bg-accent-blue selection:text-white overflow-x-hidden relative">
 
-    <!-- Background Animation Canvas -->
-    <canvas id="networkCanvas" class="fixed top-0 left-0 w-full h-full -z-10 opacity-20 pointer-events-none"></canvas>
+    <!-- پس‌زمینه متحرک (Blobs) -->
+    <div class="fixed inset-0 w-full h-full pointer-events-none z-0 overflow-hidden">
+        <div class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-accent-blue/20 rounded-full mix-blend-screen filter blur-[100px] animate-blob"></div>
+        <div class="absolute top-0 right-1/4 w-[500px] h-[500px] bg-accent-purple/20 rounded-full mix-blend-screen filter blur-[100px] animate-blob animation-delay-2000"></div>
+        <div class="absolute -bottom-32 left-1/3 w-[500px] h-[500px] bg-accent-green/10 rounded-full mix-blend-screen filter blur-[100px] animate-blob animation-delay-4000"></div>
+    </div>
 
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 glass-nav transition-all duration-300">
+    <nav class="fixed w-full z-50 glass border-b-0 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
-                <div class="flex-shrink-0 font-mono text-xl font-bold tracking-tighter">
-                    <span class="text-brand-cyan">&lt;</span>DevOps<span class="text-brand-cyan">/&gt;</span>
-                </div>
                 
-                <!-- Desktop Menu -->
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-8">
-                        <a href="#about" class="hover:text-brand-cyan px-3 py-2 rounded-md text-sm font-medium transition-colors">About</a>
-                        <a href="#skills" class="hover:text-brand-cyan px-3 py-2 rounded-md text-sm font-medium transition-colors">Stack</a>
-                        <a href="#projects" class="hover:text-brand-cyan px-3 py-2 rounded-md text-sm font-medium transition-colors">Projects</a>
-                        <a href="#experience" class="hover:text-brand-cyan px-3 py-2 rounded-md text-sm font-medium transition-colors">Experience</a>
-                        <a href="#contact" class="px-4 py-2 border border-brand-cyan text-brand-cyan rounded hover:bg-brand-cyan hover:text-brand-dark transition-all duration-300 text-sm font-medium">Contact</a>
+                <!-- 🔴 لوگو و اسم سایت -->
+                <div class="flex items-center gap-3">
+                    <!-- تصویر لوگو -->
+                    <img src="logo.png" alt="MS Logo" class="w-10 h-10 object-contain drop-shadow-[0_0_10px_rgba(56,189,248,0.5)]">
+                    
+                    <div class="flex-shrink-0 font-bold text-2xl tracking-tighter hidden sm:block">
+                        Mahdi<span class="text-accent-blue">.DevOps</span>
                     </div>
                 </div>
 
-                <!-- Mobile menu button -->
-                <div class="-mr-2 flex md:hidden">
-                    <button id="mobile-menu-btn" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-slate-400 hover:text-brand-cyan focus:outline-none">
-                        <i class="fas fa-bars text-xl"></i>
-                    </button>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#about" class="hover:text-accent-blue transition-colors px-3 py-2 text-sm font-medium">Profil</a>
+                        <a href="#skills" class="hover:text-accent-blue transition-colors px-3 py-2 text-sm font-medium">Skills</a>
+                        <a href="#projects" class="hover:text-accent-blue transition-colors px-3 py-2 text-sm font-medium">Projekte</a>
+                        <a href="#experience" class="hover:text-accent-blue transition-colors px-3 py-2 text-sm font-medium">Erfahrung</a>
+                        <a href="javascript:void(0)" onclick="openImpressum()" class="text-dark-muted hover:text-white px-3 py-2 text-sm">Impressum</a>
+                    </div>
                 </div>
-            </div>
-        </div>
-
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-brand-dark border-b border-slate-800">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="#about" class="block hover:bg-slate-800 hover:text-brand-cyan px-3 py-2 rounded-md text-base font-medium">About</a>
-                <a href="#skills" class="block hover:bg-slate-800 hover:text-brand-cyan px-3 py-2 rounded-md text-base font-medium">Stack</a>
-                <a href="#projects" class="block hover:bg-slate-800 hover:text-brand-cyan px-3 py-2 rounded-md text-base font-medium">Projects</a>
-                <a href="#experience" class="block hover:bg-slate-800 hover:text-brand-cyan px-3 py-2 rounded-md text-base font-medium">Experience</a>
-                <a href="#contact" class="block text-brand-cyan font-bold px-3 py-2">Contact Me</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="hero" class="min-h-screen flex items-center justify-center pt-20 px-4">
-        <div class="max-w-7xl mx-auto text-center relative z-10">
-            <div class="inline-block px-3 py-1 mb-6 text-xs font-mono font-semibold tracking-wider text-brand-cyan uppercase bg-brand-cyan/10 rounded-full border border-brand-cyan/20">
-                Based in Germany
-            </div>
-            <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 text-white">
-                Bridging Technology & <br>
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan to-blue-600">Business Strategy</span>
-            </h1>
-            <p class="mt-4 max-w-2xl mx-auto text-xl text-brand-muted">
-                M.Eng Student at TH Deggendorf | Linux, Azure & DevOps Specialist
-            </p>
-            <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#projects" class="px-8 py-3.5 text-base font-semibold text-brand-dark bg-brand-cyan rounded-lg hover:bg-white hover:shadow-[0_0_20px_rgba(34,211,238,0.5)] transition-all duration-300">
-                    View Projects
-                </a>
-                <a href="#" onclick="alert('This triggers a CV download.')" class="px-8 py-3.5 text-base font-semibold text-white bg-transparent border border-slate-600 rounded-lg hover:border-brand-cyan hover:text-brand-cyan transition-all duration-300">
-                    <i class="fas fa-download mr-2"></i> Download CV
-                </a>
-            </div>
+    <main class="relative z-10 pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="flex flex-col-reverse lg:flex-row items-center justify-between gap-12">
             
-            <!-- Terminal aesthetic decoration -->
-            <div class="mt-16 mx-auto max-w-3xl bg-brand-card rounded-t-xl border border-slate-700 shadow-2xl overflow-hidden opacity-90 hidden md:block transform transition-transform hover:-translate-y-1 duration-500">
-                <div class="bg-slate-900 px-4 py-2 flex items-center gap-2 border-b border-slate-700">
-                    <div class="w-3 h-3 rounded-full bg-red-500"></div>
-                    <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
-                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
-                    <span class="ml-2 font-mono text-xs text-slate-500">user@devops-machine:~</span>
+            <!-- Hero Text -->
+            <div class="text-center lg:text-left lg:w-1/2">
+                <div class="inline-flex items-center px-3 py-1 rounded-full border border-accent-blue/30 bg-accent-blue/10 text-accent-blue text-sm font-medium mb-6 animate-float">
+                    <span class="flex h-2 w-2 rounded-full bg-accent-blue mr-2 animate-pulse"></span>
+                    Open to Work: Werkstudent / Junior Engineer
                 </div>
-                <div class="p-6 text-left font-mono text-sm text-slate-300">
-                    <p><span class="text-brand-cyan">➜</span> <span class="text-green-400">~</span> whoami</p>
-                    <p class="mt-1 text-slate-400">Cloud Infrastructure Engineer focused on automation, security, and scalability.</p>
-                    <p class="mt-3"><span class="text-brand-cyan">➜</span> <span class="text-green-400">~</span> ./status.sh</p>
-                    <p class="mt-1 text-slate-400">[OK] Infrastructure Active</p>
-                    <p class="text-slate-400">[OK] Network Secure</p>
-                    <p class="text-slate-400 animate-pulse">[..] Deploying Excellence...</p>
+                
+                <h1 class="text-5xl lg:text-7xl font-extrabold tracking-tight mb-6 leading-tight">
+                    Bridging Tech & <br>
+                    <span class="gradient-text">Business Strategy</span>
+                </h1>
+                
+                <p class="mt-4 text-xl text-dark-muted leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                    Hi, ich bin <strong>Mahdi Sharbaf</strong>. <br>
+                    Ein Cloud & DevOps Engineer, der Linux-Infrastrukturen automatisiert und mit strategischem Denken verbindet.
+                </p>
+                
+                <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    <a href="#projects" class="px-8 py-4 rounded-xl bg-accent-blue text-dark-bg font-bold hover:bg-white transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(56,189,248,0.5)]">
+                        Meine Projekte
+                    </a>
+                    <a href="https://linkedin.com/in/mahdi-sharbaf-movassaghpour" target="_blank" class="px-8 py-4 rounded-xl glass hover:bg-white/10 transition-all border border-white/10 flex items-center justify-center gap-2">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                </div>
+            </div>
+
+            <!-- Hero Image/Video Placeholder -->
+            <div class="lg:w-1/2 flex justify-center relative">
+                <!-- Decorative Circles -->
+                <div class="absolute inset-0 bg-gradient-to-r from-accent-blue to-accent-purple opacity-20 blur-3xl rounded-full"></div>
+                
+                <!-- Profile Image with Glow -->
+                <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-full p-2 glass animate-float">
+                    <img src="small.jpg" alt="Mahdi Sharbaf" 
+                         class="w-full h-full rounded-full object-cover border-4 border-accent-blue/20 shadow-2xl"
+                         onerror="this.src='https://placehold.co/400x400/1e293b/ffffff?text=Mahdi'">
                 </div>
             </div>
         </div>
-    </section>
+    </main>
 
-    <!-- About Me -->
-    <section id="about" class="py-24 bg-slate-900/50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
-                <div class="mb-10 lg:mb-0 relative">
-                    <div class="absolute -inset-4 bg-gradient-to-r from-brand-cyan to-blue-600 rounded-xl blur-lg opacity-30"></div>
-                    <div class="relative bg-brand-card p-8 rounded-xl border border-slate-700">
-                        <i class="fas fa-network-wired text-5xl text-brand-cyan mb-6"></i>
-                        <h3 class="text-2xl font-bold text-white mb-2">Technical Management</h3>
-                        <p class="text-brand-muted">Integrating robust technical solutions with strategic business goals.</p>
-                        
-                        <div class="mt-6 pt-6 border-t border-slate-700">
-                             <div class="flex items-center gap-4 mb-3">
-                                <i class="fas fa-check-circle text-brand-cyan"></i>
-                                <span>Cloud Architecture</span>
-                            </div>
-                            <div class="flex items-center gap-4">
-                                <i class="fas fa-check-circle text-brand-cyan"></i>
-                                <span>Network Security</span>
-                            </div>
+    <!-- Video Introduction Section -->
+    <section id="video" class="relative z-10 py-16">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="glass rounded-3xl p-2 md:p-4 border border-accent-purple/20 shadow-[0_0_50px_rgba(129,140,248,0.2)]">
+                <div class="relative w-full aspect-video rounded-2xl overflow-hidden bg-black">
+                    <!-- 🔴 PLACEHOLDER FOR YOUTUBE VIDEO -->
+                    <!-- Replace VIDEO_ID with your actual YouTube ID -->
+                    <div class="absolute inset-0 flex items-center justify-center text-center p-8 bg-dark-card/50">
+                        <div>
+                            <i class="fab fa-youtube text-6xl text-red-500 mb-4"></i>
+                            <h3 class="text-2xl font-bold mb-2">Video Vorstellung</h3>
+                            <p class="text-dark-muted">Hier wird das Video geladen, sobald du die ID einfügst.</p>
                         </div>
                     </div>
-                </div>
-                <div>
-                    <h2 class="text-3xl font-bold text-white mb-6"><span class="text-brand-cyan">01.</span> About Me</h2>
-                    <p class="text-lg text-brand-muted leading-relaxed mb-6">
-                        I am a Technology Management student specializing in Cloud Infrastructure and DevOps. My passion lies in building resilient systems that automate the mundane and secure the critical.
-                    </p>
-                    <p class="text-lg text-brand-muted leading-relaxed">
-                        With a background that blends academic rigor at TH Deggendorf with hands-on freelance experience, I understand both the "how" of technical implementation and the "why" of business impact.
-                    </p>
+                    <iframe 
+                        class="absolute inset-0 w-full h-full"
+                        src="https://www.youtube.com/embed/VIDEO_ID?rel=0&modestbranding=1" 
+                        title="Mahdi Introduction" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Tech Stack -->
-    <section id="skills" class="py-24 relative">
+    <!-- Tech Stack (Skills) -->
+    <section id="skills" class="relative z-10 py-20 bg-dark-bg/50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-white"><span class="text-brand-cyan">02.</span> Technical Arsenal</h2>
-                <p class="mt-4 text-brand-muted">Tools and technologies I use to build and deploy.</p>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Technische <span class="text-accent-blue">Fähigkeiten</span></h2>
+                <p class="text-dark-muted">Mein Werkzeugkasten für moderne Infrastruktur</p>
             </div>
 
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-                <!-- Linux -->
-                <div class="tech-card bg-brand-card p-6 rounded-lg border border-slate-700 text-center hover:border-brand-cyan transition-colors cursor-default group">
-                    <i class="fab fa-linux text-4xl text-slate-400 mb-3 block group-hover:text-brand-cyan transition-colors"></i>
-                    <span class="font-mono text-sm font-semibold">Linux</span>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 text-center">
+                <!-- Skill Items -->
+                <div class="glass p-6 rounded-2xl hover:bg-white/5 transition-all group">
+                    <i class="fab fa-linux text-4xl mb-4 text-gray-300 group-hover:text-accent-blue transition-colors"></i>
+                    <h3 class="font-medium">Linux</h3>
                 </div>
-                <!-- Azure -->
-                <div class="tech-card bg-brand-card p-6 rounded-lg border border-slate-700 text-center hover:border-brand-cyan transition-colors cursor-default group">
-                    <i class="fab fa-microsoft text-4xl text-slate-400 mb-3 block group-hover:text-brand-cyan transition-colors"></i>
-                    <span class="font-mono text-sm font-semibold">Azure</span>
+                <div class="glass p-6 rounded-2xl hover:bg-white/5 transition-all group">
+                    <i class="fab fa-microsoft text-4xl mb-4 text-blue-500 group-hover:text-white transition-colors"></i>
+                    <h3 class="font-medium">Azure</h3>
                 </div>
-                <!-- Docker -->
-                <div class="tech-card bg-brand-card p-6 rounded-lg border border-slate-700 text-center hover:border-brand-cyan transition-colors cursor-default group">
-                    <i class="fab fa-docker text-4xl text-slate-400 mb-3 block group-hover:text-brand-cyan transition-colors"></i>
-                    <span class="font-mono text-sm font-semibold">Docker</span>
+                <div class="glass p-6 rounded-2xl hover:bg-white/5 transition-all group">
+                    <i class="fab fa-docker text-4xl mb-4 text-blue-400 group-hover:text-white transition-colors"></i>
+                    <h3 class="font-medium">Docker</h3>
                 </div>
-                <!-- Git -->
-                <div class="tech-card bg-brand-card p-6 rounded-lg border border-slate-700 text-center hover:border-brand-cyan transition-colors cursor-default group">
-                    <i class="fab fa-git-alt text-4xl text-slate-400 mb-3 block group-hover:text-brand-cyan transition-colors"></i>
-                    <span class="font-mono text-sm font-semibold">Git</span>
+                <div class="glass p-6 rounded-2xl hover:bg-white/5 transition-all group">
+                    <i class="fas fa-network-wired text-4xl mb-4 text-purple-400 group-hover:text-white transition-colors"></i>
+                    <h3 class="font-medium">Network</h3>
                 </div>
-                <!-- Nginx -->
-                <div class="tech-card bg-brand-card p-6 rounded-lg border border-slate-700 text-center hover:border-brand-cyan transition-colors cursor-default group">
-                    <i class="fas fa-server text-4xl text-slate-400 mb-3 block group-hover:text-brand-cyan transition-colors"></i>
-                    <span class="font-mono text-sm font-semibold">Nginx</span>
+                <div class="glass p-6 rounded-2xl hover:bg-white/5 transition-all group">
+                    <i class="fas fa-sync text-4xl mb-4 text-green-400 group-hover:text-white transition-colors"></i>
+                    <h3 class="font-medium">CI/CD</h3>
                 </div>
-                <!-- Bash -->
-                <div class="tech-card bg-brand-card p-6 rounded-lg border border-slate-700 text-center hover:border-brand-cyan transition-colors cursor-default group">
-                    <i class="fas fa-terminal text-4xl text-slate-400 mb-3 block group-hover:text-brand-cyan transition-colors"></i>
-                    <span class="font-mono text-sm font-semibold">Bash</span>
+                <div class="glass p-6 rounded-2xl hover:bg-white/5 transition-all group">
+                    <i class="fab fa-python text-4xl mb-4 text-yellow-300 group-hover:text-white transition-colors"></i>
+                    <h3 class="font-medium">Python</h3>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Featured Projects -->
-    <section id="projects" class="py-24 bg-slate-900/50">
+    <!-- Projects -->
+    <section id="projects" class="relative z-10 py-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-white mb-12"><span class="text-brand-cyan">03.</span> Featured Projects</h2>
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">Ausgewählte <span class="gradient-text">Projekte</span></h2>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project 1 -->
-                <div class="group bg-brand-card rounded-xl overflow-hidden border border-slate-700 hover:border-brand-cyan transition-all duration-300 hover:shadow-xl hover:shadow-cyan-900/20 flex flex-col">
-                    <div class="h-2 bg-gradient-to-r from-brand-cyan to-blue-600"></div>
-                    <div class="p-8 flex-1">
-                        <div class="flex justify-between items-start mb-4">
-                            <i class="fas fa-cloud text-3xl text-brand-cyan"></i>
-                            <a href="#" class="text-slate-400 hover:text-white"><i class="fas fa-external-link-alt"></i></a>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Project 1 (Main) -->
+                <div class="glass rounded-2xl overflow-hidden hover:-translate-y-2 transition-transform duration-300 border border-accent-blue/20 lg:col-span-2">
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-6">
+                            <div class="p-3 bg-accent-blue/10 rounded-xl text-accent-blue">
+                                <i class="fas fa-cloud text-3xl"></i>
+                            </div>
+                            <span class="px-3 py-1 bg-accent-green/10 text-accent-green text-xs font-bold rounded-full border border-accent-green/20">LIVE</span>
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-3">Azure Cloud Infra</h3>
-                        <p class="text-brand-muted text-sm mb-4">
-                            A fully containerized portfolio application hosted on an Azure Ubuntu VM. Orchestrated using Docker Compose with Nginx as a reverse proxy.
+                        
+                        <h3 class="text-2xl font-bold mb-3">Cloud-Native Portfolio Webseite</h3>
+                        <p class="text-dark-muted mb-6">
+                            Bereitstellung einer skalierbaren und performanten Portfolio-Webseite auf Azure.
+                            Demonstration moderner DevOps-Praktiken wie Infrastructure as Code und automatisierten Deployments.
                         </p>
-                        <div class="mt-auto">
-                            <ul class="flex flex-wrap gap-2 font-mono text-xs text-brand-cyan">
-                                <li>Azure VM</li>
-                                <li>Docker</li>
-                                <li>Ubuntu</li>
-                            </ul>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 text-sm text-dark-muted">
+                            <div class="flex items-center gap-2"><i class="fas fa-check text-accent-blue"></i> Azure VM & Security Hardening</div>
+                            <div class="flex items-center gap-2"><i class="fas fa-check text-accent-blue"></i> Docker Container (Nginx Alpine)</div>
+                            <div class="flex items-center gap-2"><i class="fas fa-check text-accent-blue"></i> GitHub Actions (CI/CD Pipeline)</div>
+                            <div class="flex items-center gap-2"><i class="fas fa-check text-accent-blue"></i> Cloudflare SSL & DDoS Schutz</div>
+                        </div>
+
+                        <div class="flex gap-3">
+                            <a href="https://github.com/mahdisharbaf/my-resume-site" target="_blank" class="px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg text-sm font-medium transition-colors border border-white/10">
+                                <i class="fab fa-github mr-2"></i> Source Code
+                            </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project 2 -->
-                <div class="group bg-brand-card rounded-xl overflow-hidden border border-slate-700 hover:border-brand-cyan transition-all duration-300 hover:shadow-xl hover:shadow-cyan-900/20 flex flex-col">
-                    <div class="h-2 bg-gradient-to-r from-brand-cyan to-blue-600"></div>
-                    <div class="p-8 flex-1">
-                        <div class="flex justify-between items-start mb-4">
-                            <i class="fas fa-shield-alt text-3xl text-brand-cyan"></i>
-                            <a href="#" class="text-slate-400 hover:text-white"><i class="fab fa-github"></i></a>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-3">Secure Network Tunneling</h3>
-                        <p class="text-brand-muted text-sm mb-4">
-                            Freelance implementation of WireGuard and OpenVPN solutions to provide secure, encrypted remote access for SMB clients.
-                        </p>
-                        <div class="mt-auto">
-                            <ul class="flex flex-wrap gap-2 font-mono text-xs text-brand-cyan">
-                                <li>WireGuard</li>
-                                <li>Networking</li>
-                                <li>Security</li>
-                            </ul>
-                        </div>
+                <!-- Project 2 (Networking) -->
+                <div class="glass rounded-2xl p-8 hover:-translate-y-2 transition-transform duration-300">
+                    <div class="p-3 bg-accent-purple/10 rounded-xl text-accent-purple w-fit mb-6">
+                        <i class="fas fa-shield-alt text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Secure Networking</h3>
+                    <p class="text-dark-muted text-sm mb-6">
+                        Konzeption und Implementierung sicherer VPN-Lösungen (WireGuard, OpenVPN) auf Linux-Servern für verschlüsselte Datenübertragung.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-xs px-2 py-1 rounded bg-dark-bg border border-white/5">WireGuard</span>
+                        <span class="text-xs px-2 py-1 rounded bg-dark-bg border border-white/5">Linux Hardening</span>
                     </div>
                 </div>
 
-                <!-- Project 3 -->
-                <div class="group bg-brand-card rounded-xl overflow-hidden border border-slate-700 hover:border-brand-cyan transition-all duration-300 hover:shadow-xl hover:shadow-cyan-900/20 flex flex-col">
-                    <div class="h-2 bg-gradient-to-r from-brand-cyan to-blue-600"></div>
-                    <div class="p-8 flex-1">
-                        <div class="flex justify-between items-start mb-4">
-                            <i class="fas fa-cogs text-3xl text-brand-cyan"></i>
-                            <a href="#" class="text-slate-400 hover:text-white"><i class="fab fa-github"></i></a>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-3">IT Process Automation</h3>
-                        <p class="text-brand-muted text-sm mb-4">
-                            Developed Bash and Python scripts to automate routine data backup workflows and user management, increasing operational efficiency by 40%.
-                        </p>
-                        <div class="mt-auto">
-                            <ul class="flex flex-wrap gap-2 font-mono text-xs text-brand-cyan">
-                                <li>Bash</li>
-                                <li>Python</li>
-                                <li>Cron</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 
     <!-- Experience Timeline -->
-    <section id="experience" class="py-24 relative overflow-hidden">
+    <section id="experience" class="relative z-10 py-20 bg-dark-bg/50">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-white mb-12 text-center"><span class="text-brand-cyan">04.</span> Experience</h2>
+            <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center">Beruflicher <span class="text-accent-blue">Werdegang</span></h2>
             
-            <div class="relative border-l border-slate-700 ml-4 md:ml-6 space-y-12">
-                <!-- Role: Freelance Tech Consultant -->
-                <div class="relative pl-8 md:pl-12">
-                    <div class="absolute -left-[9px] md:-left-[11px] top-0 w-5 h-5 md:w-6 md:h-6 bg-brand-dark rounded-full border-2 border-brand-cyan timeline-dot"></div>
-                    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
-                        <h3 class="text-xl font-bold text-white">Freelance Tech Consultant</h3>
-                        <span class="font-mono text-brand-cyan text-sm bg-brand-cyan/10 px-2 py-1 rounded border border-brand-cyan/20 w-fit mt-2 sm:mt-0">Self-Employed</span>
-                    </div>
-                    <p class="text-sm text-slate-400 mb-4 font-mono">2021 - Present | Remote</p>
-                    <p class="text-brand-muted">
-                        Providing IT consulting for small businesses. Setting up secure remote work environments (VPNs), configuring local servers, and troubleshooting network infrastructure issues.
+            <div class="relative border-l-2 border-white/10 ml-3 md:ml-6 space-y-12">
+                
+                <!-- Job 1 -->
+                <div class="relative pl-8 md:pl-12 group">
+                    <div class="absolute -left-[9px] top-0 w-5 h-5 rounded-full bg-accent-blue border-4 border-dark-bg group-hover:scale-125 transition-transform"></div>
+                    <span class="text-xs font-mono text-accent-blue mb-1 block">06/2025 - 10/2025</span>
+                    <h3 class="text-xl font-bold text-white">Werkstudent - Logistik & Prozessoptimierung</h3>
+                    <p class="text-sm text-dark-muted mb-4">Innstolz Frischdienst, Deggendorf</p>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Optimierung der Lagerorganisation unter strikten Zeitvorgaben. Zusammenarbeit in einem diversen Team zur Sicherstellung von Datenqualität und Prozesseinhaltung.
                     </p>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Contact -->
-    <section id="contact" class="py-24 bg-slate-900/50">
-        <div class="max-w-3xl mx-auto px-4 text-center">
-            <p class="text-brand-cyan font-mono mb-4">05. What's Next?</p>
-            <h2 class="text-4xl font-bold text-white mb-6">Get In Touch</h2>
-            <p class="text-brand-muted text-lg mb-10">
-                I am currently looking for new opportunities in DevOps and Cloud Infrastructure. Whether you have a question or just want to say hi, I'll try my best to get back to you!
-            </p>
-            
-            <form class="max-w-md mx-auto space-y-4 text-left" onsubmit="event.preventDefault(); alert('Thank you for your message! (Demo Only)');">
-                <div>
-                    <label for="email" class="sr-only">Email</label>
-                    <input type="email" name="email" id="email" class="block w-full rounded-md border-0 py-3 px-4 text-slate-300 bg-brand-card shadow-sm ring-1 ring-inset ring-slate-700 placeholder:text-slate-500 focus:ring-2 focus:ring-inset focus:ring-brand-cyan sm:text-sm sm:leading-6" placeholder="Your Email">
+                <!-- Job 2 -->
+                <div class="relative pl-8 md:pl-12 group">
+                    <div class="absolute -left-[9px] top-0 w-5 h-5 rounded-full bg-dark-card border-4 border-white/10 group-hover:border-accent-purple transition-colors"></div>
+                    <span class="text-xs font-mono text-dark-muted mb-1 block">09/2021 - 09/2023</span>
+                    <h3 class="text-xl font-bold text-white">Netzwerk-Infrastruktur & Sicherheit (Freelance)</h3>
+                    <p class="text-sm text-dark-muted mb-4">Remote</p>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Implementierung sicherer VPN-Lösungen und Server-Hardening. Monitoring von Uptime und Latenz für 99,9% Verfügbarkeit.
+                    </p>
                 </div>
-                <div>
-                    <label for="message" class="sr-only">Message</label>
-                    <textarea id="message" name="message" rows="4" class="block w-full rounded-md border-0 py-3 px-4 text-slate-300 bg-brand-card shadow-sm ring-1 ring-inset ring-slate-700 placeholder:text-slate-500 focus:ring-2 focus:ring-inset focus:ring-brand-cyan sm:text-sm sm:leading-6" placeholder="Your Message"></textarea>
-                </div>
-                <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-brand-dark bg-brand-cyan hover:bg-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-cyan transition-all duration-300">
-                    Send Message
-                </button>
-            </form>
 
-            <div class="mt-12 flex justify-center space-x-8">
-                <a href="#" class="text-slate-400 hover:text-brand-cyan transition-colors text-2xl">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="#" class="text-slate-400 hover:text-brand-cyan transition-colors text-2xl">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="#" class="text-slate-400 hover:text-brand-cyan transition-colors text-2xl">
-                    <i class="fab fa-xing"></i>
-                </a>
+                <!-- Gap Year -->
+                <div class="relative pl-8 md:pl-12 group opacity-70 hover:opacity-100 transition-opacity">
+                    <div class="absolute -left-[9px] top-0 w-5 h-5 rounded-full bg-dark-card border-4 border-white/10"></div>
+                    <span class="text-xs font-mono text-dark-muted mb-1 block">10/2023 - 09/2024</span>
+                    <h3 class="text-lg font-bold text-white">Sprachvorbereitung & Relocation</h3>
+                    <p class="text-gray-400 text-sm">Intensiv-Sprachkurse (Deutsch C1) und Vorbereitung auf das Masterstudium in Deutschland.</p>
+                </div>
+
+                <!-- Job 3 -->
+                <div class="relative pl-8 md:pl-12 group">
+                    <div class="absolute -left-[9px] top-0 w-5 h-5 rounded-full bg-dark-card border-4 border-white/10"></div>
+                    <span class="text-xs font-mono text-dark-muted mb-1 block">04/2017 - 08/2021</span>
+                    <h3 class="text-xl font-bold text-white">IT-Projektkoordinator & Systemsupport</h3>
+                    <p class="text-sm text-dark-muted mb-4">RahaPharma.co, Isfahan</p>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Koordination digitaler Transformationsprojekte und Automatisierung administrativer Aufgaben zur Effizienzsteigerung (ca. 20%).
+                    </p>
+                </div>
+
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="py-8 bg-brand-dark border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-sm text-slate-500 font-mono">
-            <div class="mb-4 md:mb-0">
-                &copy; 2025 Tech Portfolio. Built in Deggendorf.
+    <footer class="relative z-10 py-12 border-t border-white/5 bg-dark-card/30">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <div class="flex justify-center space-x-8 mb-8">
+                <a href="https://linkedin.com/in/mahdi-sharbaf-movassaghpour" class="text-2xl text-dark-muted hover:text-accent-blue transition-colors"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/mahdisharbaf" class="text-2xl text-dark-muted hover:text-white transition-colors"><i class="fab fa-github"></i></a>
+                <a href="mailto:mehdi.sharbaf187@gmail.com" class="text-2xl text-dark-muted hover:text-accent-green transition-colors"><i class="fas fa-envelope"></i></a>
             </div>
-            <div>
-                <button onclick="toggleImpressum()" class="hover:text-brand-cyan transition-colors underline decoration-dotted">Impressum / Legal Notice</button>
-            </div>
+            <p class="text-dark-muted text-sm mb-2">
+                © 2025 Mahdi Sharbaf Movassaghpour. Hosted on Azure.
+            </p>
+            <a href="javascript:void(0)" onclick="openImpressum()" class="text-xs text-dark-muted hover:text-white underline">Impressum</a>
         </div>
     </footer>
 
-    <!-- Impressum Modal (Hidden by default) -->
-    <div id="impressum-modal" class="fixed inset-0 z-[60] hidden overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
-        <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
-            <div class="fixed inset-0 bg-slate-900 bg-opacity-90 transition-opacity" aria-hidden="true" onclick="toggleImpressum()"></div>
+    <!-- Impressum Modal -->
+    <div id="impressum-modal" class="fixed inset-0 z-[100] hidden overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <div class="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
+            <div class="fixed inset-0 bg-dark-bg/90 transition-opacity backdrop-blur-sm" onclick="closeImpressum()"></div>
+            
             <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
-            <div class="inline-block align-bottom bg-brand-card rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full border border-slate-700">
-                <div class="px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-                    <div class="sm:flex sm:items-start">
-                        <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left w-full">
-                            <h3 class="text-lg leading-6 font-medium text-white mb-4" id="modal-title">Impressum</h3>
-                            <div class="mt-2 text-slate-300 text-sm space-y-2">
-                                <p class="font-bold">Angaben gemäß § 5 TMG</p>
-                                <p>Mahdi Sharbaf Movassaghpour</p>
-                                <p>Bahnhofstraße 45</p>
-                                <p>94469 Deggendorf</p>
-                                <br>
-                                <p class="font-bold">Kontakt</p>
-                                <p>Telefon: +49 (0) 157 36980335</p>
-                                <p>E-Mail: mehdi.sharbaf187@gmail.com</p>
-                                <br>
-                                <p class="text-xs text-slate-500">
-                                    Disclaimer: This is a portfolio template. No actual liability is assumed for the content of external links.
-                                </p>
-                            </div>
+
+            <div class="inline-block align-bottom glass rounded-2xl text-left overflow-hidden shadow-2xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full border border-white/10">
+                <div class="px-6 py-6 text-gray-300">
+                    <div class="flex justify-between items-center mb-6">
+                        <h3 class="text-xl font-bold text-white">Impressum</h3>
+                        <button onclick="closeImpressum()" class="text-gray-400 hover:text-white"><i class="fas fa-times"></i></button>
+                    </div>
+                    
+                    <div class="space-y-4 text-sm">
+                        <div>
+                            <p class="font-bold text-white mb-1">Angaben gemäß § 5 TMG</p>
+                            <p>Mahdi Sharbaf Movassaghpour<br>Adolf-Baeyer-Damm 34<br>81735 München<br>Deutschland</p>
+                        </div>
+                        <div>
+                            <p class="font-bold text-white mb-1">Kontakt</p>
+                            <p>Telefon: +49 1573 6980335<br>E-Mail: mehdi.sharbaf187@gmail.com</p>
+                        </div>
+                        <div class="text-xs text-gray-500 mt-4">
+                            <p>Haftungsausschluss: Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für die Inhalte externer Links. Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.</p>
                         </div>
                     </div>
                 </div>
-                <div class="bg-slate-800 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
-                    <button type="button" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-brand-cyan text-base font-medium text-brand-dark hover:bg-white focus:outline-none sm:ml-3 sm:w-auto sm:text-sm" onclick="toggleImpressum()">
-                        Close
+                <div class="px-6 py-4 bg-white/5 sm:flex sm:flex-row-reverse">
+                    <button type="button" class="w-full inline-flex justify-center rounded-lg border border-transparent shadow-sm px-4 py-2 bg-accent-blue text-base font-medium text-dark-bg hover:bg-white sm:ml-3 sm:w-auto sm:text-sm" onclick="closeImpressum()">
+                        Schließen
                     </button>
                 </div>
             </div>
@@ -430,94 +404,12 @@
     </div>
 
     <script>
-        // Mobile Menu Toggle
-        const btn = document.getElementById('mobile-menu-btn');
-        const menu = document.getElementById('mobile-menu');
-
-        btn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
-        });
-
-        // Impressum Toggle
-        function toggleImpressum() {
-            const modal = document.getElementById('impressum-modal');
-            modal.classList.toggle('hidden');
+        function openImpressum() {
+            document.getElementById('impressum-modal').classList.remove('hidden');
         }
-
-        // Particle Network Animation
-        const canvas = document.getElementById('networkCanvas');
-        const ctx = canvas.getContext('2d');
-
-        let particles = [];
-        const particleCount = 60;
-        const connectionDistance = 150;
-
-        function resize() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
+        function closeImpressum() {
+            document.getElementById('impressum-modal').classList.add('hidden');
         }
-        window.addEventListener('resize', resize);
-        resize();
-
-        class Particle {
-            constructor() {
-                this.x = Math.random() * canvas.width;
-                this.y = Math.random() * canvas.height;
-                this.vx = (Math.random() - 0.5) * 0.5;
-                this.vy = (Math.random() - 0.5) * 0.5;
-                this.size = Math.random() * 2 + 1;
-            }
-
-            update() {
-                this.x += this.vx;
-                this.y += this.vy;
-
-                if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
-                if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
-            }
-
-            draw() {
-                ctx.fillStyle = '#22d3ee';
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fill();
-            }
-        }
-
-        function initParticles() {
-            particles = [];
-            for (let i = 0; i < particleCount; i++) {
-                particles.push(new Particle());
-            }
-        }
-
-        function animate() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            
-            for (let i = 0; i < particles.length; i++) {
-                particles[i].update();
-                particles[i].draw();
-
-                for (let j = i; j < particles.length; j++) {
-                    const dx = particles[i].x - particles[j].x;
-                    const dy = particles[i].y - particles[j].y;
-                    const distance = Math.sqrt(dx * dx + dy * dy);
-
-                    if (distance < connectionDistance) {
-                        ctx.beginPath();
-                        ctx.strokeStyle = `rgba(34, 211, 238, ${1 - distance / connectionDistance})`;
-                        ctx.lineWidth = 1;
-                        ctx.moveTo(particles[i].x, particles[i].y);
-                        ctx.lineTo(particles[j].x, particles[j].y);
-                        ctx.stroke();
-                    }
-                }
-            }
-            requestAnimationFrame(animate);
-        }
-
-        initParticles();
-        animate();
     </script>
 </body>
 </html>
