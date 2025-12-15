@@ -17,14 +17,30 @@ jobs:
           key: ${{ secrets.KEY }}
           port: 22
           script: |
-            cd my-resume-site
+            # تعریف متغیرها
+            FOLDER="my-resume-site"
+            # مطمئن شوید که نام کاربری جدید (mahdisharbaf) در آدرس زیر درست است
+            REPO="https://github.com/mahdisharbaf/my-resume-site.git"
             
-            # این دو خط جایگزین git pull می‌شوند
-            git fetch --all
-            git reset --hard origin/main
+            # چک کردن اینکه آیا پوشه وجود دارد یا نه
+            if [ -d "$FOLDER" ]; then
+              echo "Folder exists. Updating..."
+              cd $FOLDER
+              # دریافت آخرین تغییرات و ریست کردن اجباری برای جلوگیری از تداخل
+              git fetch --all
+              git reset --hard origin/main
+            else
+              echo "Folder not found. Cloning..."
+              git clone $REPO $FOLDER
+              cd $FOLDER
+            fi
             
-            # ادامه ماجرا...
+            # ساخت مجدد ایمیج داکر (بدون کش برای اطمینان از تغییرات)
             sudo docker build --no-cache -t resume-app .
+            
+            # توقف و حذف کانتینر قدیمی (اگر وجود داشته باشد)
             sudo docker stop my-website || true
             sudo docker rm my-website || true
+            
+            # اجرای کانتینر جدید با تنظیم ریستارت خودکار
             sudo docker run -d -p 80:80 --restart always --name my-website resume-app
