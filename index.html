@@ -5,24 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mahdi Sharbaf | Cloud & DevOps Engineer</title>
     
-    <!-- 🔴 لوگو در تب مرورگر (Favicon) -->
     <link rel="icon" type="image/png" href="logo.png">
     
-    <!-- 🟢 تنظیمات پیش‌نمایش برای واتس‌اپ، لینکدین و تلگرام (Open Graph) -->
-    <!-- این بخش باعث می‌شود لینک شما عکس و متن داشته باشد -->
+    <!-- Meta Tags for Social Preview -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://mahdi-sharbaf.me/">
     <meta property="og:title" content="Mahdi Sharbaf | Cloud & DevOps Engineer">
-    <meta property="og:description" content="Cloud-Native Portfolio. Spezialisiert auf Azure, Docker, Linux und CI/CD Automatisierung.">
-    <!-- عکس پروفایل شما به عنوان عکس لینک نمایش داده می‌شود -->
+    <meta property="og:description" content="Portfolio of a Cloud & DevOps Engineer specialized in AWS, Azure, Docker, Kubernetes, and CI/CD Automation.">
     <meta property="og:image" content="https://mahdi-sharbaf.me/small.jpg">
-
-    <!-- تنظیمات برای توییتر (Twitter Cards) -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://mahdi-sharbaf.me/">
-    <meta property="twitter:title" content="Mahdi Sharbaf | Cloud & DevOps Engineer">
-    <meta property="twitter:description" content="Cloud-Native Portfolio. Spezialisiert auf Azure, Docker, Linux und CI/CD Automatisierung.">
-    <meta property="twitter:image" content="https://mahdi-sharbaf.me/small.jpg">
     
     <meta name="robots" content="noindex, nofollow">
 
@@ -53,7 +43,10 @@
                         accent: {
                             blue: '#38bdf8',    // Sky 400
                             purple: '#818cf8',  // Indigo 400
-                            green: '#4ade80'    // Green 400
+                            green: '#4ade80',   // Green 400
+                            orange: '#fb923c',  // Orange 400
+                            red: '#f87171',     // Red 400
+                            yellow: '#facc15'   // Yellow 400
                         }
                     },
                     animation: {
@@ -84,9 +77,6 @@
             -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.05);
         }
-        .text-glow {
-            text-shadow: 0 0 20px rgba(56, 189, 248, 0.5);
-        }
         .gradient-text {
             background: linear-gradient(to right, #38bdf8, #818cf8);
             -webkit-background-clip: text;
@@ -112,22 +102,19 @@
     <div class="fixed inset-0 w-full h-full pointer-events-none z-0 overflow-hidden">
         <div class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-accent-blue/20 rounded-full mix-blend-screen filter blur-[100px] animate-blob"></div>
         <div class="absolute top-0 right-1/4 w-[500px] h-[500px] bg-accent-purple/20 rounded-full mix-blend-screen filter blur-[100px] animate-blob animation-delay-2000"></div>
-        <div class="absolute -bottom-32 left-1/3 w-[500px] h-[500px] bg-accent-green/10 rounded-full mix-blend-screen filter blur-[100px] animate-blob animation-delay-4000"></div>
+        <div class="absolute -bottom-32 left-1/3 w-[500px] h-[500px] bg-accent-orange/10 rounded-full mix-blend-screen filter blur-[100px] animate-blob animation-delay-4000"></div>
     </div>
 
     <!-- Navigation -->
     <nav class="fixed w-full z-50 glass border-b-0 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
-                
-                <!-- 🔴 لوگو و اسم سایت در نوار بالا -->
                 <div class="flex items-center gap-3">
                     <img src="logo.png" alt="MS Logo" class="w-10 h-10 object-contain drop-shadow-[0_0_10px_rgba(56,189,248,0.5)]" onerror="this.style.display='none'">
                     <div class="flex-shrink-0 font-bold text-2xl tracking-tighter hidden sm:block">
                         Mahdi<span class="text-accent-blue">.DevOps</span>
                     </div>
                 </div>
-
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-8">
                         <a href="#about" class="hover:text-accent-blue transition-colors px-3 py-2 text-sm font-medium">Profil</a>
@@ -144,21 +131,20 @@
     <!-- Hero Section -->
     <main id="about" class="relative z-10 pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div class="flex flex-col-reverse lg:flex-row items-center justify-between gap-12">
-            
             <div class="text-center lg:text-left lg:w-1/2">
                 <div class="inline-flex items-center px-3 py-1 rounded-full border border-accent-blue/30 bg-accent-blue/10 text-accent-blue text-sm font-medium mb-6 animate-float">
                     <span class="flex h-2 w-2 rounded-full bg-accent-blue mr-2 animate-pulse"></span>
-                    Open to Work: Werkstudent / Junior Engineer
+                    Open to Work: Werkstudent / Junior DevOps
                 </div>
                 
                 <h1 class="text-5xl lg:text-7xl font-extrabold tracking-tight mb-6 leading-tight">
-                    Bridging Tech & <br>
-                    <span class="gradient-text">Business Strategy</span>
+                    Cloud Native & <br>
+                    <span class="gradient-text">Automation Expert</span>
                 </h1>
                 
                 <p class="mt-4 text-xl text-dark-muted leading-relaxed max-w-2xl mx-auto lg:mx-0">
                     Hi, ich bin <strong>Mahdi Sharbaf</strong>. <br>
-                    Ein Cloud & DevOps Engineer, der Linux-Infrastrukturen automatisiert und mit strategischem Denken verbindet.
+                    Ich baue skalierbare Cloud-Architekturen auf <strong>AWS & Azure</strong>, automatisiere Deployments mit <strong>Jenkins & GitHub Actions</strong> und liebe Linux.
                 </p>
                 
                 <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
@@ -187,6 +173,7 @@
         <div class="max-w-4xl mx-auto px-4">
             <div class="glass rounded-3xl p-2 md:p-4 border border-accent-purple/20 shadow-[0_0_50px_rgba(129,140,248,0.2)]">
                 <div class="relative w-full aspect-video rounded-2xl overflow-hidden bg-black">
+                    <!-- 🔴 VIDEO_ID جایگزین شود -->
                     <div class="absolute inset-0 flex items-center justify-center text-center p-8 bg-dark-card/50">
                         <div>
                             <i class="fab fa-youtube text-6xl text-red-500 mb-4"></i>
@@ -207,108 +194,180 @@
         </div>
     </section>
 
-    <!-- Skills -->
+    <!-- Tech Stack (Erweitert) -->
     <section id="skills" class="relative z-10 py-20 bg-dark-bg/50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">Technische <span class="text-accent-blue">Fähigkeiten</span></h2>
-                <p class="text-dark-muted">Mein Werkzeugkasten für moderne Infrastruktur</p>
+                <p class="text-dark-muted">Umfassendes Skillset für moderne IT-Infrastrukturen</p>
             </div>
 
             <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 text-center">
+                <!-- AWS -->
                 <div class="glass p-6 rounded-2xl hover:bg-white/5 transition-all group">
-                    <i class="fab fa-linux text-4xl mb-4 text-gray-300 group-hover:text-accent-blue transition-colors"></i>
-                    <h3 class="font-medium">Linux</h3>
+                    <i class="fab fa-aws text-4xl mb-4 text-accent-orange group-hover:text-white transition-colors"></i>
+                    <h3 class="font-medium">AWS</h3>
+                    <p class="text-xs text-dark-muted mt-2">EC2, S3, RDS, ELB</p>
                 </div>
+                <!-- Azure -->
                 <div class="glass p-6 rounded-2xl hover:bg-white/5 transition-all group">
                     <i class="fab fa-microsoft text-4xl mb-4 text-blue-500 group-hover:text-white transition-colors"></i>
                     <h3 class="font-medium">Azure</h3>
+                    <p class="text-xs text-dark-muted mt-2">VMs, Networking</p>
                 </div>
+                <!-- Linux -->
+                <div class="glass p-6 rounded-2xl hover:bg-white/5 transition-all group">
+                    <i class="fab fa-linux text-4xl mb-4 text-gray-300 group-hover:text-accent-blue transition-colors"></i>
+                    <h3 class="font-medium">Linux</h3>
+                    <p class="text-xs text-dark-muted mt-2">RedHat & Debian</p>
+                </div>
+                <!-- CI/CD -->
+                <div class="glass p-6 rounded-2xl hover:bg-white/5 transition-all group">
+                    <i class="fab fa-jenkins text-4xl mb-4 text-accent-red group-hover:text-white transition-colors"></i>
+                    <h3 class="font-medium">Jenkins</h3>
+                    <p class="text-xs text-dark-muted mt-2">Pipelines, Maven</p>
+                </div>
+                <!-- Virtualization -->
+                <div class="glass p-6 rounded-2xl hover:bg-white/5 transition-all group">
+                    <i class="fas fa-box-open text-4xl mb-4 text-blue-300 group-hover:text-white transition-colors"></i>
+                    <h3 class="font-medium">Vagrant</h3>
+                    <p class="text-xs text-dark-muted mt-2">VirtualBox, VM</p>
+                </div>
+                <!-- Scripting -->
+                <div class="glass p-6 rounded-2xl hover:bg-white/5 transition-all group">
+                    <i class="fas fa-terminal text-4xl mb-4 text-accent-green group-hover:text-white transition-colors"></i>
+                    <h3 class="font-medium">Bash</h3>
+                    <p class="text-xs text-dark-muted mt-2">Automation</p>
+                </div>
+                <!-- Containers -->
                 <div class="glass p-6 rounded-2xl hover:bg-white/5 transition-all group">
                     <i class="fab fa-docker text-4xl mb-4 text-blue-400 group-hover:text-white transition-colors"></i>
                     <h3 class="font-medium">Docker</h3>
+                    <p class="text-xs text-dark-muted mt-2">Microservices</p>
                 </div>
+                <!-- Databases -->
                 <div class="glass p-6 rounded-2xl hover:bg-white/5 transition-all group">
-                    <i class="fas fa-network-wired text-4xl mb-4 text-purple-400 group-hover:text-white transition-colors"></i>
-                    <h3 class="font-medium">Network</h3>
-                </div>
-                <div class="glass p-6 rounded-2xl hover:bg-white/5 transition-all group">
-                    <i class="fas fa-sync text-4xl mb-4 text-green-400 group-hover:text-white transition-colors"></i>
-                    <h3 class="font-medium">CI/CD</h3>
-                </div>
-                <div class="glass p-6 rounded-2xl hover:bg-white/5 transition-all group">
-                    <i class="fab fa-python text-4xl mb-4 text-yellow-300 group-hover:text-white transition-colors"></i>
-                    <h3 class="font-medium">Python</h3>
+                    <i class="fas fa-database text-4xl mb-4 text-accent-yellow group-hover:text-white transition-colors"></i>
+                    <h3 class="font-medium">Services</h3>
+                    <p class="text-xs text-dark-muted mt-2">MySQL, RabbitMQ</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects -->
+    <!-- Projects (Updated) -->
     <section id="projects" class="relative z-10 py-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">Ausgewählte <span class="gradient-text">Projekte</span></h2>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
-                <!-- Project 1 -->
-                <div class="glass rounded-2xl overflow-hidden hover:-translate-y-2 transition-transform duration-300 border border-accent-blue/20 lg:col-span-2">
-                    <div class="p-8">
-                        <div class="flex justify-between items-start mb-6">
-                            <div class="p-3 bg-accent-blue/10 rounded-xl text-accent-blue">
-                                <i class="fas fa-cloud text-3xl"></i>
-                            </div>
-                            <span class="px-3 py-1 bg-accent-green/10 text-accent-green text-xs font-bold rounded-full border border-accent-green/20">LIVE</span>
+                <!-- Project 1: AWS Lift & Shift (IaaS) -->
+                <div class="glass rounded-2xl p-8 hover:-translate-y-2 transition-transform duration-300 border border-accent-orange/20 lg:col-span-2">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="p-3 bg-accent-orange/10 rounded-xl text-accent-orange">
+                            <i class="fab fa-aws text-3xl"></i>
                         </div>
-                        
-                        <h3 class="text-2xl font-bold mb-3">Cloud-Native Portfolio Webseite</h3>
-                        <p class="text-dark-muted mb-6">
-                            Bereitstellung einer skalierbaren und performanten Portfolio-Webseite auf Azure.
-                            Demonstration moderner DevOps-Praktiken wie Infrastructure as Code und automatisierten Deployments.
-                        </p>
-                        
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 text-sm text-dark-muted">
-                            <div class="flex items-center gap-2"><i class="fas fa-check text-accent-blue"></i> Azure VM & Security Hardening</div>
-                            <div class="flex items-center gap-2"><i class="fas fa-check text-accent-blue"></i> Docker Container (Nginx Alpine)</div>
-                            <div class="flex items-center gap-2"><i class="fas fa-check text-accent-blue"></i> GitHub Actions (CI/CD Pipeline)</div>
-                            <div class="flex items-center gap-2"><i class="fas fa-check text-accent-blue"></i> Cloudflare SSL & DDoS Schutz</div>
-                        </div>
-
-                        <div class="flex gap-3">
-                            <a href="https://github.com/mahdisharbaf/my-resume-site" target="_blank" class="px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg text-sm font-medium transition-colors border border-white/10">
-                                <i class="fab fa-github mr-2"></i> Source Code
-                            </a>
-                        </div>
+                        <span class="px-3 py-1 bg-accent-orange/10 text-accent-orange text-xs font-bold rounded-full border border-accent-orange/20">AWS IaaS</span>
                     </div>
+                    <h3 class="text-2xl font-bold mb-3">Cloud Migration: Lift & Shift auf AWS</h3>
+                    <p class="text-dark-muted mb-6">
+                        Migration einer Multi-Tier Applikation (vProfile) in die AWS Cloud unter Verwendung von EC2-Instanzen. Implementierung von Hochverfügbarkeit mit Load Balancern und Auto Scaling.
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 text-sm text-dark-muted">
+                        <div class="flex items-center gap-2"><i class="fas fa-check text-accent-orange"></i> EC2, Security Groups, Key Pairs</div>
+                        <div class="flex items-center gap-2"><i class="fas fa-check text-accent-orange"></i> Elastic Load Balancer (ELB)</div>
+                        <div class="flex items-center gap-2"><i class="fas fa-check text-accent-orange"></i> Auto Scaling Groups</div>
+                        <div class="flex items-center gap-2"><i class="fas fa-check text-accent-orange"></i> DNS Management mit Route 53</div>
+                    </div>
+                    <!-- 🔴 لینک گیت‌هاب پروژه AWS -->
+                    <a href="LINK_GITHUB_AWS" target="_blank" class="px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg text-sm font-medium transition-colors border border-white/10 inline-flex items-center">
+                        <i class="fab fa-github mr-2"></i> Source Code
+                    </a>
                 </div>
 
-                <!-- Project 2 -->
+                <!-- Project 2: AWS Refactoring (PaaS/SaaS) -->
                 <div class="glass rounded-2xl p-8 hover:-translate-y-2 transition-transform duration-300">
                     <div class="p-3 bg-accent-purple/10 rounded-xl text-accent-purple w-fit mb-6">
-                        <i class="fas fa-shield-alt text-2xl"></i>
+                        <i class="fas fa-layer-group text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Secure Networking</h3>
+                    <h3 class="text-xl font-bold mb-3">AWS Modernisierung (PaaS)</h3>
                     <p class="text-dark-muted text-sm mb-6">
-                        Konzeption und Implementierung sicherer VPN-Lösungen (WireGuard, OpenVPN) auf Linux-Servern für verschlüsselte Datenübertragung.
+                        Refactoring der Infrastruktur zu PaaS & SaaS Diensten für bessere Skalierbarkeit und weniger Management-Aufwand.
                     </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="text-xs px-2 py-1 rounded bg-dark-bg border border-white/5">WireGuard</span>
-                        <span class="text-xs px-2 py-1 rounded bg-dark-bg border border-white/5">Linux Hardening</span>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-xs px-2 py-1 rounded bg-dark-bg border border-white/5">Beanstalk</span>
+                        <span class="text-xs px-2 py-1 rounded bg-dark-bg border border-white/5">RDS</span>
+                        <span class="text-xs px-2 py-1 rounded bg-dark-bg border border-white/5">ElastiCache</span>
+                        <span class="text-xs px-2 py-1 rounded bg-dark-bg border border-white/5">CloudFront</span>
                     </div>
+                    <!-- 🔴 لینک گیت‌هاب پروژه Refactoring -->
+                    <a href="LINK_GITHUB_PAAS" target="_blank" class="text-accent-blue text-sm hover:underline"><i class="fab fa-github"></i> Code ansehen</a>
+                </div>
+
+                <!-- Project 3: Local Automation (Vagrant) -->
+                <div class="glass rounded-2xl p-8 hover:-translate-y-2 transition-transform duration-300">
+                    <div class="p-3 bg-accent-green/10 rounded-xl text-accent-green w-fit mb-6">
+                        <i class="fas fa-laptop-code text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Lokale Automatisierung</h3>
+                    <p class="text-dark-muted text-sm mb-6">
+                        Automatisierte Bereitstellung einer Multi-VM Umgebung für WordPress mit <strong>Vagrant</strong> und <strong>VirtualBox</strong>. Vollständiges Provisioning via Bash-Skripte.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-xs px-2 py-1 rounded bg-dark-bg border border-white/5">Vagrant</span>
+                        <span class="text-xs px-2 py-1 rounded bg-dark-bg border border-white/5">VirtualBox</span>
+                        <span class="text-xs px-2 py-1 rounded bg-dark-bg border border-white/5">Bash</span>
+                    </div>
+                    <!-- 🔴 لینک گیت‌هاب پروژه Vagrant -->
+                    <a href="LINK_GITHUB_VAGRANT" target="_blank" class="text-accent-blue text-sm hover:underline"><i class="fab fa-github"></i> Code ansehen</a>
+                </div>
+
+                <!-- Project 4: vProfile Local (Microservices) -->
+                <div class="glass rounded-2xl p-8 hover:-translate-y-2 transition-transform duration-300">
+                    <div class="p-3 bg-accent-blue/10 rounded-xl text-accent-blue w-fit mb-6">
+                        <i class="fas fa-server text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Multi-Tier App Deployment</h3>
+                    <p class="text-dark-muted text-sm mb-6">
+                        Lokales Deployment des vProfile-Projekts mit automatisierter Einrichtung von Nginx, MySQL, Memcache und RabbitMQ Services.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-xs px-2 py-1 rounded bg-dark-bg border border-white/5">Nginx</span>
+                        <span class="text-xs px-2 py-1 rounded bg-dark-bg border border-white/5">MySQL</span>
+                        <span class="text-xs px-2 py-1 rounded bg-dark-bg border border-white/5">RabbitMQ</span>
+                    </div>
+                    <!-- 🔴 لینک گیت‌هاب پروژه vProfile -->
+                    <a href="LINK_GITHUB_VPROFILE" target="_blank" class="text-accent-blue text-sm hover:underline"><i class="fab fa-github"></i> Code ansehen</a>
+                </div>
+
+                <!-- Project 5: Azure Portfolio (Existing) -->
+                <div class="glass rounded-2xl p-8 hover:-translate-y-2 transition-transform duration-300">
+                    <div class="p-3 bg-blue-500/10 rounded-xl text-blue-400 w-fit mb-6">
+                        <i class="fab fa-microsoft text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Azure Portfolio (Live)</h3>
+                    <p class="text-dark-muted text-sm mb-6">
+                        Diese Webseite selbst! Gehostet auf Azure VM, containerisiert mit Docker und deployed via GitHub Actions CI/CD.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-xs px-2 py-1 rounded bg-dark-bg border border-white/5">Azure</span>
+                        <span class="text-xs px-2 py-1 rounded bg-dark-bg border border-white/5">Docker</span>
+                        <span class="text-xs px-2 py-1 rounded bg-dark-bg border border-white/5">GitHub Actions</span>
+                    </div>
+                    <a href="https://github.com/mahdisharbaf/my-resume-site" target="_blank" class="text-accent-blue text-sm hover:underline"><i class="fab fa-github"></i> Code ansehen</a>
                 </div>
 
             </div>
         </div>
     </section>
 
-    <!-- Experience Timeline -->
+    <!-- Experience & Footer Sections Remain Same -->
     <section id="experience" class="relative z-10 py-20 bg-dark-bg/50">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center">Beruflicher <span class="text-accent-blue">Werdegang</span></h2>
-            
             <div class="relative border-l-2 border-white/10 ml-3 md:ml-6 space-y-12">
                 
-                <!-- Job 1 -->
                 <div class="relative pl-8 md:pl-12 group">
                     <div class="absolute -left-[9px] top-0 w-5 h-5 rounded-full bg-accent-blue border-4 border-dark-bg group-hover:scale-125 transition-transform"></div>
                     <span class="text-xs font-mono text-accent-blue mb-1 block">06/2025 - 10/2025</span>
@@ -319,7 +378,6 @@
                     </p>
                 </div>
 
-                <!-- Job 2 -->
                 <div class="relative pl-8 md:pl-12 group">
                     <div class="absolute -left-[9px] top-0 w-5 h-5 rounded-full bg-dark-card border-4 border-white/10 group-hover:border-accent-purple transition-colors"></div>
                     <span class="text-xs font-mono text-dark-muted mb-1 block">09/2021 - 09/2024</span>
@@ -330,7 +388,6 @@
                     </p>
                 </div>
 
-                <!-- Job 3 -->
                 <div class="relative pl-8 md:pl-12 group">
                     <div class="absolute -left-[9px] top-0 w-5 h-5 rounded-full bg-dark-card border-4 border-white/10"></div>
                     <span class="text-xs font-mono text-dark-muted mb-1 block">04/2017 - 08/2021</span>
@@ -345,10 +402,8 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="relative z-10 py-12 border-t border-white/5 bg-dark-card/30">
         <div class="max-w-7xl mx-auto px-4 text-center">
-            
             <div class="mb-12">
                 <h3 class="text-2xl font-bold mb-6 text-white">Ausbildung</h3>
                 <div class="flex flex-col md:flex-row justify-center gap-6 text-left max-w-4xl mx-auto">
@@ -364,33 +419,27 @@
                     </div>
                 </div>
             </div>
-
             <div class="flex justify-center space-x-8 mb-8">
                 <a href="https://linkedin.com/in/mahdi-sharbaf-movassaghpour" class="text-2xl text-dark-muted hover:text-accent-blue transition-colors"><i class="fab fa-linkedin"></i></a>
                 <a href="https://github.com/mahdisharbaf" class="text-2xl text-dark-muted hover:text-white transition-colors"><i class="fab fa-github"></i></a>
                 <a href="mailto:mehdi.sharbaf187@gmail.com" class="text-2xl text-dark-muted hover:text-accent-green transition-colors"><i class="fas fa-envelope"></i></a>
             </div>
-            <p class="text-dark-muted text-sm mb-2">
-                © 2025 Mahdi Sharbaf Movassaghpour. Hosted on Azure.
-            </p>
+            <p class="text-dark-muted text-sm mb-2">© 2025 Mahdi Sharbaf Movassaghpour. Hosted on Azure.</p>
             <a href="javascript:void(0)" onclick="openImpressum()" class="text-xs text-dark-muted hover:text-white underline">Impressum</a>
         </div>
     </footer>
 
-    <!-- Impressum Modal -->
+    <!-- Impressum Modal (Unchanged) -->
     <div id="impressum-modal" class="fixed inset-0 z-[100] hidden overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
         <div class="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
             <div class="fixed inset-0 bg-dark-bg/90 transition-opacity backdrop-blur-sm" onclick="closeImpressum()"></div>
-            
             <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
-
             <div class="inline-block align-bottom glass rounded-2xl text-left overflow-hidden shadow-2xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full border border-white/10">
                 <div class="px-6 py-6 text-gray-300">
                     <div class="flex justify-between items-center mb-6">
                         <h3 class="text-xl font-bold text-white">Impressum</h3>
                         <button onclick="closeImpressum()" class="text-gray-400 hover:text-white"><i class="fas fa-times"></i></button>
                     </div>
-                    
                     <div class="space-y-4 text-sm">
                         <div>
                             <p class="font-bold text-white mb-1">Angaben gemäß § 5 TMG</p>
