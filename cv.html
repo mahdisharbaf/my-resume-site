@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lebenslauf - Mahdi Sharbaf Movassaghpour</title>
+    
+    <!-- آیکون تب مرورگر -->
+    <link rel="icon" type="image/png" href="logo.png">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body { font-family: 'Roboto', sans-serif; background-color: #f3f4f6; color: #374151; }
+        h1, h2, h3 { font-family: 'Montserrat', sans-serif; }
+        
+        /* استایل‌های مخصوص پرینت (A4) */
+        @media print {
+            body { background-color: white; padding: 0; margin: 0; -webkit-print-color-adjust: exact; }
+            .container { max-width: 100% !important; box-shadow: none !important; margin: 0 !important; padding: 20px !important; }
+            .no-print { display: none !important; }
+            a { text-decoration: none !important; color: #374151 !important; }
+            .print-break { page-break-before: always; }
+        }
+        
+        .section-header {
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            color: #2563eb; /* Blue-600 */
+        }
+    </style>
+</head>
+<body class="py-10 print:py-0">
+
+    <!-- دکمه‌های شناور برای دانلود/پرینت (در پرینت دیده نمی‌شوند) -->
+    <div class="fixed bottom-5 right-5 flex gap-3 no-print z-50">
+        <button onclick="window.print()" class="bg-blue-600 hover:bg-blue-700 text-white p-4 rounded-full shadow-lg transition-all" title="Als PDF drucken">
+            <i class="fas fa-print"></i>
+        </button>
+        <a href="index.html" class="bg-gray-800 hover:bg-gray-900 text-white p-4 rounded-full shadow-lg transition-all" title="Zurück zum Portfolio">
+            <i class="fas fa-home"></i>
+        </a>
+    </div>
+
+    <!-- کانتینر اصلی رزومه (A4 Width) -->
+    <div class="container mx-auto max-w-[21cm] bg-white shadow-2xl rounded-lg overflow-hidden min-h-[29.7cm]">
+        
+        <!-- HEADER -->
+        <header class="bg-slate-900 text-white p-8 md:p-12 flex flex-col md:flex-row items-center gap-8">
+            <!-- عکس پروفایل -->
+            <div class="flex-shrink-0">
+                <!-- استفاده مستقیم از فایل small.jpg که در گیت‌هاب موجود است -->
+                <img src="small.jpg" alt="Mahdi Sharbaf" 
+                     class="w-40 h-40 rounded-full border-4 border-blue-500 shadow-xl object-cover"
+                     onerror="this.src='https://ui-avatars.com/api/?name=Mahdi+Sharbaf&size=160&background=2563eb&color=fff'">
+            </div>
+            
+            <!-- اطلاعات اصلی -->
+            <div class="text-center md:text-left flex-grow">
+                <h1 class="text-3xl md:text-4xl font-bold mb-2">Mahdi Sharbaf Movassaghpour</h1>
+                <p class="text-blue-400 text-xl font-medium mb-4 uppercase tracking-wider">Cloud & DevOps Engineer | M.Eng Student</p>
+                
+                <!-- اطلاعات تماس -->
+                <div class="flex flex-wrap justify-center md:justify-start gap-y-2 gap-x-6 text-sm text-gray-300">
+                    <span class="flex items-center gap-2"><i class="fas fa-phone-alt text-blue-500"></i> +49 1573 6980335</span>
+                    <a href="mailto:mehdi.sharbaf187@gmail.com" class="flex items-center gap-2 hover:text-white transition"><i class="fas fa-envelope text-blue-500"></i> mehdi.sharbaf187@gmail.com</a>
+                    <a href="https://mahdi-sharbaf.me" class="flex items-center gap-2 hover:text-white transition"><i class="fas fa-globe text-blue-500"></i> mahdi-sharbaf.me</a>
+                    <span class="flex items-center gap-2"><i class="fas fa-map-marker-alt text-blue-500"></i> Adolf-Baeyer-Damm 34, 81735 München</span>
+                </div>
+                
+                <div class="mt-4 flex justify-center md:justify-start gap-4">
+                    <a href="https://linkedin.com/in/mahdi-sharbaf-movassaghpour" target="_blank" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin fa-lg"></i></a>
+                    <a href="https://github.com/mahdisharbaf" target="_blank" class="text-gray-400 hover:text-white"><i class="fab fa-github fa-lg"></i></a>
+                </div>
+            </div>
+        </header>
+
+        <div class="p-8 md:p-12 grid grid-cols-1 gap-10">
+
+            <!-- KURZPROFIL -->
+            <section>
+                <h2 class="section-header text-xl font-bold uppercase tracking-wide">
+                    <i class="fas fa-user-circle mr-3"></i> Kurzprofil
+                </h2>
+                <p class="leading-relaxed text-gray-600 text-justify">
+                    Motivierter <strong>Cloud & DevOps Engineer</strong> und Masterstudent. Ich verbinde fundiertes Wissen in Linux-Administration (RHEL/Debian) und Cloud-Infrastrukturen (AWS/Azure) mit modernen Automatisierungstechniken. Erfahren in der Migration von Applikationen in die Cloud (Lift & Shift, PaaS) sowie in der Orchestrierung mittels Docker, Jenkins und Ansible. Ich suche eine Position, um meine Fähigkeiten in komplexen IT-Umgebungen einzubringen.
+                </p>
+            </section>
+
+            <!-- AUSBILDUNG -->
+            <section>
+                <h2 class="section-header text-xl font-bold uppercase tracking-wide">
+                    <i class="fas fa-graduation-cap mr-3"></i> Ausbildung
+                </h2>
+                <div class="space-y-6">
+                    <div class="flex flex-col md:flex-row md:justify-between">
+                        <div class="md:w-1/4 mb-2 md:mb-0">
+                            <span class="font-bold text-gray-800">10/2024 -- Heute</span>
+                        </div>
+                        <div class="md:w-3/4">
+                            <h3 class="font-bold text-lg text-gray-800">Technologiemanagement M.Eng.</h3>
+                            <p class="text-blue-600 font-medium">Technische Hochschule Deggendorf (THD), Deutschland</p>
+                            <p class="text-sm text-gray-500 mt-1">Schwerpunkte: Industrie 4.0, Strategisches Management, Innovationsmanagement, Smart Factory.</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col md:flex-row md:justify-between">
+                        <div class="md:w-1/4 mb-2 md:mb-0">
+                            <span class="font-bold text-gray-800">10/2011 -- 04/2015</span>
+                        </div>
+                        <div class="md:w-3/4">
+                            <h3 class="font-bold text-lg text-gray-800">Elektrotechnik B.Sc.</h3>
+                            <p class="text-blue-600 font-medium">Azad-Universität Tabriz, Iran</p>
+                            <p class="text-sm text-gray-500 mt-1">Grundlagen und Vertiefung in Elektrotechnik, Messtechnik, Steuerungs- und Automatisierungstechnik.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TECHNISCHE FÄHIGKEITEN -->
+            <section>
+                <h2 class="section-header text-xl font-bold uppercase tracking-wide">
+                    <i class="fas fa-microchip mr-3"></i> Technische Fähigkeiten
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-8 text-sm">
+                    <div>
+                        <span class="font-bold block text-gray-900 mb-1">Cloud Platforms</span>
+                        <p class="text-gray-600">AWS (EC2, S3, RDS, ELB, Route53, Beanstalk, CloudFront), Azure</p>
+                    </div>
+                    <div>
+                        <span class="font-bold block text-gray-900 mb-1">DevOps & CI/CD</span>
+                        <p class="text-gray-600">Jenkins, GitHub Actions, Docker, Maven, Git, Build Tools (npm)</p>
+                    </div>
+                    <div>
+                        <span class="font-bold block text-gray-900 mb-1">Virtualisierung</span>
+                        <p class="text-gray-600">Vagrant, VirtualBox, Multi-VM Provisioning</p>
+                    </div>
+                    <div>
+                        <span class="font-bold block text-gray-900 mb-1">OS & Linux</span>
+                        <p class="text-gray-600">RHEL, CentOS, Ubuntu, Debian (Package Mgmt, User Admin)</p>
+                    </div>
+                    <div>
+                        <span class="font-bold block text-gray-900 mb-1">Scripting & IaC</span>
+                        <p class="text-gray-600">Bash Scripting, YAML, JSON, AWS CLI, Automatisierung</p>
+                    </div>
+                    <div>
+                        <span class="font-bold block text-gray-900 mb-1">Services & Netzwerk</span>
+                        <p class="text-gray-600">Nginx, MySQL, RabbitMQ, Memcache, TCP/IP, Firewalls, DNS</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PROJEKTE -->
+            <section>
+                <h2 class="section-header text-xl font-bold uppercase tracking-wide">
+                    <i class="fas fa-project-diagram mr-3"></i> Ausgewählte Projekte
+                </h2>
+                <div class="space-y-6">
+                    <!-- Project 1 -->
+                    <div>
+                        <div class="flex justify-between items-baseline mb-1">
+                            <h3 class="font-bold text-lg text-gray-800">AWS Cloud Migration & Modernisierung</h3>
+                            <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded font-semibold">01/2026 -- Heute</span>
+                        </div>
+                        <p class="text-sm text-gray-500 italic mb-2">Umfassendes Cloud-Projekt | AWS</p>
+                        <ul class="list-disc list-outside ml-5 text-gray-600 text-sm space-y-1">
+                            <li><strong>Lift & Shift (IaaS):</strong> Migration mittels EC2, ELB und Auto Scaling Groups. DNS-Management via Route 53.</li>
+                            <li><strong>Re-Platforming (PaaS):</strong> Modernisierung durch Nutzung von Elastic Beanstalk, RDS, ElastiCache und CloudFront.</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Project 2 -->
+                    <div>
+                        <div class="flex justify-between items-baseline mb-1">
+                            <h3 class="font-bold text-lg text-gray-800">Infrastruktur-Automatisierung & Virtualisierung</h3>
+                            <span class="text-xs bg-gray-100 text-gray-800 px-2 py-1 rounded font-semibold">12/2025 -- 01/2026</span>
+                        </div>
+                        <p class="text-sm text-gray-500 italic mb-2">Lokales Labor | Vagrant & Linux</p>
+                        <ul class="list-disc list-outside ml-5 text-gray-600 text-sm space-y-1">
+                            <li><strong>Provisioning:</strong> Automatisches Setup von Multi-VM-Umgebungen mit Vagrant und VirtualBox.</li>
+                            <li><strong>Service-Stack:</strong> Skriptbasierte Installation von Nginx, MySQL, RabbitMQ und Memcache (vProfile).</li>
+                        </ul>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div>
+                        <div class="flex justify-between items-baseline mb-1">
+                            <h3 class="font-bold text-lg text-gray-800">Cloud-Native Portfolio Webseite</h3>
+                            <span class="text-xs bg-gray-100 text-gray-800 px-2 py-1 rounded font-semibold">12/2025 -- Heute</span>
+                        </div>
+                        <p class="text-sm text-gray-500 italic mb-2">Persönliches Projekt | Azure</p>
+                        <ul class="list-disc list-outside ml-5 text-gray-600 text-sm space-y-1">
+                            <li><strong>Setup:</strong> Azure VM mit Linux-Hardening, Docker (Nginx Alpine) und Cloudflare.</li>
+                            <li><strong>CI/CD:</strong> Vollautomatisierte GitHub Actions Pipeline für Zero-Downtime Deployments.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- BERUFSERFAHRUNG -->
+            <section>
+                <h2 class="section-header text-xl font-bold uppercase tracking-wide">
+                    <i class="fas fa-briefcase mr-3"></i> Beruflicher Werdegang
+                </h2>
+                <div class="space-y-6">
+                    <!-- Job 1 -->
+                    <div class="flex flex-col md:flex-row">
+                        <div class="md:w-1/4 mb-1">
+                            <span class="font-bold text-gray-800 text-sm">06/2025 -- 10/2025</span>
+                        </div>
+                        <div class="md:w-3/4">
+                            <h3 class="font-bold text-gray-800">Werkstudent - Logistik & Prozessoptimierung</h3>
+                            <p class="text-sm text-gray-500 mb-2">Innstolz Frischdienst, Deggendorf</p>
+                            <ul class="list-disc list-outside ml-5 text-gray-600 text-sm space-y-1">
+                                <li>Optimierung der Lagerorganisation unter strikten Zeitvorgaben.</li>
+                                <li>Zusammenarbeit in einem diversen Team zur Sicherstellung der Prozesseinhaltung.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Job 2 -->
+                    <div class="flex flex-col md:flex-row">
+                        <div class="md:w-1/4 mb-1">
+                            <span class="font-bold text-gray-800 text-sm">09/2021 -- 09/2024</span>
+                        </div>
+                        <div class="md:w-3/4">
+                            <h3 class="font-bold text-gray-800">Netzwerk-Infrastruktur & Sicherheit (Freelance)</h3>
+                            <p class="text-sm text-gray-500 mb-2">Selbstständig, Remote</p>
+                            <ul class="list-disc list-outside ml-5 text-gray-600 text-sm space-y-1">
+                                <li>Konzeption und Implementierung sicherer VPN-Lösungen (WireGuard, OpenVPN).</li>
+                                <li>Server-Hardening und Kernel-Optimierung für hohen Netzwerkdurchsatz.</li>
+                                <li>Monitoring der Server-Uptime (99,9% Verfügbarkeit).</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Job 3 -->
+                    <div class="flex flex-col md:flex-row">
+                        <div class="md:w-1/4 mb-1">
+                            <span class="font-bold text-gray-800 text-sm">04/2017 -- 08/2021</span>
+                        </div>
+                        <div class="md:w-3/4">
+                            <h3 class="font-bold text-gray-800">IT-Projektkoordinator & Systemsupport</h3>
+                            <p class="text-sm text-gray-500 mb-2">RahaPharma.co, Isfahan</p>
+                            <ul class="list-disc list-outside ml-5 text-gray-600 text-sm space-y-1">
+                                <li>Koordination des IT-Betriebs und digitaler Transformationsprojekte.</li>
+                                <li>Automatisierung administrativer Aufgaben zur Effizienzsteigerung.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Job 4 -->
+                    <div class="flex flex-col md:flex-row">
+                        <div class="md:w-1/4 mb-1">
+                            <span class="font-bold text-gray-800 text-sm">05/2015 -- 03/2017</span>
+                        </div>
+                        <div class="md:w-3/4">
+                            <h3 class="font-bold text-gray-800">Junior IT-Support Spezialist</h3>
+                            <p class="text-sm text-gray-500 mb-2">Adak Pharmed, Tehran</p>
+                            <ul class="list-disc list-outside ml-5 text-gray-600 text-sm space-y-1">
+                                <li>Technischer Support und Troubleshooting für Endanwender.</li>
+                                <li>Unterstützung bei der Einrichtung lokaler Netzwerke.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SPRACHEN -->
+            <section>
+                <h2 class="section-header text-xl font-bold uppercase tracking-wide">
+                    <i class="fas fa-language mr-3"></i> Sprachkenntnisse
+                </h2>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4 text-sm">
+                    <div class="flex justify-between border-b pb-1">
+                        <span class="text-gray-700">Deutsch</span>
+                        <span class="font-bold text-blue-600">C1 (TestDaF)</span>
+                    </div>
+                    <div class="flex justify-between border-b pb-1">
+                        <span class="text-gray-700">Englisch</span>
+                        <span class="font-bold text-blue-600">B2/C1</span>
+                    </div>
+                    <div class="flex justify-between border-b pb-1">
+                        <span class="text-gray-700">Aserbaidschanisch</span>
+                        <span class="font-bold text-gray-500">Muttersprache</span>
+                    </div>
+                    <div class="flex justify-between border-b pb-1">
+                        <span class="text-gray-700">Persisch</span>
+                        <span class="font-bold text-gray-500">Fließend</span>
+                    </div>
+                    <div class="flex justify-between border-b pb-1">
+                        <span class="text-gray-700">Türkisch</span>
+                        <span class="font-bold text-gray-500">Gute Kenntnisse</span>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- FOOTER -->
+        <footer class="bg-gray-50 p-8 text-center text-xs text-gray-400 border-t">
+            <p class="mb-4">Deggendorf, <script>document.write(new Date().toLocaleDateString('de-DE', { year: 'numeric', month: '2-digit' }));</script></p>
+            <div class="w-48 mx-auto border-b border-gray-300 mb-2"></div>
+            <p>Mahdi Sharbaf Movassaghpour</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
