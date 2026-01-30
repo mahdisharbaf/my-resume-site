@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mahdi Sharbaf | Cloud & DevOps Engineer</title>
     
+    <!-- 🔴 لوگو در تب مرورگر -->
     <link rel="icon" type="image/png" href="logo.png">
     
     <!-- Meta Tags for Social Preview -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://mahdi-sharbaf.me/">
     <meta property="og:title" content="Mahdi Sharbaf | Cloud & DevOps Engineer">
-    <meta property="og:description" content="Portfolio of a Cloud & DevOps Engineer specialized in AWS, Azure, Docker, Kubernetes, and CI/CD Automation.">
+    <meta property="og:description" content="Portfolio eines Cloud & DevOps Engineers. Spezialisiert auf AWS, Azure, Docker, Kubernetes und CI/CD Automatisierung.">
     <meta property="og:image" content="https://mahdi-sharbaf.me/small.jpg">
     
     <meta name="robots" content="noindex, nofollow">
@@ -68,6 +69,24 @@
                 }
             }
         }
+
+        // 🟢 تابع هوشمند: دانلود PDF + انتقال به صفحه HTML
+        function downloadAndRedirect(event) {
+            event.preventDefault(); // جلوگیری از رفتار پیش‌فرض لینک
+
+            // 1. شروع دانلود فایل PDF
+            const link = document.createElement('a');
+            link.href = 'Lebenslauf.pdf'; // نام فایل PDF شما
+            link.download = 'Lebenslauf - Mahdi Sharbaf Movassaghpour.pdf'; // نامی که کاربر موقع دانلود می‌بیند
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+
+            // 2. انتقال کاربر به صفحه رزومه دیجیتال (cv.html) بعد از 800 میلی‌ثانیه
+            setTimeout(() => {
+                window.location.href = 'cv.html';
+            }, 800);
+        }
     </script>
 
     <style>
@@ -121,7 +140,8 @@
                         <a href="#skills" class="hover:text-accent-blue transition-colors px-3 py-2 text-sm font-medium">Skills</a>
                         <a href="#projects" class="hover:text-accent-blue transition-colors px-3 py-2 text-sm font-medium">Projekte</a>
                         <a href="#experience" class="hover:text-accent-blue transition-colors px-3 py-2 text-sm font-medium">Erfahrung</a>
-                        <a href="Lebenslauf.pdf" target="_blank" class="text-accent-blue border border-accent-blue/30 bg-accent-blue/10 hover:bg-accent-blue hover:text-dark-bg transition-all px-4 py-2 rounded-lg text-sm font-medium">CV</a>
+                        <!-- CV Button im Menü (با قابلیت جدید) -->
+                        <a href="cv.html" onclick="downloadAndRedirect(event)" class="text-accent-blue border border-accent-blue/30 bg-accent-blue/10 hover:bg-accent-blue hover:text-dark-bg transition-all px-4 py-2 rounded-lg text-sm font-medium">CV</a>
                     </div>
                 </div>
             </div>
@@ -148,7 +168,8 @@
                 </p>
                 
                 <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                    <a href="Lebenslauf.pdf" target="_blank" class="px-8 py-4 rounded-xl bg-accent-blue text-dark-bg font-bold hover:bg-white transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(56,189,248,0.5)] flex items-center justify-center gap-2">
+                    <!-- 🔴 CV Download Button (با قابلیت جدید) -->
+                    <a href="cv.html" onclick="downloadAndRedirect(event)" class="px-8 py-4 rounded-xl bg-accent-blue text-dark-bg font-bold hover:bg-white transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(56,189,248,0.5)] flex items-center justify-center gap-2">
                         <i class="fas fa-download"></i> Lebenslauf (CV)
                     </a>
                     <a href="#projects" class="px-8 py-4 rounded-xl glass hover:bg-white/10 transition-all border border-white/10 flex items-center justify-center gap-2">
@@ -194,7 +215,7 @@
         </div>
     </section>
 
-    <!-- Tech Stack (Erweitert) -->
+    <!-- Tech Stack -->
     <section id="skills" class="relative z-10 py-20 bg-dark-bg/50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
@@ -255,7 +276,7 @@
         </div>
     </section>
 
-    <!-- Projects (Updated) -->
+    <!-- Projects -->
     <section id="projects" class="relative z-10 py-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">Ausgewählte <span class="gradient-text">Projekte</span></h2>
@@ -320,7 +341,7 @@
                         <span class="text-xs px-2 py-1 rounded bg-dark-bg border border-white/5">Bash</span>
                     </div>
                     <!-- 🔴 لینک گیت‌هاب پروژه Vagrant -->
-                    <a href="LINK_GITHUB_VAGRANT" target="_blank" class="text-accent-blue text-sm hover:underline"><i class="fab fa-github"></i> Code ansehen</a>
+                    <a href="https://github.com/mahdisharbaf/proton/tree/local" target="_blank" class="text-accent-blue text-sm hover:underline"><i class="fab fa-github"></i> Code ansehen</a>
                 </div>
 
                 <!-- Project 4: vProfile Local (Microservices) -->
@@ -338,7 +359,7 @@
                         <span class="text-xs px-2 py-1 rounded bg-dark-bg border border-white/5">RabbitMQ</span>
                     </div>
                     <!-- 🔴 لینک گیت‌هاب پروژه vProfile -->
-                    <a href="LINK_GITHUB_VPROFILE" target="_blank" class="text-accent-blue text-sm hover:underline"><i class="fab fa-github"></i> Code ansehen</a>
+                    <a href="https://github.com/mahdisharbaf/proton/tree/main" target="_blank" class="text-accent-blue text-sm hover:underline"><i class="fab fa-github"></i> Code ansehen</a>
                 </div>
 
                 <!-- Project 5: Azure Portfolio (Existing) -->
@@ -362,10 +383,11 @@
         </div>
     </section>
 
-    <!-- Experience & Footer Sections Remain Same -->
+    <!-- Experience Timeline -->
     <section id="experience" class="relative z-10 py-20 bg-dark-bg/50">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center">Beruflicher <span class="text-accent-blue">Werdegang</span></h2>
+            
             <div class="relative border-l-2 border-white/10 ml-3 md:ml-6 space-y-12">
                 
                 <div class="relative pl-8 md:pl-12 group">
@@ -402,8 +424,10 @@
         </div>
     </section>
 
+    <!-- Footer -->
     <footer class="relative z-10 py-12 border-t border-white/5 bg-dark-card/30">
         <div class="max-w-7xl mx-auto px-4 text-center">
+            
             <div class="mb-12">
                 <h3 class="text-2xl font-bold mb-6 text-white">Ausbildung</h3>
                 <div class="flex flex-col md:flex-row justify-center gap-6 text-left max-w-4xl mx-auto">
@@ -419,27 +443,33 @@
                     </div>
                 </div>
             </div>
+
             <div class="flex justify-center space-x-8 mb-8">
                 <a href="https://linkedin.com/in/mahdi-sharbaf-movassaghpour" class="text-2xl text-dark-muted hover:text-accent-blue transition-colors"><i class="fab fa-linkedin"></i></a>
                 <a href="https://github.com/mahdisharbaf" class="text-2xl text-dark-muted hover:text-white transition-colors"><i class="fab fa-github"></i></a>
                 <a href="mailto:mehdi.sharbaf187@gmail.com" class="text-2xl text-dark-muted hover:text-accent-green transition-colors"><i class="fas fa-envelope"></i></a>
             </div>
-            <p class="text-dark-muted text-sm mb-2">© 2025 Mahdi Sharbaf Movassaghpour. Hosted on Azure.</p>
+            <p class="text-dark-muted text-sm mb-2">
+                © 2025 Mahdi Sharbaf Movassaghpour. Hosted on Azure.
+            </p>
             <a href="javascript:void(0)" onclick="openImpressum()" class="text-xs text-dark-muted hover:text-white underline">Impressum</a>
         </div>
     </footer>
 
-    <!-- Impressum Modal (Unchanged) -->
+    <!-- Impressum Modal -->
     <div id="impressum-modal" class="fixed inset-0 z-[100] hidden overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
         <div class="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
             <div class="fixed inset-0 bg-dark-bg/90 transition-opacity backdrop-blur-sm" onclick="closeImpressum()"></div>
+            
             <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+
             <div class="inline-block align-bottom glass rounded-2xl text-left overflow-hidden shadow-2xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full border border-white/10">
                 <div class="px-6 py-6 text-gray-300">
                     <div class="flex justify-between items-center mb-6">
                         <h3 class="text-xl font-bold text-white">Impressum</h3>
                         <button onclick="closeImpressum()" class="text-gray-400 hover:text-white"><i class="fas fa-times"></i></button>
                     </div>
+                    
                     <div class="space-y-4 text-sm">
                         <div>
                             <p class="font-bold text-white mb-1">Angaben gemäß § 5 TMG</p>
