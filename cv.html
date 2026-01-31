@@ -21,13 +21,43 @@
         body { font-family: 'Roboto', sans-serif; background-color: #f3f4f6; color: #374151; }
         h1, h2, h3 { font-family: 'Montserrat', sans-serif; }
         
-        /* استایل‌های مخصوص پرینت (A4) */
+        /* تنظیمات حیاتی برای پرینت دقیق رنگ‌ها */
         @media print {
-            body { background-color: white; padding: 0; margin: 0; -webkit-print-color-adjust: exact; }
-            .container { max-width: 100% !important; box-shadow: none !important; margin: 0 !important; padding: 20px !important; }
+            body { 
+                background-color: white; 
+                padding: 0; 
+                margin: 0; 
+                -webkit-print-color-adjust: exact !important;   /* برای Chrome/Safari */
+                print-color-adjust: exact !important;           /* استاندارد جدید */
+                color-adjust: exact !important;                 /* برای Firefox */
+            }
+            .container { 
+                max-width: 100% !important; 
+                box-shadow: none !important; 
+                margin: 0 !important; 
+                padding: 0 !important; /* پدینگ را صفر کردم تا هدر به لبه‌ها بچسبد */
+            }
+            /* اجبار هدر به تیره بودن در پرینت */
+            header {
+                background-color: #0f172a !important; /* Slate-900 */
+                color: white !important;
+                -webkit-print-color-adjust: exact !important; 
+                print-color-adjust: exact !important;
+            }
+            /* اجبار لینک‌ها و آیکون‌ها به سفید بودن در هدر */
+            header a, header span, header i {
+                color: #d1d5db !important; /* Gray-300 */
+                text-decoration: none !important;
+            }
+            /* آیکون‌های آبی روشن بمانند */
+            header .text-blue-500 {
+                color: #3b82f6 !important; /* Blue-500 */
+            }
+            /* مخفی کردن دکمه‌های پرینت */
             .no-print { display: none !important; }
-            a { text-decoration: none !important; color: #374151 !important; }
-            .print-break { page-break-before: always; }
+            
+            /* حذف لینک‌های پیش‌فرض مرورگر */
+            a[href]:after { content: none !important; }
         }
         
         .section-header {
@@ -42,7 +72,7 @@
 </head>
 <body class="py-10 print:py-0">
 
-    <!-- دکمه‌های شناور برای دانلود/پرینت (در پرینت دیده نمی‌شوند) -->
+    <!-- دکمه‌های شناور -->
     <div class="fixed bottom-5 right-5 flex gap-3 no-print z-50">
         <button onclick="window.print()" class="bg-blue-600 hover:bg-blue-700 text-white p-4 rounded-full shadow-lg transition-all" title="Als PDF drucken">
             <i class="fas fa-print"></i>
@@ -52,14 +82,13 @@
         </a>
     </div>
 
-    <!-- کانتینر اصلی رزومه (A4 Width) -->
+    <!-- کانتینر اصلی -->
     <div class="container mx-auto max-w-[21cm] bg-white shadow-2xl rounded-lg overflow-hidden min-h-[29.7cm]">
         
         <!-- HEADER -->
         <header class="bg-slate-900 text-white p-8 md:p-12 flex flex-col md:flex-row items-center gap-8">
             <!-- عکس پروفایل -->
             <div class="flex-shrink-0">
-                <!-- استفاده مستقیم از فایل small.jpg که در گیت‌هاب موجود است -->
                 <img src="small.jpg" alt="Mahdi Sharbaf" 
                      class="w-40 h-40 rounded-full border-4 border-blue-500 shadow-xl object-cover"
                      onerror="this.src='https://ui-avatars.com/api/?name=Mahdi+Sharbaf&size=160&background=2563eb&color=fff'">
@@ -67,14 +96,14 @@
             
             <!-- اطلاعات اصلی -->
             <div class="text-center md:text-left flex-grow">
-                <h1 class="text-3xl md:text-4xl font-bold mb-2">Mahdi Sharbaf Movassaghpour</h1>
+                <h1 class="text-3xl md:text-4xl font-bold mb-2 text-white">Mahdi Sharbaf Movassaghpour</h1>
                 <p class="text-blue-400 text-xl font-medium mb-4 uppercase tracking-wider">Cloud & DevOps Engineer | M.Eng Student</p>
                 
                 <!-- اطلاعات تماس -->
                 <div class="flex flex-wrap justify-center md:justify-start gap-y-2 gap-x-6 text-sm text-gray-300">
                     <span class="flex items-center gap-2"><i class="fas fa-phone-alt text-blue-500"></i> +49 1573 6980335</span>
-                    <a href="mailto:mehdi.sharbaf187@gmail.com" class="flex items-center gap-2 hover:text-white transition"><i class="fas fa-envelope text-blue-500"></i> mehdi.sharbaf187@gmail.com</a>
-                    <a href="https://mahdi-sharbaf.me" class="flex items-center gap-2 hover:text-white transition"><i class="fas fa-globe text-blue-500"></i> mahdi-sharbaf.me</a>
+                    <a href="mailto:mehdi.sharbaf187@gmail.com" class="flex items-center gap-2 hover:text-white transition text-gray-300"><i class="fas fa-envelope text-blue-500"></i> mehdi.sharbaf187@gmail.com</a>
+                    <a href="https://mahdi-sharbaf.me" class="flex items-center gap-2 hover:text-white transition text-gray-300"><i class="fas fa-globe text-blue-500"></i> mahdi-sharbaf.me</a>
                     <span class="flex items-center gap-2"><i class="fas fa-map-marker-alt text-blue-500"></i> Adolf-Baeyer-Damm 34, 81735 München</span>
                 </div>
                 
