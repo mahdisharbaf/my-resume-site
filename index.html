@@ -189,23 +189,25 @@
         </div>
     </main>
 
-    <!-- Video Section -->
+    <!-- Video Section (Optimized for YouTube Shorts) -->
     <section id="video" class="relative z-10 py-16">
-        <div class="max-w-4xl mx-auto px-4">
-            <div class="glass rounded-3xl p-2 md:p-4 border border-accent-purple/20 shadow-[0_0_50px_rgba(129,140,248,0.2)]">
-                <div class="relative w-full aspect-video rounded-2xl overflow-hidden bg-black">
-                    <!-- 🔴 VIDEO_ID جایگزین شود -->
+        <!-- سایز کانتینر برای ویدیوهای عمودی (موبایل) تنظیم شده است -->
+        <div class="max-w-sm mx-auto px-4">
+            <div class="glass rounded-3xl p-2 md:p-3 border border-accent-purple/20 shadow-[0_0_50px_rgba(129,140,248,0.2)]">
+                <!-- نسبت تصویر 9:16 برای شورت ویدیو -->
+                <div class="relative w-full aspect-[9/16] rounded-2xl overflow-hidden bg-black">
+                    <!-- 🔴 VIDEO_ID جایگزین شده است -->
                     <div class="absolute inset-0 flex items-center justify-center text-center p-8 bg-dark-card/50">
                         <div>
-                            <i class="fab fa-youtube text-6xl text-red-500 mb-4"></i>
-                            <h3 class="text-2xl font-bold mb-2">Video Vorstellung</h3>
-                            <p class="text-dark-muted">Hier wird das Video geladen, sobald du die ID einfügst.</p>
+                            <i class="fab fa-youtube text-5xl text-red-500 mb-4"></i>
+                            <h3 class="text-xl font-bold mb-2">Video Vorstellung</h3>
+                            <p class="text-dark-muted text-sm">Hier wird das Short-Video geladen.</p>
                         </div>
                     </div>
                     <iframe 
                         class="absolute inset-0 w-full h-full"
-                        src="https://www.youtube.com/embed/VIDEO_ID?rel=0&modestbranding=1" 
-                        title="Mahdi Introduction" 
+                        src="https://www.youtube.com/embed/-DZAlcAYz3I?rel=0&modestbranding=1" 
+                        title="Mahdi Introduction Short" 
                         frameborder="0" 
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                         allowfullscreen>
@@ -390,6 +392,7 @@
             
             <div class="relative border-l-2 border-white/10 ml-3 md:ml-6 space-y-12">
                 
+                <!-- Job 1 -->
                 <div class="relative pl-8 md:pl-12 group">
                     <div class="absolute -left-[9px] top-0 w-5 h-5 rounded-full bg-accent-blue border-4 border-dark-bg group-hover:scale-125 transition-transform"></div>
                     <span class="text-xs font-mono text-accent-blue mb-1 block">06/2025 - 10/2025</span>
@@ -400,6 +403,7 @@
                     </p>
                 </div>
 
+                <!-- Job 2 -->
                 <div class="relative pl-8 md:pl-12 group">
                     <div class="absolute -left-[9px] top-0 w-5 h-5 rounded-full bg-dark-card border-4 border-white/10 group-hover:border-accent-purple transition-colors"></div>
                     <span class="text-xs font-mono text-dark-muted mb-1 block">09/2021 - 09/2024</span>
@@ -410,6 +414,7 @@
                     </p>
                 </div>
 
+                <!-- Job 3 -->
                 <div class="relative pl-8 md:pl-12 group">
                     <div class="absolute -left-[9px] top-0 w-5 h-5 rounded-full bg-dark-card border-4 border-white/10"></div>
                     <span class="text-xs font-mono text-dark-muted mb-1 block">04/2017 - 08/2021</span>
