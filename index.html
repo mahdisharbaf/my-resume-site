@@ -12,7 +12,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://mahdi-sharbaf.me/">
     <meta property="og:title" content="Mahdi Sharbaf | Cloud & DevOps Engineer">
-    <meta property="og:description" content="Portfolio eines Cloud & DevOps Engineers. Spezialisiert auf AWS, Azure, Docker, Kubernetes und CI/CD Automatisierung.">
+    <meta property="og:description" content="Portfolio eines Cloud & DevOps Engineers. Spezialisiert auf Kubernetes, Terraform, AWS, Azure und GitOps.">
     <meta property="og:image" content="https://mahdi-sharbaf.me/small.jpg">
     
     <meta name="robots" content="noindex, nofollow">
@@ -47,7 +47,8 @@
                             green: '#4ade80',   // Green 400
                             orange: '#fb923c',  // Orange 400
                             red: '#f87171',     // Red 400
-                            yellow: '#facc15'   // Yellow 400
+                            yellow: '#facc15',   // Yellow 400
+                            pink: '#f472b6'     // Pink 400
                         }
                     },
                     animation: {
@@ -140,7 +141,7 @@
                         <a href="#skills" class="hover:text-accent-blue transition-colors px-3 py-2 text-sm font-medium">Skills</a>
                         <a href="#projects" class="hover:text-accent-blue transition-colors px-3 py-2 text-sm font-medium">Projekte</a>
                         <a href="#experience" class="hover:text-accent-blue transition-colors px-3 py-2 text-sm font-medium">Erfahrung</a>
-                        <!-- CV Button im Menü (با قابلیت جدید) -->
+                        <!-- CV Button -->
                         <a href="cv.html" onclick="downloadAndRedirect(event)" class="text-accent-blue border border-accent-blue/30 bg-accent-blue/10 hover:bg-accent-blue hover:text-dark-bg transition-all px-4 py-2 rounded-lg text-sm font-medium">CV</a>
                     </div>
                 </div>
@@ -159,16 +160,15 @@
                 
                 <h1 class="text-5xl lg:text-7xl font-extrabold tracking-tight mb-6 leading-tight">
                     Cloud Native & <br>
-                    <span class="gradient-text">Automation Expert</span>
+                    <span class="gradient-text">GitOps Expert</span>
                 </h1>
                 
                 <p class="mt-4 text-xl text-dark-muted leading-relaxed max-w-2xl mx-auto lg:mx-0">
                     Hi, ich bin <strong>Mahdi Sharbaf</strong>. <br>
-                    Ich baue skalierbare Cloud-Architekturen auf <strong>AWS & Azure</strong>, automatisiere Deployments mit <strong>Jenkins & GitHub Actions</strong> und liebe Linux.
+                    Ich automatisiere Infrastruktur mit <strong>Terraform & Ansible</strong>, orchestriere Container mit <strong>Kubernetes</strong> und baue sichere CI/CD Pipelines.
                 </p>
                 
                 <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                    <!-- 🔴 CV Download Button (با قابلیت جدید) -->
                     <a href="cv.html" onclick="downloadAndRedirect(event)" class="px-8 py-4 rounded-xl bg-accent-blue text-dark-bg font-bold hover:bg-white transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(56,189,248,0.5)] flex items-center justify-center gap-2">
                         <i class="fas fa-download"></i> Lebenslauf (CV)
                     </a>
@@ -189,14 +189,11 @@
         </div>
     </main>
 
-    <!-- Video Section (Optimized for YouTube Shorts) -->
+    <!-- Video Section (YouTube Shorts) -->
     <section id="video" class="relative z-10 py-16">
-        <!-- سایز کانتینر برای ویدیوهای عمودی (موبایل) تنظیم شده است -->
         <div class="max-w-sm mx-auto px-4">
             <div class="glass rounded-3xl p-2 md:p-3 border border-accent-purple/20 shadow-[0_0_50px_rgba(129,140,248,0.2)]">
-                <!-- نسبت تصویر 9:16 برای شورت ویدیو -->
                 <div class="relative w-full aspect-[9/16] rounded-2xl overflow-hidden bg-black">
-                    <!-- 🔴 VIDEO_ID جایگزین شده است -->
                     <div class="absolute inset-0 flex items-center justify-center text-center p-8 bg-dark-card/50">
                         <div>
                             <i class="fab fa-youtube text-5xl text-red-500 mb-4"></i>
@@ -204,6 +201,7 @@
                             <p class="text-dark-muted text-sm">Hier wird das Short-Video geladen.</p>
                         </div>
                     </div>
+                    <!-- لینک ویدیوی شورت شما -->
                     <iframe 
                         class="absolute inset-0 w-full h-full"
                         src="https://www.youtube.com/embed/-DZAlcAYz3I?rel=0&modestbranding=1" 
@@ -217,151 +215,169 @@
         </div>
     </section>
 
-    <!-- Tech Stack -->
+    <!-- Tech Stack (UPDATED WITH NEW SKILLS) -->
     <section id="skills" class="relative z-10 py-20 bg-dark-bg/50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">Technische <span class="text-accent-blue">Fähigkeiten</span></h2>
-                <p class="text-dark-muted">Umfassendes Skillset für moderne IT-Infrastrukturen</p>
+                <p class="text-dark-muted">Modernes Toolset für Cloud-Native Infrastrukturen</p>
             </div>
 
-            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 text-center">
-                <!-- AWS -->
-                <div class="glass p-6 rounded-2xl hover:bg-white/5 transition-all group">
-                    <i class="fab fa-aws text-4xl mb-4 text-accent-orange group-hover:text-white transition-colors"></i>
-                    <h3 class="font-medium">AWS</h3>
-                    <p class="text-xs text-dark-muted mt-2">EC2, S3, RDS, ELB</p>
+            <!-- Grid Layout für Skills -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                
+                <!-- IaC (Terraform & Ansible) -->
+                <div class="glass p-6 rounded-2xl hover:bg-white/5 transition-all group border border-accent-purple/20">
+                    <div class="flex justify-center gap-4 mb-4">
+                        <i class="fas fa-code-branch text-4xl text-accent-purple"></i>
+                        <i class="fas fa-server text-4xl text-gray-400"></i>
+                    </div>
+                    <h3 class="font-medium text-lg">IaC & Config Mgmt</h3>
+                    <p class="text-xs text-dark-muted mt-2">Terraform, Ansible, Packer</p>
                 </div>
-                <!-- Azure -->
-                <div class="glass p-6 rounded-2xl hover:bg-white/5 transition-all group">
-                    <i class="fab fa-microsoft text-4xl mb-4 text-blue-500 group-hover:text-white transition-colors"></i>
-                    <h3 class="font-medium">Azure</h3>
-                    <p class="text-xs text-dark-muted mt-2">VMs, Networking</p>
+
+                <!-- Orchestration (K8s) -->
+                <div class="glass p-6 rounded-2xl hover:bg-white/5 transition-all group border border-blue-500/20">
+                    <i class="fas fa-dharmachakra text-4xl mb-4 text-blue-500 group-hover:text-white transition-colors"></i>
+                    <h3 class="font-medium text-lg">Kubernetes</h3>
+                    <p class="text-xs text-dark-muted mt-2">K8s Clusters, Helm, GitOps</p>
                 </div>
-                <!-- Linux -->
-                <div class="glass p-6 rounded-2xl hover:bg-white/5 transition-all group">
-                    <i class="fab fa-linux text-4xl mb-4 text-gray-300 group-hover:text-accent-blue transition-colors"></i>
-                    <h3 class="font-medium">Linux</h3>
-                    <p class="text-xs text-dark-muted mt-2">RedHat & Debian</p>
-                </div>
+
                 <!-- CI/CD -->
-                <div class="glass p-6 rounded-2xl hover:bg-white/5 transition-all group">
-                    <i class="fab fa-jenkins text-4xl mb-4 text-accent-red group-hover:text-white transition-colors"></i>
-                    <h3 class="font-medium">Jenkins</h3>
-                    <p class="text-xs text-dark-muted mt-2">Pipelines, Maven</p>
+                <div class="glass p-6 rounded-2xl hover:bg-white/5 transition-all group border border-accent-orange/20">
+                    <div class="flex justify-center gap-4 mb-4">
+                        <i class="fab fa-github text-4xl text-white"></i>
+                        <i class="fab fa-gitlab text-4xl text-orange-500"></i>
+                    </div>
+                    <h3 class="font-medium text-lg">CI/CD Pipelines</h3>
+                    <p class="text-xs text-dark-muted mt-2">GitHub Actions, GitLab CI, AWS CodePipeline</p>
                 </div>
-                <!-- Virtualization -->
-                <div class="glass p-6 rounded-2xl hover:bg-white/5 transition-all group">
-                    <i class="fas fa-box-open text-4xl mb-4 text-blue-300 group-hover:text-white transition-colors"></i>
-                    <h3 class="font-medium">Vagrant</h3>
-                    <p class="text-xs text-dark-muted mt-2">VirtualBox, VM</p>
+
+                <!-- Cloud -->
+                <div class="glass p-6 rounded-2xl hover:bg-white/5 transition-all group border border-accent-orange/20">
+                    <div class="flex justify-center gap-4 mb-4">
+                        <i class="fab fa-aws text-4xl text-accent-orange"></i>
+                        <i class="fab fa-microsoft text-4xl text-blue-400"></i>
+                    </div>
+                    <h3 class="font-medium text-lg">Cloud Platforms</h3>
+                    <p class="text-xs text-dark-muted mt-2">AWS & Azure Services</p>
                 </div>
+
+                <!-- Monitoring -->
+                <div class="glass p-6 rounded-2xl hover:bg-white/5 transition-all group border border-accent-pink/20">
+                    <i class="fas fa-chart-line text-4xl mb-4 text-accent-pink group-hover:text-white transition-colors"></i>
+                    <h3 class="font-medium text-lg">Observability</h3>
+                    <p class="text-xs text-dark-muted mt-2">Prometheus, Grafana, CloudWatch</p>
+                </div>
+
                 <!-- Scripting -->
-                <div class="glass p-6 rounded-2xl hover:bg-white/5 transition-all group">
-                    <i class="fas fa-terminal text-4xl mb-4 text-accent-green group-hover:text-white transition-colors"></i>
-                    <h3 class="font-medium">Bash</h3>
-                    <p class="text-xs text-dark-muted mt-2">Automation</p>
+                <div class="glass p-6 rounded-2xl hover:bg-white/5 transition-all group border border-accent-yellow/20">
+                    <div class="flex justify-center gap-4 mb-4">
+                        <i class="fab fa-python text-4xl text-accent-yellow"></i>
+                        <i class="fas fa-terminal text-4xl text-green-500"></i>
+                    </div>
+                    <h3 class="font-medium text-lg">Scripting</h3>
+                    <p class="text-xs text-dark-muted mt-2">Python, Bash, Automation</p>
                 </div>
+
                 <!-- Containers -->
-                <div class="glass p-6 rounded-2xl hover:bg-white/5 transition-all group">
+                <div class="glass p-6 rounded-2xl hover:bg-white/5 transition-all group border border-blue-400/20">
                     <i class="fab fa-docker text-4xl mb-4 text-blue-400 group-hover:text-white transition-colors"></i>
-                    <h3 class="font-medium">Docker</h3>
-                    <p class="text-xs text-dark-muted mt-2">Microservices</p>
+                    <h3 class="font-medium text-lg">Container</h3>
+                    <p class="text-xs text-dark-muted mt-2">Docker, Docker Compose</p>
                 </div>
-                <!-- Databases -->
-                <div class="glass p-6 rounded-2xl hover:bg-white/5 transition-all group">
-                    <i class="fas fa-database text-4xl mb-4 text-accent-yellow group-hover:text-white transition-colors"></i>
-                    <h3 class="font-medium">Services</h3>
-                    <p class="text-xs text-dark-muted mt-2">MySQL, RabbitMQ</p>
+
+                 <!-- OS -->
+                 <div class="glass p-6 rounded-2xl hover:bg-white/5 transition-all group border border-gray-500/20">
+                    <i class="fab fa-linux text-4xl mb-4 text-gray-300 group-hover:text-white transition-colors"></i>
+                    <h3 class="font-medium text-lg">Linux Ops</h3>
+                    <p class="text-xs text-dark-muted mt-2">RHEL, Ubuntu, Debian</p>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Projects -->
+    <!-- Projects (UPDATED WITH NEW PROJECTS) -->
     <section id="projects" class="relative z-10 py-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">Ausgewählte <span class="gradient-text">Projekte</span></h2>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
-                <!-- Project 1: AWS Lift & Shift (IaaS) -->
-                <div class="glass rounded-2xl p-8 hover:-translate-y-2 transition-transform duration-300 border border-accent-orange/20 lg:col-span-2">
+                <!-- Project 1: Kubernetes & GitOps (NEW) -->
+                <div class="glass rounded-2xl p-8 hover:-translate-y-2 transition-transform duration-300 border border-blue-500/30 lg:col-span-2">
                     <div class="flex justify-between items-start mb-6">
-                        <div class="p-3 bg-accent-orange/10 rounded-xl text-accent-orange">
-                            <i class="fab fa-aws text-3xl"></i>
+                        <div class="p-3 bg-blue-500/10 rounded-xl text-blue-400">
+                            <i class="fas fa-dharmachakra text-3xl"></i>
                         </div>
-                        <span class="px-3 py-1 bg-accent-orange/10 text-accent-orange text-xs font-bold rounded-full border border-accent-orange/20">AWS IaaS</span>
+                        <span class="px-3 py-1 bg-blue-500/10 text-blue-400 text-xs font-bold rounded-full border border-blue-500/20">GitOps & K8s</span>
                     </div>
-                    <h3 class="text-2xl font-bold mb-3">Cloud Migration: Lift & Shift auf AWS</h3>
+                    <h3 class="text-2xl font-bold mb-3">Kubernetes Cluster & GitOps Deployment</h3>
                     <p class="text-dark-muted mb-6">
-                        Migration einer Multi-Tier Applikation (vProfile) in die AWS Cloud unter Verwendung von EC2-Instanzen. Implementierung von Hochverfügbarkeit mit Load Balancern und Auto Scaling.
+                        Bereitstellung einer Microservices-Architektur auf einem Kubernetes-Cluster. Implementierung von <strong>GitOps</strong> Prinzipien für kontinuierliches Deployment.
                     </p>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 text-sm text-dark-muted">
-                        <div class="flex items-center gap-2"><i class="fas fa-check text-accent-orange"></i> EC2, Security Groups, Key Pairs</div>
-                        <div class="flex items-center gap-2"><i class="fas fa-check text-accent-orange"></i> Elastic Load Balancer (ELB)</div>
-                        <div class="flex items-center gap-2"><i class="fas fa-check text-accent-orange"></i> Auto Scaling Groups</div>
-                        <div class="flex items-center gap-2"><i class="fas fa-check text-accent-orange"></i> DNS Management mit Route 53</div>
+                        <div class="flex items-center gap-2"><i class="fas fa-check text-blue-400"></i> K8s Cluster Setup (EKS/Kops)</div>
+                        <div class="flex items-center gap-2"><i class="fas fa-check text-blue-400"></i> Helm Charts Management</div>
+                        <div class="flex items-center gap-2"><i class="fas fa-check text-blue-400"></i> ArgoCD für GitOps</div>
+                        <div class="flex items-center gap-2"><i class="fas fa-check text-blue-400"></i> Monitoring mit Prometheus/Grafana</div>
                     </div>
-                    <!-- 🔴 لینک گیت‌هاب پروژه AWS -->
-                    <a href="https://github.com/mahdisharbaf/proton/tree/awsliftandshift" target="_blank" class="px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg text-sm font-medium transition-colors border border-white/10 inline-flex items-center">
+                    <!-- لینک گیت هاب اصلی -->
+                    <a href="https://github.com/mahdisharbaf" target="_blank" class="px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg text-sm font-medium transition-colors border border-white/10 inline-flex items-center">
                         <i class="fab fa-github mr-2"></i> Source Code
                     </a>
                 </div>
 
-                <!-- Project 2: AWS Refactoring (PaaS/SaaS) -->
-                <div class="glass rounded-2xl p-8 hover:-translate-y-2 transition-transform duration-300">
+                <!-- Project 2: Infrastructure as Code (NEW) -->
+                <div class="glass rounded-2xl p-8 hover:-translate-y-2 transition-transform duration-300 border border-accent-purple/20">
                     <div class="p-3 bg-accent-purple/10 rounded-xl text-accent-purple w-fit mb-6">
-                        <i class="fas fa-layer-group text-2xl"></i>
+                        <i class="fas fa-code-branch text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">AWS Modernisierung (PaaS)</h3>
+                    <h3 class="text-xl font-bold mb-3">IaC mit Terraform & Ansible</h3>
                     <p class="text-dark-muted text-sm mb-6">
-                        Refactoring der Infrastruktur zu PaaS & SaaS Diensten für bessere Skalierbarkeit und weniger Management-Aufwand.
+                        Vollständige Automatisierung der Infrastruktur-Bereitstellung (Provisioning) auf AWS mit Terraform und Konfigurationsmanagement mit Ansible.
                     </p>
                     <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="text-xs px-2 py-1 rounded bg-dark-bg border border-white/5">Beanstalk</span>
-                        <span class="text-xs px-2 py-1 rounded bg-dark-bg border border-white/5">RDS</span>
-                        <span class="text-xs px-2 py-1 rounded bg-dark-bg border border-white/5">ElastiCache</span>
-                        <span class="text-xs px-2 py-1 rounded bg-dark-bg border border-white/5">CloudFront</span>
+                        <span class="text-xs px-2 py-1 rounded bg-dark-bg border border-white/5">Terraform</span>
+                        <span class="text-xs px-2 py-1 rounded bg-dark-bg border border-white/5">Ansible</span>
+                        <span class="text-xs px-2 py-1 rounded bg-dark-bg border border-white/5">AWS VPC</span>
                     </div>
-                    <!-- 🔴 لینک گیت‌هاب پروژه Refactoring -->
-                    <a href="https://github.com/mahdisharbaf/proton/tree/awsrefactor" target="_blank" class="text-accent-blue text-sm hover:underline"><i class="fab fa-github"></i> Code ansehen</a>
+                    <a href="https://github.com/mahdisharbaf" target="_blank" class="text-accent-blue text-sm hover:underline"><i class="fab fa-github"></i> Code ansehen</a>
                 </div>
 
-                <!-- Project 3: Local Automation (Vagrant) -->
-                <div class="glass rounded-2xl p-8 hover:-translate-y-2 transition-transform duration-300">
-                    <div class="p-3 bg-accent-green/10 rounded-xl text-accent-green w-fit mb-6">
-                        <i class="fas fa-laptop-code text-2xl"></i>
+                <!-- Project 3: End-to-End CI/CD (NEW) -->
+                <div class="glass rounded-2xl p-8 hover:-translate-y-2 transition-transform duration-300 border border-accent-orange/20">
+                    <div class="p-3 bg-accent-orange/10 rounded-xl text-accent-orange w-fit mb-6">
+                        <i class="fab fa-gitlab text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Lokale Automatisierung</h3>
+                    <h3 class="text-xl font-bold mb-3">Multi-Cloud CI/CD Pipeline</h3>
                     <p class="text-dark-muted text-sm mb-6">
-                        Automatisierte Bereitstellung einer Multi-VM Umgebung für WordPress mit <strong>Vagrant</strong> und <strong>VirtualBox</strong>. Vollständiges Provisioning via Bash-Skripte.
+                        Entwicklung robuster Pipelines mit GitHub Actions und GitLab CI. Automatisierte Tests, Docker Builds und Deployment auf Staging/Production.
                     </p>
                     <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="text-xs px-2 py-1 rounded bg-dark-bg border border-white/5">Vagrant</span>
-                        <span class="text-xs px-2 py-1 rounded bg-dark-bg border border-white/5">VirtualBox</span>
-                        <span class="text-xs px-2 py-1 rounded bg-dark-bg border border-white/5">Bash</span>
+                        <span class="text-xs px-2 py-1 rounded bg-dark-bg border border-white/5">GitHub Actions</span>
+                        <span class="text-xs px-2 py-1 rounded bg-dark-bg border border-white/5">Python Tests</span>
+                        <span class="text-xs px-2 py-1 rounded bg-dark-bg border border-white/5">SonarQube</span>
                     </div>
-                    <!-- 🔴 لینک گیت‌هاب پروژه Vagrant -->
-                    <a href="https://github.com/mahdisharbaf/proton/tree/local" target="_blank" class="text-accent-blue text-sm hover:underline"><i class="fab fa-github"></i> Code ansehen</a>
+                    <a href="https://github.com/mahdisharbaf" target="_blank" class="text-accent-blue text-sm hover:underline"><i class="fab fa-github"></i> Code ansehen</a>
                 </div>
 
-                <!-- Project 4: vProfile Local (Microservices) -->
+                <!-- Project 4: AWS Lift & Shift (Existing) -->
                 <div class="glass rounded-2xl p-8 hover:-translate-y-2 transition-transform duration-300">
-                    <div class="p-3 bg-accent-blue/10 rounded-xl text-accent-blue w-fit mb-6">
-                        <i class="fas fa-server text-2xl"></i>
+                    <div class="p-3 bg-accent-orange/10 rounded-xl text-accent-orange w-fit mb-6">
+                        <i class="fab fa-aws text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Multi-Tier App Deployment</h3>
+                    <h3 class="text-xl font-bold mb-3">AWS Migration (Lift & Shift)</h3>
                     <p class="text-dark-muted text-sm mb-6">
-                        Lokales Deployment des vProfile-Projekts mit automatisierter Einrichtung von Nginx, MySQL, Memcache und RabbitMQ Services.
+                        Migration einer vProfile Applikation mittels EC2, ELB und Auto Scaling. DNS Management via Route 53.
                     </p>
                     <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="text-xs px-2 py-1 rounded bg-dark-bg border border-white/5">Nginx</span>
-                        <span class="text-xs px-2 py-1 rounded bg-dark-bg border border-white/5">MySQL</span>
-                        <span class="text-xs px-2 py-1 rounded bg-dark-bg border border-white/5">RabbitMQ</span>
+                        <span class="text-xs px-2 py-1 rounded bg-dark-bg border border-white/5">EC2</span>
+                        <span class="text-xs px-2 py-1 rounded bg-dark-bg border border-white/5">ELB</span>
+                        <span class="text-xs px-2 py-1 rounded bg-dark-bg border border-white/5">Auto Scaling</span>
                     </div>
-                    <!-- 🔴 لینک گیت‌هاب پروژه vProfile -->
-                    <a href="https://github.com/mahdisharbaf/proton/tree/main" target="_blank" class="text-accent-blue text-sm hover:underline"><i class="fab fa-github"></i> Code ansehen</a>
+                    <a href="https://github.com/mahdisharbaf/proton/tree/awsliftandshift" target="_blank" class="text-accent-blue text-sm hover:underline"><i class="fab fa-github"></i> Code ansehen</a>
                 </div>
 
                 <!-- Project 5: Azure Portfolio (Existing) -->
@@ -371,12 +387,12 @@
                     </div>
                     <h3 class="text-xl font-bold mb-3">Azure Portfolio (Live)</h3>
                     <p class="text-dark-muted text-sm mb-6">
-                        Diese Webseite selbst! Gehostet auf Azure VM, containerisiert mit Docker und deployed via GitHub Actions CI/CD.
+                        Diese Webseite! Gehostet auf Azure VM, Dockerisiert und deployed via GitHub Actions CI/CD.
                     </p>
                     <div class="flex flex-wrap gap-2 mb-4">
                         <span class="text-xs px-2 py-1 rounded bg-dark-bg border border-white/5">Azure</span>
                         <span class="text-xs px-2 py-1 rounded bg-dark-bg border border-white/5">Docker</span>
-                        <span class="text-xs px-2 py-1 rounded bg-dark-bg border border-white/5">GitHub Actions</span>
+                        <span class="text-xs px-2 py-1 rounded bg-dark-bg border border-white/5">Actions</span>
                     </div>
                     <a href="https://github.com/mahdisharbaf/my-resume-site" target="_blank" class="text-accent-blue text-sm hover:underline"><i class="fab fa-github"></i> Code ansehen</a>
                 </div>
