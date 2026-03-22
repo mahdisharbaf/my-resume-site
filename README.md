@@ -62,4 +62,4 @@ Minimal Base Image: Verwendung von nginx:alpine zur Reduzierung der Angriffsflä
 
 👤 Kontakt
 
-Mahdi Sharbaf Movassaghpour Cloud & DevOps Engineer | M.Eng Student
+Mahdi Sharbaf Movassaghpour Cloud & DevOps Engineer
