@@ -73,12 +73,12 @@
 
         // 🟢 تابع هوشمند: دانلود PDF + انتقال به صفحه HTML
         function downloadAndRedirect(event) {
-            event.preventDefault(); // جلوگیری از رفتار پیش‌فرض لینک
+            event.preventDefault();
 
             // 1. شروع دانلود فایل PDF
             const link = document.createElement('a');
-            link.href = 'Lebenslauf.pdf'; // نام فایل PDF شما
-            link.download = 'Lebenslauf - Mahdi Sharbaf Movassaghpour.pdf'; // نامی که کاربر موقع دانلود می‌بیند
+            link.href = 'Lebenslauf.pdf';
+            link.download = 'Lebenslauf - Mahdi Sharbaf Movassaghpour.pdf';
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
@@ -129,20 +129,36 @@
     <nav class="fixed w-full z-50 glass border-b-0 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
-                <div class="flex items-center gap-3">
-                    <img src="logo.png" alt="MS Logo" class="w-10 h-10 object-contain drop-shadow-[0_0_10px_rgba(56,189,248,0.5)]" onerror="this.style.display='none'">
-                    <div class="flex-shrink-0 font-bold text-2xl tracking-tighter hidden sm:block">
-                        Mahdi<span class="text-accent-blue">.DevOps</span>
-                    </div>
+                
+                <!-- 🟢 Logo Section 🟢 -->
+                <div class="flex items-center">
+                    <a href="#" class="flex-shrink-0 flex items-center hover:scale-105 transition-transform duration-300">
+                        <img src="logo.png" alt="Mahdi Sharbaf Logo" class="h-12 md:h-14 w-auto object-contain drop-shadow-[0_0_15px_rgba(56,189,248,0.6)]" onerror="this.style.display='none'">
+                    </a>
                 </div>
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-8">
-                        <a href="#about" class="hover:text-accent-blue transition-colors px-3 py-2 text-sm font-medium">Profil</a>
-                        <a href="#skills" class="hover:text-accent-blue transition-colors px-3 py-2 text-sm font-medium">Skills</a>
-                        <a href="#projects" class="hover:text-accent-blue transition-colors px-3 py-2 text-sm font-medium">Projekte</a>
-                        <a href="#experience" class="hover:text-accent-blue transition-colors px-3 py-2 text-sm font-medium">Erfahrung</a>
-                        <!-- CV Button -->
-                        <a href="cv.html" onclick="downloadAndRedirect(event)" class="text-accent-blue border border-accent-blue/30 bg-accent-blue/10 hover:bg-accent-blue hover:text-dark-bg transition-all px-4 py-2 rounded-lg text-sm font-medium">CV</a>
+                
+                <div class="flex items-center">
+                    <!-- دکمه موبایل: فقط در گوشی نمایش داده می‌شود تا سریع کارت را باز کنید -->
+                    <a href="DigitalBusinessCard.html" target="_blank" class="md:hidden text-accent-purple border border-accent-purple/30 bg-accent-purple/10 hover:bg-accent-purple hover:text-dark-bg transition-all px-3 py-2 rounded-lg text-sm font-medium flex items-center gap-2">
+                        <i class="fas fa-qrcode"></i> Card
+                    </a>
+
+                    <!-- منوی دسکتاپ -->
+                    <div class="hidden md:block">
+                        <div class="ml-10 flex items-baseline space-x-8">
+                            <a href="#about" class="hover:text-accent-blue transition-colors px-3 py-2 text-sm font-medium">Profil</a>
+                            <a href="#skills" class="hover:text-accent-blue transition-colors px-3 py-2 text-sm font-medium">Skills</a>
+                            <a href="#projects" class="hover:text-accent-blue transition-colors px-3 py-2 text-sm font-medium">Projekte</a>
+                            <a href="#experience" class="hover:text-accent-blue transition-colors px-3 py-2 text-sm font-medium">Erfahrung</a>
+                            
+                            <!-- لینک کارت ویزیت دیجیتال -->
+                            <a href="DigitalBusinessCard.html" target="_blank" class="text-accent-purple hover:text-white transition-colors px-3 py-2 text-sm font-medium flex items-center gap-1">
+                                <i class="fas fa-qrcode"></i> Digital Card
+                            </a>
+                            
+                            <!-- CV Button -->
+                            <a href="cv.html" onclick="downloadAndRedirect(event)" class="text-accent-blue border border-accent-blue/30 bg-accent-blue/10 hover:bg-accent-blue hover:text-dark-bg transition-all px-4 py-2 rounded-lg text-sm font-medium">CV</a>
+                        </div>
                     </div>
                 </div>
             </div>
