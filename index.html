@@ -149,24 +149,25 @@
                 <!-- 🟢 Menu Links 🟢 -->
                 <div class="flex items-center gap-4">
                     
-                    <!-- منوی دسکتاپ (فقط در صفحات بزرگتر از lg نمایش داده می‌شود تا فشرده نشود) -->
-                    <div class="hidden lg:flex items-center space-x-6">
-                        <a href="#video" class="hover:text-accent-blue transition-colors text-sm font-medium">Video</a>
-                        <a href="#skills" class="hover:text-accent-blue transition-colors text-sm font-medium">Skills</a>
-                        <a href="#projects" class="hover:text-accent-blue transition-colors text-sm font-medium">Projekte</a>
-                        <a href="#experience" class="hover:text-accent-blue transition-colors text-sm font-medium">Erfahrung</a>
-                        <a href="#ausbildung" class="hover:text-accent-blue transition-colors text-sm font-medium">Ausbildung</a>
+                    <!-- منوی دسکتاپ -->
+                    <div class="hidden md:flex items-center space-x-4 lg:space-x-6">
+                        <a href="#video" class="text-gray-200 hover:text-accent-blue transition-colors text-sm font-medium">Video</a>
+                        <a href="#skills" class="text-gray-200 hover:text-accent-blue transition-colors text-sm font-medium">Skills</a>
+                        <a href="#projects" class="text-gray-200 hover:text-accent-blue transition-colors text-sm font-medium">Projekte</a>
+                        <a href="#experience" class="text-gray-200 hover:text-accent-blue transition-colors text-sm font-medium">Erfahrung</a>
+                        <a href="#ausbildung" class="text-gray-200 hover:text-accent-blue transition-colors text-sm font-medium">Ausbildung</a>
+                        <a href="#kontakt" class="text-gray-200 hover:text-accent-blue transition-colors text-sm font-medium">Kontakt</a>
                         
-                        <!-- Kontakt & Card (ادغام شده و جایگزین CV) -->
+                        <!-- Card Button -->
                         <a href="DigitalBusinessCard.html" target="_blank" class="text-accent-purple border border-accent-purple/30 bg-accent-purple/10 hover:bg-accent-purple hover:text-dark-bg transition-all px-4 py-2 rounded-lg text-sm font-medium flex items-center gap-2">
-                            <i class="fas fa-qrcode"></i> Kontakt & Card
+                            <i class="fas fa-qrcode"></i> Card
                         </a>
                     </div>
 
                     <!-- دکمه موبایل و همبرگر -->
-                    <div class="lg:hidden flex items-center gap-3">
+                    <div class="md:hidden flex items-center gap-3">
                         <a href="DigitalBusinessCard.html" target="_blank" class="text-accent-purple border border-accent-purple/30 bg-accent-purple/10 hover:bg-accent-purple hover:text-dark-bg transition-all px-3 py-1.5 rounded-lg text-sm font-medium flex items-center gap-2">
-                            <i class="fas fa-qrcode"></i> Kontakt
+                            <i class="fas fa-qrcode"></i> Card
                         </a>
                         <button onclick="toggleMobileMenu()" class="text-gray-300 hover:text-white focus:outline-none text-2xl p-2">
                             <i class="fas fa-bars"></i>
@@ -178,15 +179,16 @@
         </div>
 
         <!-- 🟢 منوی کشویی موبایل 🟢 -->
-        <div id="mobile-menu" class="hidden lg:hidden absolute top-20 left-0 w-full glass border-t border-white/10 flex flex-col items-center py-6 space-y-5 shadow-2xl backdrop-blur-xl">
+        <div id="mobile-menu" class="hidden md:hidden absolute top-20 left-0 w-full glass border-t border-white/10 flex flex-col items-center py-6 space-y-5 shadow-2xl backdrop-blur-xl">
             <a href="#video" onclick="closeMobileMenu()" class="text-white hover:text-accent-blue text-base font-medium">Video Vorstellung</a>
             <a href="#skills" onclick="closeMobileMenu()" class="text-white hover:text-accent-blue text-base font-medium">Technische Fähigkeiten</a>
             <a href="#projects" onclick="closeMobileMenu()" class="text-white hover:text-accent-blue text-base font-medium">Projekte</a>
             <a href="#experience" onclick="closeMobileMenu()" class="text-white hover:text-accent-blue text-base font-medium">Beruflicher Werdegang</a>
             <a href="#ausbildung" onclick="closeMobileMenu()" class="text-white hover:text-accent-blue text-base font-medium">Ausbildung & Zertifikate</a>
+            <a href="#kontakt" onclick="closeMobileMenu()" class="text-white hover:text-accent-blue text-base font-medium">Kontakt</a>
             
             <a href="DigitalBusinessCard.html" target="_blank" onclick="closeMobileMenu()" class="mt-4 text-accent-purple border border-accent-purple/30 bg-accent-purple/10 px-6 py-2 rounded-full text-base font-medium flex items-center gap-2">
-                <i class="fas fa-qrcode"></i> Kontakt & Card
+                <i class="fas fa-qrcode"></i> Digital Card
             </a>
         </div>
     </nav>
