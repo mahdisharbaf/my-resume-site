@@ -88,6 +88,15 @@
                 window.location.href = 'cv.html';
             }, 800);
         }
+
+        // 🟢 توابع منوی موبایل
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+        function closeMobileMenu() {
+            document.getElementById('mobile-menu').classList.add('hidden');
+        }
     </script>
 
     <style>
@@ -137,36 +146,53 @@
                     </a>
                 </div>
                 
-                <div class="flex items-center">
-                    <!-- دکمه موبایل: فقط در گوشی نمایش داده می‌شود تا سریع کارت را باز کنید -->
-                    <a href="DigitalBusinessCard.html" target="_blank" class="md:hidden text-accent-purple border border-accent-purple/30 bg-accent-purple/10 hover:bg-accent-purple hover:text-dark-bg transition-all px-3 py-2 rounded-lg text-sm font-medium flex items-center gap-2">
-                        <i class="fas fa-qrcode"></i> Card
-                    </a>
-
-                    <!-- منوی دسکتاپ -->
-                    <div class="hidden md:block">
-                        <div class="ml-10 flex items-baseline space-x-8">
-                            <a href="#about" class="hover:text-accent-blue transition-colors px-3 py-2 text-sm font-medium">Profil</a>
-                            <a href="#skills" class="hover:text-accent-blue transition-colors px-3 py-2 text-sm font-medium">Skills</a>
-                            <a href="#projects" class="hover:text-accent-blue transition-colors px-3 py-2 text-sm font-medium">Projekte</a>
-                            <a href="#experience" class="hover:text-accent-blue transition-colors px-3 py-2 text-sm font-medium">Erfahrung</a>
-                            
-                            <!-- لینک کارت ویزیت دیجیتال -->
-                            <a href="DigitalBusinessCard.html" target="_blank" class="text-accent-purple hover:text-white transition-colors px-3 py-2 text-sm font-medium flex items-center gap-1">
-                                <i class="fas fa-qrcode"></i> Digital Card
-                            </a>
-                            
-                            <!-- CV Button -->
-                            <a href="cv.html" onclick="downloadAndRedirect(event)" class="text-accent-blue border border-accent-blue/30 bg-accent-blue/10 hover:bg-accent-blue hover:text-dark-bg transition-all px-4 py-2 rounded-lg text-sm font-medium">CV</a>
-                        </div>
+                <!-- 🟢 Menu Links 🟢 -->
+                <div class="flex items-center gap-4">
+                    
+                    <!-- منوی دسکتاپ (فقط در صفحات بزرگتر از lg نمایش داده می‌شود تا فشرده نشود) -->
+                    <div class="hidden lg:flex items-center space-x-6">
+                        <a href="#video" class="hover:text-accent-blue transition-colors text-sm font-medium">Video</a>
+                        <a href="#skills" class="hover:text-accent-blue transition-colors text-sm font-medium">Skills</a>
+                        <a href="#projects" class="hover:text-accent-blue transition-colors text-sm font-medium">Projekte</a>
+                        <a href="#experience" class="hover:text-accent-blue transition-colors text-sm font-medium">Erfahrung</a>
+                        <a href="#ausbildung" class="hover:text-accent-blue transition-colors text-sm font-medium">Ausbildung</a>
+                        
+                        <!-- Kontakt & Card (ادغام شده و جایگزین CV) -->
+                        <a href="DigitalBusinessCard.html" target="_blank" class="text-accent-purple border border-accent-purple/30 bg-accent-purple/10 hover:bg-accent-purple hover:text-dark-bg transition-all px-4 py-2 rounded-lg text-sm font-medium flex items-center gap-2">
+                            <i class="fas fa-qrcode"></i> Kontakt & Card
+                        </a>
                     </div>
+
+                    <!-- دکمه موبایل و همبرگر -->
+                    <div class="lg:hidden flex items-center gap-3">
+                        <a href="DigitalBusinessCard.html" target="_blank" class="text-accent-purple border border-accent-purple/30 bg-accent-purple/10 hover:bg-accent-purple hover:text-dark-bg transition-all px-3 py-1.5 rounded-lg text-sm font-medium flex items-center gap-2">
+                            <i class="fas fa-qrcode"></i> Kontakt
+                        </a>
+                        <button onclick="toggleMobileMenu()" class="text-gray-300 hover:text-white focus:outline-none text-2xl p-2">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    </div>
+
                 </div>
             </div>
+        </div>
+
+        <!-- 🟢 منوی کشویی موبایل 🟢 -->
+        <div id="mobile-menu" class="hidden lg:hidden absolute top-20 left-0 w-full glass border-t border-white/10 flex flex-col items-center py-6 space-y-5 shadow-2xl backdrop-blur-xl">
+            <a href="#video" onclick="closeMobileMenu()" class="text-white hover:text-accent-blue text-base font-medium">Video Vorstellung</a>
+            <a href="#skills" onclick="closeMobileMenu()" class="text-white hover:text-accent-blue text-base font-medium">Technische Fähigkeiten</a>
+            <a href="#projects" onclick="closeMobileMenu()" class="text-white hover:text-accent-blue text-base font-medium">Projekte</a>
+            <a href="#experience" onclick="closeMobileMenu()" class="text-white hover:text-accent-blue text-base font-medium">Beruflicher Werdegang</a>
+            <a href="#ausbildung" onclick="closeMobileMenu()" class="text-white hover:text-accent-blue text-base font-medium">Ausbildung & Zertifikate</a>
+            
+            <a href="DigitalBusinessCard.html" target="_blank" onclick="closeMobileMenu()" class="mt-4 text-accent-purple border border-accent-purple/30 bg-accent-purple/10 px-6 py-2 rounded-full text-base font-medium flex items-center gap-2">
+                <i class="fas fa-qrcode"></i> Kontakt & Card
+            </a>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <main id="about" class="relative z-10 pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <main id="about" class="relative z-10 pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto scroll-mt-24">
         <div class="flex flex-col-reverse lg:flex-row items-center justify-between gap-12">
             <div class="text-center lg:text-left lg:w-1/2">
                 <div class="inline-flex items-center px-3 py-1 rounded-full border border-accent-blue/30 bg-accent-blue/10 text-accent-blue text-sm font-medium mb-6 animate-float">
@@ -206,7 +232,7 @@
     </main>
 
     <!-- Video Section (YouTube Shorts) -->
-    <section id="video" class="relative z-10 py-16">
+    <section id="video" class="relative z-10 py-16 scroll-mt-24">
         <div class="max-w-sm mx-auto px-4">
             <div class="glass rounded-3xl p-2 md:p-3 border border-accent-purple/20 shadow-[0_0_50px_rgba(129,140,248,0.2)]">
                 <div class="relative w-full aspect-[9/16] rounded-2xl overflow-hidden bg-black">
@@ -232,7 +258,7 @@
     </section>
 
     <!-- Tech Stack -->
-    <section id="skills" class="relative z-10 py-20 bg-dark-bg/50">
+    <section id="skills" class="relative z-10 py-20 bg-dark-bg/50 scroll-mt-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">Technische <span class="text-accent-blue">Fähigkeiten</span></h2>
@@ -315,7 +341,7 @@
     </section>
 
     <!-- Projects -->
-    <section id="projects" class="relative z-10 py-20">
+    <section id="projects" class="relative z-10 py-20 scroll-mt-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">Ausgewählte <span class="gradient-text">Projekte</span></h2>
             
@@ -417,16 +443,27 @@
     </section>
 
     <!-- Experience Timeline -->
-    <section id="experience" class="relative z-10 py-20 bg-dark-bg/50">
+    <section id="experience" class="relative z-10 py-20 bg-dark-bg/50 scroll-mt-24">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center">Beruflicher <span class="text-accent-blue">Werdegang</span></h2>
             
             <div class="relative border-l-2 border-white/10 ml-3 md:ml-6 space-y-12">
                 
-                <!-- Job 1 -->
+                <!-- 🟢 Job 1 (NEU: Junior DevOps Engineer) 🟢 -->
                 <div class="relative pl-8 md:pl-12 group">
                     <div class="absolute -left-[9px] top-0 w-5 h-5 rounded-full bg-accent-blue border-4 border-dark-bg group-hover:scale-125 transition-transform"></div>
-                    <span class="text-xs font-mono text-accent-blue mb-1 block">09/2021 - 09/2025</span>
+                    <span class="text-xs font-mono text-accent-blue mb-1 block">10/2025 - Heute</span>
+                    <h3 class="text-xl font-bold text-white">Junior DevOps Engineer (Project-based)</h3>
+                    <p class="text-sm text-dark-muted mb-4">Freelance / Remote</p>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Fokus auf Cloud-native Infrastrukturen, Automatisierung und CI/CD. Bereitstellung von K8s-Clustern, IaC mit Terraform/Ansible, AWS-Migrationen und Implementierung von GitOps-Workflows.
+                    </p>
+                </div>
+
+                <!-- Job 2 (Früher Job 1) -->
+                <div class="relative pl-8 md:pl-12 group">
+                    <div class="absolute -left-[9px] top-0 w-5 h-5 rounded-full bg-dark-card border-4 border-white/10"></div>
+                    <span class="text-xs font-mono text-dark-muted mb-1 block">09/2021 - 09/2025</span>
                     <h3 class="text-xl font-bold text-white">Netzwerk-Infrastruktur & Sicherheit (Freelance)</h3>
                     <p class="text-sm text-dark-muted mb-4">Remote</p>
                     <p class="text-gray-400 text-sm leading-relaxed">
@@ -434,7 +471,7 @@
                     </p>
                 </div>
 
-                <!-- Job 2 -->
+                <!-- Job 3 -->
                 <div class="relative pl-8 md:pl-12 group">
                     <div class="absolute -left-[9px] top-0 w-5 h-5 rounded-full bg-dark-card border-4 border-white/10"></div>
                     <span class="text-xs font-mono text-dark-muted mb-1 block">04/2017 - 08/2021</span>
@@ -445,7 +482,7 @@
                     </p>
                 </div>
 
-                <!-- Job 3 -->
+                <!-- Job 4 -->
                 <div class="relative pl-8 md:pl-12 group">
                     <div class="absolute -left-[9px] top-0 w-5 h-5 rounded-full bg-dark-card border-4 border-white/10"></div>
                     <span class="text-xs font-mono text-dark-muted mb-1 block">05/2015 - 03/2017</span>
@@ -464,7 +501,7 @@
     <footer class="relative z-10 py-12 border-t border-white/5 bg-dark-card/30">
         <div class="max-w-7xl mx-auto px-4 text-center">
             
-            <div class="mb-12">
+            <div id="ausbildung" class="mb-12 scroll-mt-24">
                 <h3 class="text-2xl font-bold mb-6 text-white">Ausbildung & Zertifikate</h3>
                 <div class="flex flex-col md:flex-row justify-center gap-6 text-left max-w-4xl mx-auto">
                     
@@ -497,7 +534,7 @@
                 </div>
             </div>
 
-            <div class="flex justify-center space-x-8 mb-8">
+            <div id="kontakt" class="flex justify-center space-x-8 mb-8 scroll-mt-24">
                 <a href="https://linkedin.com/in/mahdi-sharbaf-movassaghpour" class="text-2xl text-dark-muted hover:text-accent-blue transition-colors"><i class="fab fa-linkedin"></i></a>
                 <a href="https://github.com/mahdisharbaf" class="text-2xl text-dark-muted hover:text-white transition-colors"><i class="fab fa-github"></i></a>
                 <a href="mailto:mehdi.sharbaf187@gmail.com" class="text-2xl text-dark-muted hover:text-accent-green transition-colors"><i class="fas fa-envelope"></i></a>
@@ -546,13 +583,5 @@
         </div>
     </div>
 
-    <script>
-        function openImpressum() {
-            document.getElementById('impressum-modal').classList.remove('hidden');
-        }
-        function closeImpressum() {
-            document.getElementById('impressum-modal').classList.add('hidden');
-        }
-    </script>
 </body>
 </html>
