@@ -89,7 +89,7 @@
             }, 800);
         }
 
-        // 🟢 توابع منوی موبایل
+        // 🟢 توابع منوی یکپارچه (موبایل و دسکتاپ)
         function toggleMobileMenu() {
             const menu = document.getElementById('mobile-menu');
             menu.classList.toggle('hidden');
@@ -146,44 +146,33 @@
                     </a>
                 </div>
                 
-                <!-- 🟢 منوی دسکتاپ (فقط روی دسکتاپ نمایش داده می‌شود تا ریسپانسیو باشد) 🟢 -->
-                <div class="hidden lg:flex items-center space-x-5 xl:space-x-6">
-                    <a href="#video" class="text-white hover:text-accent-blue transition-colors text-sm font-semibold">Video</a>
-                    <a href="#skills" class="text-white hover:text-accent-blue transition-colors text-sm font-semibold">Skills</a>
-                    <a href="#projects" class="text-white hover:text-accent-blue transition-colors text-sm font-semibold">Projekte</a>
-                    <a href="#experience" class="text-white hover:text-accent-blue transition-colors text-sm font-semibold">Erfahrung</a>
-                    <a href="#ausbildung" class="text-white hover:text-accent-blue transition-colors text-sm font-semibold">Ausbildung</a>
-                    <a href="#kontakt" class="text-white hover:text-accent-blue transition-colors text-sm font-semibold">Kontakt</a>
+                <!-- 🟢 دکمه‌های سمت راست (کارت و منو) یکپارچه برای همه دستگاه‌ها 🟢 -->
+                <div class="flex items-center gap-3">
+                    <!-- Card Button -->
+                    <a href="DigitalBusinessCard.html" target="_blank" class="text-accent-purple border border-accent-purple/50 bg-accent-purple/10 hover:bg-accent-purple hover:text-dark-bg transition-all px-3 py-1.5 lg:px-4 lg:py-2 rounded-lg text-sm font-bold flex items-center gap-2 shadow-[0_0_10px_rgba(129,140,248,0.2)]">
+                        <i class="fas fa-qrcode"></i> Card
+                    </a>
                     
-                    <!-- Card Button Desktop -->
-                    <a href="DigitalBusinessCard.html" target="_blank" class="text-accent-purple border border-accent-purple/50 bg-accent-purple/10 hover:bg-accent-purple hover:text-dark-bg transition-all px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 shadow-[0_0_10px_rgba(129,140,248,0.2)]">
-                        <i class="fas fa-qrcode"></i> Card
-                    </a>
-                </div>
-
-                <!-- 🟢 دکمه موبایل و همبرگر (مخصوص گوشی و تبلت) 🟢 -->
-                <div class="lg:hidden flex items-center gap-3">
-                    <a href="DigitalBusinessCard.html" target="_blank" class="text-accent-purple border border-accent-purple/50 bg-accent-purple/10 hover:bg-accent-purple hover:text-dark-bg transition-all px-3 py-1.5 rounded-lg text-sm font-bold flex items-center gap-2">
-                        <i class="fas fa-qrcode"></i> Card
-                    </a>
-                    <button onclick="toggleMobileMenu()" class="text-white hover:text-accent-blue focus:outline-none text-2xl p-2 ml-2">
-                        <i class="fas fa-bars"></i>
+                    <!-- Menu Toggle Button (متن Menu در دسکتاپ، آیکون همبرگر در موبایل) -->
+                    <button onclick="toggleMobileMenu()" class="text-white hover:text-accent-blue focus:outline-none p-2 ml-1 md:ml-3 transition-colors flex items-center">
+                        <span class="hidden md:block text-base lg:text-lg font-bold tracking-widest uppercase">Menu</span>
+                        <i class="fas fa-bars text-2xl md:hidden"></i>
                     </button>
                 </div>
 
             </div>
         </div>
 
-        <!-- 🟢 منوی کشویی موبایل 🟢 -->
-        <div id="mobile-menu" class="hidden lg:hidden absolute top-20 left-0 w-full glass border-t border-white/10 flex flex-col items-center py-6 space-y-5 shadow-2xl backdrop-blur-xl">
-            <a href="#video" onclick="closeMobileMenu()" class="text-white hover:text-accent-blue text-base font-semibold tracking-wide">Video Vorstellung</a>
-            <a href="#skills" onclick="closeMobileMenu()" class="text-white hover:text-accent-blue text-base font-semibold tracking-wide">Technische Fähigkeiten</a>
-            <a href="#projects" onclick="closeMobileMenu()" class="text-white hover:text-accent-blue text-base font-semibold tracking-wide">Projekte</a>
-            <a href="#experience" onclick="closeMobileMenu()" class="text-white hover:text-accent-blue text-base font-semibold tracking-wide">Beruflicher Werdegang</a>
-            <a href="#ausbildung" onclick="closeMobileMenu()" class="text-white hover:text-accent-blue text-base font-semibold tracking-wide">Ausbildung & Zertifikate</a>
-            <a href="#kontakt" onclick="closeMobileMenu()" class="text-white hover:text-accent-blue text-base font-semibold tracking-wide">Kontakt</a>
+        <!-- 🟢 منوی کشویی یکپارچه (نمایش در دسکتاپ و موبایل پس از کلیک) 🟢 -->
+        <div id="mobile-menu" class="hidden absolute top-20 left-0 w-full glass border-t border-white/10 flex flex-col items-center py-8 space-y-6 shadow-2xl backdrop-blur-xl">
+            <a href="#video" onclick="closeMobileMenu()" class="text-white hover:text-accent-blue text-lg font-semibold tracking-wide transition-colors">Video Vorstellung</a>
+            <a href="#skills" onclick="closeMobileMenu()" class="text-white hover:text-accent-blue text-lg font-semibold tracking-wide transition-colors">Technische Fähigkeiten</a>
+            <a href="#projects" onclick="closeMobileMenu()" class="text-white hover:text-accent-blue text-lg font-semibold tracking-wide transition-colors">Projekte</a>
+            <a href="#experience" onclick="closeMobileMenu()" class="text-white hover:text-accent-blue text-lg font-semibold tracking-wide transition-colors">Beruflicher Werdegang</a>
+            <a href="#ausbildung" onclick="closeMobileMenu()" class="text-white hover:text-accent-blue text-lg font-semibold tracking-wide transition-colors">Ausbildung & Zertifikate</a>
+            <a href="#kontakt" onclick="closeMobileMenu()" class="text-white hover:text-accent-blue text-lg font-semibold tracking-wide transition-colors">Kontakt</a>
             
-            <a href="DigitalBusinessCard.html" target="_blank" onclick="closeMobileMenu()" class="mt-4 text-accent-purple border border-accent-purple/50 bg-accent-purple/10 px-6 py-2 rounded-full text-base font-bold flex items-center gap-2">
+            <a href="DigitalBusinessCard.html" target="_blank" onclick="closeMobileMenu()" class="mt-6 text-accent-purple border border-accent-purple/50 bg-accent-purple/10 px-8 py-3 rounded-full text-base font-bold flex items-center gap-2 hover:bg-accent-purple hover:text-dark-bg transition-all">
                 <i class="fas fa-qrcode"></i> Digital Card
             </a>
         </div>
