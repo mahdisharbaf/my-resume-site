@@ -8,14 +8,47 @@
     <!-- 🔴 لوگو در تب مرورگر -->
     <link rel="icon" type="image/png" href="logo.png">
     
-    <!-- Meta Tags for Social Preview -->
+    <!-- 🟢 Standard SEO Meta Tags 🟢 -->
+    <!-- این تگ‌ها به گوگل اجازه می‌دهند سایت شما را در نتایج جستجو نشان دهد -->
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="Portfolio von Mahdi Sharbaf, Cloud & DevOps Engineer in Deutschland. Spezialisiert auf Kubernetes, Terraform, AWS, Azure, CI/CD und GitOps.">
+    <meta name="keywords" content="Mahdi Sharbaf, DevOps Engineer, Cloud Engineer, Kubernetes, Terraform, AWS, Azure, GitOps, München, Deutschland, IT Freelancer">
+    <meta name="author" content="Mahdi Sharbaf Movassaghpour">
+    <link rel="canonical" href="https://mahdi-sharbaf.me/">
+    
+    <!-- Meta Tags for Social Preview (Open Graph) -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://mahdi-sharbaf.me/">
     <meta property="og:title" content="Mahdi Sharbaf | Cloud & DevOps Engineer">
     <meta property="og:description" content="Portfolio eines Cloud & DevOps Engineers. Spezialisiert auf Kubernetes, Terraform, AWS, Azure und GitOps.">
     <meta property="og:image" content="https://mahdi-sharbaf.me/small.jpg">
     
-    <meta name="robots" content="noindex, nofollow">
+    <!-- 🟢 Structured Data (JSON-LD) 🟢 -->
+    <!-- این کد به گوگل می‌فهماند که شما دقیقاً چه کسی هستید تا در نتایج جستجو بهتر نمایش داده شوید -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Mahdi Sharbaf Movassaghpour",
+      "alternateName": "Mahdi Sharbaf",
+      "url": "https://mahdi-sharbaf.me/",
+      "image": "https://mahdi-sharbaf.me/small.jpg",
+      "jobTitle": "Cloud & DevOps Engineer",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Freelance"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "München",
+        "addressCountry": "DE"
+      },
+      "sameAs": [
+        "https://linkedin.com/in/mahdi-sharbaf-movassaghpour",
+        "https://github.com/mahdisharbaf"
+      ]
+    }
+    </script>
 
     <!-- 🟢 رفع مشکل Cloudflare: اضافه شدن data-cfasync="false" 🟢 -->
     <script src="https://cdn.tailwindcss.com" data-cfasync="false"></script>
