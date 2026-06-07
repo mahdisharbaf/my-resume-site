@@ -4,27 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mahdi Sharbaf | Cloud & DevOps Engineer</title>
-    
-    <!-- 🔴 لوگو در تب مرورگر -->
+
+    <!-- Logo im Browser-Tab -->
     <link rel="icon" type="image/png" href="logo.png">
-    
-    <!-- 🟢 Standard SEO Meta Tags 🟢 -->
-    <!-- این تگ‌ها به گوگل اجازه می‌دهند سایت شما را در نتایج جستجو نشان دهد -->
+
+    <!-- SEO Meta Tags -->
     <meta name="robots" content="index, follow">
     <meta name="description" content="Portfolio von Mahdi Sharbaf, Cloud & DevOps Engineer in Deutschland. Spezialisiert auf Kubernetes, Terraform, AWS, Azure, CI/CD und GitOps.">
     <meta name="keywords" content="Mahdi Sharbaf, DevOps Engineer, Cloud Engineer, Kubernetes, Terraform, AWS, Azure, GitOps, München, Deutschland, IT Freelancer">
     <meta name="author" content="Mahdi Sharbaf Movassaghpour">
     <link rel="canonical" href="https://mahdi-sharbaf.me/">
-    
-    <!-- Meta Tags for Social Preview (Open Graph) -->
+
+    <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://mahdi-sharbaf.me/">
     <meta property="og:title" content="Mahdi Sharbaf | Cloud & DevOps Engineer">
     <meta property="og:description" content="Portfolio eines Cloud & DevOps Engineers. Spezialisiert auf Kubernetes, Terraform, AWS, Azure und GitOps.">
     <meta property="og:image" content="https://mahdi-sharbaf.me/small.jpg">
-    
-    <!-- 🟢 Structured Data (JSON-LD) 🟢 -->
-    <!-- این کد به گوگل می‌فهماند که شما دقیقاً چه کسی هستید تا در نتایج جستجو بهتر نمایش داده شوید -->
+
+    <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -34,15 +32,8 @@
       "url": "https://mahdi-sharbaf.me/",
       "image": "https://mahdi-sharbaf.me/small.jpg",
       "jobTitle": "Cloud & DevOps Engineer",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "Freelance"
-      },
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "München",
-        "addressCountry": "DE"
-      },
+      "worksFor": { "@type": "Organization", "name": "Freelance" },
+      "address": { "@type": "PostalAddress", "addressLocality": "München", "addressCountry": "DE" },
       "sameAs": [
         "https://linkedin.com/in/mahdi-sharbaf-movassaghpour",
         "https://github.com/mahdisharbaf"
@@ -50,14 +41,12 @@
     }
     </script>
 
-    <!-- 🟢 رفع مشکل Cloudflare: اضافه شدن data-cfasync="false" 🟢 -->
     <script src="https://cdn.tailwindcss.com" data-cfasync="false"></script>
-    
-    <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Three.js (WebGL 3D Engine) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" data-cfasync="false"></script>
 
     <script data-cfasync="false">
         tailwind.config = {
@@ -66,137 +55,120 @@
                 extend: {
                     fontFamily: {
                         sans: ['Outfit', 'sans-serif'],
+                        mono: ['Space Grotesk', 'monospace'],
                     },
                     colors: {
-                        dark: {
-                            bg: '#0f172a',      // Slate 900
-                            card: '#1e293b',    // Slate 800
-                            text: '#f8fafc',    // Slate 50
-                            muted: '#94a3b8'    // Slate 400
-                        },
+                        dark: { bg: '#0a0f1f', card: '#131c31', text: '#f8fafc', muted: '#94a3b8' },
                         accent: {
-                            blue: '#38bdf8',    // Sky 400
-                            purple: '#818cf8',  // Indigo 400
-                            green: '#4ade80',   // Green 400
-                            orange: '#fb923c',  // Orange 400
-                            red: '#f87171',     // Red 400
-                            yellow: '#facc15',   // Yellow 400
-                            pink: '#f472b6'     // Pink 400
+                            blue: '#38bdf8', purple: '#818cf8', green: '#4ade80',
+                            orange: '#fb923c', red: '#f87171', yellow: '#facc15', pink: '#f472b6'
                         }
                     },
-                    animation: {
-                        'blob': 'blob 10s infinite',
-                        'float': 'float 6s ease-in-out infinite',
-                    },
+                    animation: { 'float': 'float 6s ease-in-out infinite' },
                     keyframes: {
-                        blob: {
-                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
-                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
-                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
-                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
-                        },
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-20px)' },
-                        }
+                        float: { '0%, 100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-20px)' } }
                     }
                 }
             }
         }
 
-        // 🟢 تابع هوشمند: دانلود PDF + انتقال به صفحه HTML
         function downloadAndRedirect(event) {
             event.preventDefault();
-
-            // 1. شروع دانلود فایل PDF
             const link = document.createElement('a');
             link.href = 'Lebenslauf.pdf';
             link.download = 'Lebenslauf - Mahdi Sharbaf Movassaghpour.pdf';
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
-
-            // 2. انتقال کاربر به صفحه رزومه دیجیتال (cv.html) بعد از 800 میلی‌ثانیه
-            setTimeout(() => {
-                window.location.href = 'cv.html';
-            }, 800);
+            setTimeout(() => { window.location.href = 'cv.html'; }, 800);
         }
-
-        // 🟢 توابع منوی یکپارچه (موبایل و دسکتاپ)
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
-        }
-        function closeMobileMenu() {
-            document.getElementById('mobile-menu').classList.add('hidden');
-        }
+        function toggleMobileMenu() { document.getElementById('mobile-menu').classList.toggle('hidden'); }
+        function closeMobileMenu() { document.getElementById('mobile-menu').classList.add('hidden'); }
     </script>
 
     <style>
+        html, body { background: #0a0f1f; }
         .glass {
-            background: rgba(30, 41, 59, 0.7);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            background: rgba(19, 28, 49, 0.55);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
         }
         .gradient-text {
-            background: linear-gradient(to right, #38bdf8, #818cf8);
+            background: linear-gradient(110deg, #38bdf8, #818cf8 45%, #f472b6);
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        ::-webkit-scrollbar {
-            width: 8px;
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0a0f1f; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #475569; }
+
+        /* WebGL Canvas */
+        #bg-canvas {
+            position: fixed; inset: 0; width: 100%; height: 100%;
+            z-index: 0; pointer-events: none; opacity: 0;
+            transition: opacity 1.2s ease;
         }
-        ::-webkit-scrollbar-track {
-            background: #0f172a;
+        #bg-canvas.ready { opacity: 1; }
+
+        /* Scroll-progress bar */
+        #scroll-progress {
+            position: fixed; top: 0; left: 0; height: 3px; width: 0%;
+            background: linear-gradient(90deg, #38bdf8, #818cf8, #f472b6);
+            z-index: 60; box-shadow: 0 0 14px rgba(56,189,248,0.8);
         }
-        ::-webkit-scrollbar-thumb {
-            background: #334155;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #475569;
+
+        /* Scroll reveal */
+        .reveal { opacity: 0; transform: translateY(48px); transition: opacity .9s cubic-bezier(.16,.84,.3,1), transform .9s cubic-bezier(.16,.84,.3,1); }
+        .reveal.revealed { opacity: 1; transform: none; }
+
+        /* 3D tilt cards */
+        .tilt-wrap { perspective: 1000px; }
+        .tilt-card { transform-style: preserve-3d; transition: transform .25s ease, box-shadow .25s ease; will-change: transform; }
+        .tilt-card .lift { transform: translateZ(40px); transition: transform .25s ease; }
+
+        /* Glow chip */
+        .chip { background: rgba(56,189,248,0.07); border: 1px solid rgba(56,189,248,0.18); }
+
+        /* Section label */
+        .eyebrow { letter-spacing: .35em; }
+
+        @media (prefers-reduced-motion: reduce) {
+            .reveal { opacity: 1; transform: none; transition: none; }
         }
     </style>
 </head>
-<body class="bg-dark-bg text-dark-text selection:bg-accent-blue selection:text-white overflow-x-hidden relative">
+<body class="bg-dark-bg text-dark-text font-sans selection:bg-accent-blue selection:text-dark-bg overflow-x-hidden relative">
 
-    <div class="fixed inset-0 w-full h-full pointer-events-none z-0 overflow-hidden">
-        <div class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-accent-blue/20 rounded-full mix-blend-screen filter blur-[100px] animate-blob"></div>
-        <div class="absolute top-0 right-1/4 w-[500px] h-[500px] bg-accent-purple/20 rounded-full mix-blend-screen filter blur-[100px] animate-blob animation-delay-2000"></div>
-        <div class="absolute -bottom-32 left-1/3 w-[500px] h-[500px] bg-accent-orange/10 rounded-full mix-blend-screen filter blur-[100px] animate-blob animation-delay-4000"></div>
-    </div>
+    <!-- WebGL 3D Background -->
+    <canvas id="bg-canvas"></canvas>
+    <!-- subtle vignette over canvas for readability -->
+    <div class="fixed inset-0 z-[1] pointer-events-none" style="background: radial-gradient(120% 80% at 50% 0%, transparent 40%, rgba(10,15,31,0.55) 100%);"></div>
 
-    <!-- 🟢 Navigation 🟢 -->
+    <div id="scroll-progress"></div>
+
+    <!-- Navigation -->
     <nav class="fixed w-full z-50 glass border-b-0 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
-                
-                <!-- Logo Section -->
                 <div class="flex items-center">
                     <a href="#" class="flex-shrink-0 flex items-center hover:scale-105 transition-transform duration-300">
                         <img src="logo.png" alt="Mahdi Sharbaf Logo" class="h-12 md:h-14 w-auto object-contain drop-shadow-[0_0_15px_rgba(56,189,248,0.6)]" onerror="this.style.display='none'">
                     </a>
                 </div>
-                
-                <!-- 🟢 دکمه‌های سمت راست (کارت و منو) یکپارچه برای همه دستگاه‌ها 🟢 -->
                 <div class="flex items-center gap-3">
-                    <!-- Card Button -->
                     <a href="DigitalBusinessCard.html" target="_blank" class="text-accent-purple border border-accent-purple/50 bg-accent-purple/10 hover:bg-accent-purple hover:text-dark-bg transition-all px-3 py-1.5 lg:px-4 lg:py-2 rounded-lg text-sm font-bold flex items-center gap-2 shadow-[0_0_10px_rgba(129,140,248,0.2)]">
                         <i class="fas fa-qrcode"></i> Card
                     </a>
-                    
-                    <!-- Menu Toggle Button (دکمه شیشه‌ای و کاملاً واضح) -->
                     <button onclick="toggleMobileMenu()" class="text-white border border-white/20 bg-white/10 hover:bg-white/20 hover:text-accent-blue transition-all px-3 py-1.5 lg:px-4 lg:py-2 ml-1 rounded-lg flex items-center gap-2 shadow-lg backdrop-blur-md">
                         <span class="hidden md:inline-block text-sm font-bold tracking-widest uppercase">Menu</span>
                         <i class="fas fa-bars text-lg"></i>
                     </button>
                 </div>
-
             </div>
         </div>
-
-        <!-- 🟢 منوی کشویی یکپارچه (نمایش در دسکتاپ و موبایل پس از کلیک) 🟢 -->
         <div id="mobile-menu" class="hidden absolute top-20 left-0 w-full glass border-t border-white/10 flex flex-col items-center py-8 space-y-6 shadow-2xl backdrop-blur-xl">
             <a href="#video" onclick="closeMobileMenu()" class="text-white hover:text-accent-blue text-lg font-semibold tracking-wide transition-colors">Video Vorstellung</a>
             <a href="#skills" onclick="closeMobileMenu()" class="text-white hover:text-accent-blue text-lg font-semibold tracking-wide transition-colors">Technische Fähigkeiten</a>
@@ -204,46 +176,63 @@
             <a href="#experience" onclick="closeMobileMenu()" class="text-white hover:text-accent-blue text-lg font-semibold tracking-wide transition-colors">Beruflicher Werdegang</a>
             <a href="#ausbildung" onclick="closeMobileMenu()" class="text-white hover:text-accent-blue text-lg font-semibold tracking-wide transition-colors">Ausbildung & Zertifikate</a>
             <a href="#kontakt" onclick="closeMobileMenu()" class="text-white hover:text-accent-blue text-lg font-semibold tracking-wide transition-colors">Kontakt</a>
-            
             <a href="DigitalBusinessCard.html" target="_blank" onclick="closeMobileMenu()" class="mt-6 text-accent-purple border border-accent-purple/50 bg-accent-purple/10 px-8 py-3 rounded-full text-base font-bold flex items-center gap-2 hover:bg-accent-purple hover:text-dark-bg transition-all">
                 <i class="fas fa-qrcode"></i> Digital Card
             </a>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <main id="about" class="relative z-10 pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto scroll-mt-24">
-        <div class="flex flex-col-reverse lg:flex-row items-center justify-between gap-12">
+    <!-- Hero -->
+    <main id="about" class="relative z-10 pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto scroll-mt-24 min-h-screen flex items-center">
+        <div class="flex flex-col-reverse lg:flex-row items-center justify-between gap-12 w-full">
             <div class="text-center lg:text-left lg:w-1/2">
-                <div class="inline-flex items-center px-3 py-1 rounded-full border border-accent-blue/30 bg-accent-blue/10 text-accent-blue text-sm font-medium mb-6 animate-float">
+                <div class="reveal inline-flex items-center px-3 py-1 rounded-full border border-accent-blue/30 bg-accent-blue/10 text-accent-blue text-sm font-medium mb-6">
                     <span class="flex h-2 w-2 rounded-full bg-accent-blue mr-2 animate-pulse"></span>
-                    Open to Work: Cloud & DevOps (Bundesweit verfügbar)
+                    Open to Work · Cloud & DevOps · Bundesweit verfügbar
                 </div>
-                
-                <h1 class="text-5xl lg:text-7xl font-extrabold tracking-tight mb-6 leading-tight">
-                    Cloud Native & <br>
-                    <span class="gradient-text">GitOps Expert</span>
+
+                <h1 class="reveal text-5xl lg:text-7xl font-extrabold tracking-tight mb-6 leading-[1.05]" style="transition-delay:.08s">
+                    Infrastruktur, die <br>
+                    <span class="gradient-text">sich selbst baut.</span>
                 </h1>
-                
-                <p class="mt-4 text-xl text-dark-muted leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                    Hi, ich bin <strong>Mahdi Sharbaf</strong>. <br>
-                    Ich automatisiere Infrastruktur mit <strong>Terraform & Ansible</strong>, orchestriere Container mit <strong>Kubernetes</strong> und baue sichere CI/CD Pipelines.
+
+                <p class="reveal mt-4 text-xl text-dark-muted leading-relaxed max-w-2xl mx-auto lg:mx-0" style="transition-delay:.16s">
+                    Hi, ich bin <strong class="text-white">Mahdi Sharbaf</strong> — Cloud &amp; DevOps Engineer.
+                    Ich automatisiere Infrastruktur mit <strong class="text-white">Terraform &amp; Ansible</strong>,
+                    orchestriere Container mit <strong class="text-white">Kubernetes</strong> und baue sichere,
+                    nachvollziehbare <strong class="text-white">CI/CD- &amp; GitOps-Pipelines</strong>.
                 </p>
-                
-                <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+
+                <div class="reveal mt-10 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start" style="transition-delay:.24s">
                     <a href="cv.html" onclick="downloadAndRedirect(event)" class="px-8 py-4 rounded-xl bg-accent-blue text-dark-bg font-bold hover:bg-white transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(56,189,248,0.5)] flex items-center justify-center gap-2">
                         <i class="fas fa-download"></i> Lebenslauf (CV)
                     </a>
                     <a href="#projects" class="px-8 py-4 rounded-xl glass hover:bg-white/10 transition-all border border-white/10 flex items-center justify-center gap-2">
-                        Meine Projekte
+                        Meine Projekte <i class="fas fa-arrow-down text-sm"></i>
                     </a>
+                </div>
+
+                <!-- Stats strip -->
+                <div class="reveal mt-12 grid grid-cols-3 gap-4 max-w-xl mx-auto lg:mx-0" style="transition-delay:.32s">
+                    <div>
+                        <div class="text-3xl font-extrabold gradient-text font-mono">10+</div>
+                        <div class="text-xs text-dark-muted mt-1">Jahre IT-Erfahrung</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-extrabold gradient-text font-mono">2</div>
+                        <div class="text-xs text-dark-muted mt-1">Clouds · AWS &amp; Azure</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-extrabold gradient-text font-mono">100%</div>
+                        <div class="text-xs text-dark-muted mt-1">Infrastructure as Code</div>
+                    </div>
                 </div>
             </div>
 
             <div class="lg:w-1/2 flex justify-center relative">
                 <div class="absolute inset-0 bg-gradient-to-r from-accent-blue to-accent-purple opacity-20 blur-3xl rounded-full"></div>
                 <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-full p-2 glass animate-float">
-                    <img src="small.jpg" alt="Mahdi Sharbaf" 
+                    <img src="small.jpg" alt="Mahdi Sharbaf"
                          class="w-full h-full rounded-full object-cover border-4 border-accent-blue/20 shadow-2xl"
                          onerror="this.src='https://placehold.co/400x400/1e293b/ffffff?text=Mahdi'">
                 </div>
@@ -251,9 +240,13 @@
         </div>
     </main>
 
-    <!-- Video Section (YouTube Shorts) -->
+    <!-- Video Section -->
     <section id="video" class="relative z-10 py-16 scroll-mt-24">
-        <div class="max-w-sm mx-auto px-4">
+        <div class="text-center mb-10 reveal">
+            <p class="eyebrow text-xs font-mono text-accent-blue uppercase mb-3">// 30 Sekunden über mich</p>
+            <h2 class="text-3xl md:text-4xl font-bold">Video <span class="gradient-text">Vorstellung</span></h2>
+        </div>
+        <div class="max-w-sm mx-auto px-4 reveal">
             <div class="glass rounded-3xl p-2 md:p-3 border border-accent-purple/20 shadow-[0_0_50px_rgba(129,140,248,0.2)]">
                 <div class="relative w-full aspect-[9/16] rounded-2xl overflow-hidden bg-black">
                     <div class="absolute inset-0 flex items-center justify-center text-center p-8 bg-dark-card/50">
@@ -263,97 +256,101 @@
                             <p class="text-dark-muted text-sm">Hier wird das Short-Video geladen.</p>
                         </div>
                     </div>
-                    <!-- لینک ویدیوی شورت شما -->
-                    <iframe 
-                        class="absolute inset-0 w-full h-full"
-                        src="https://www.youtube.com/embed/RoVlKp2Om3U?rel=0&modestbranding=1" 
-                        title="Mahdi Introduction Short" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                    </iframe>
+                    <iframe class="absolute inset-0 w-full h-full"
+                        src="https://www.youtube.com/embed/RoVlKp2Om3U?rel=0&modestbranding=1"
+                        title="Mahdi Introduction Short" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Tech Stack -->
-    <section id="skills" class="relative z-10 py-20 bg-dark-bg/50 scroll-mt-24">
+    <section id="skills" class="relative z-10 py-24 scroll-mt-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Technische <span class="text-accent-blue">Fähigkeiten</span></h2>
-                <p class="text-dark-muted">Modernes Toolset für Cloud-Native Infrastrukturen</p>
+            <div class="text-center mb-16 reveal">
+                <p class="eyebrow text-xs font-mono text-accent-blue uppercase mb-3">// Tech-Stack</p>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Werkzeuge für <span class="gradient-text">Cloud-Native</span></h2>
+                <p class="text-dark-muted">Automatisierung, Orchestrierung und Betrieb moderner Infrastruktur</p>
             </div>
 
-            <!-- Grid Layout für Skills -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-                
-                <!-- IaC (Terraform & Ansible) -->
-                <div class="glass p-6 rounded-2xl hover:bg-white/5 transition-all group border border-accent-purple/20">
-                    <div class="flex justify-center gap-4 mb-4">
-                        <i class="fas fa-code-branch text-4xl text-accent-purple"></i>
-                        <i class="fas fa-server text-4xl text-gray-400"></i>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center tilt-wrap">
+
+                <div class="reveal glass tilt-card p-6 rounded-2xl border border-accent-purple/20">
+                    <div class="lift">
+                        <div class="flex justify-center gap-4 mb-4">
+                            <i class="fas fa-code-branch text-4xl text-accent-purple"></i>
+                            <i class="fas fa-server text-4xl text-gray-400"></i>
+                        </div>
+                        <h3 class="font-medium text-lg">IaC &amp; Config Mgmt</h3>
+                        <p class="text-xs text-dark-muted mt-2">Terraform, Ansible, Packer</p>
                     </div>
-                    <h3 class="font-medium text-lg">IaC & Config Mgmt</h3>
-                    <p class="text-xs text-dark-muted mt-2">Terraform, Ansible, Packer</p>
                 </div>
 
-                <!-- Orchestration (K8s) -->
-                <div class="glass p-6 rounded-2xl hover:bg-white/5 transition-all group border border-blue-500/20">
-                    <i class="fas fa-dharmachakra text-4xl mb-4 text-blue-500 group-hover:text-white transition-colors"></i>
-                    <h3 class="font-medium text-lg">Kubernetes</h3>
-                    <p class="text-xs text-dark-muted mt-2">K8s Clusters, Helm, GitOps</p>
-                </div>
-
-                <!-- CI/CD -->
-                <div class="glass p-6 rounded-2xl hover:bg-white/5 transition-all group border border-accent-orange/20">
-                    <div class="flex justify-center gap-4 mb-4">
-                        <i class="fab fa-github text-4xl text-white"></i>
-                        <i class="fab fa-gitlab text-4xl text-orange-500"></i>
+                <div class="reveal glass tilt-card p-6 rounded-2xl border border-blue-500/20" style="transition-delay:.05s">
+                    <div class="lift">
+                        <i class="fas fa-dharmachakra text-4xl mb-4 text-blue-500"></i>
+                        <h3 class="font-medium text-lg">Kubernetes</h3>
+                        <p class="text-xs text-dark-muted mt-2">K8s Clusters, Helm, GitOps</p>
                     </div>
-                    <h3 class="font-medium text-lg">CI/CD Pipelines</h3>
-                    <p class="text-xs text-dark-muted mt-2">GitHub Actions, GitLab CI, AWS CodePipeline</p>
                 </div>
 
-                <!-- Cloud -->
-                <div class="glass p-6 rounded-2xl hover:bg-white/5 transition-all group border border-accent-orange/20">
-                    <div class="flex justify-center gap-4 mb-4">
-                        <i class="fab fa-aws text-4xl text-accent-orange"></i>
-                        <i class="fab fa-microsoft text-4xl text-blue-400"></i>
+                <div class="reveal glass tilt-card p-6 rounded-2xl border border-accent-orange/20" style="transition-delay:.1s">
+                    <div class="lift">
+                        <div class="flex justify-center gap-4 mb-4">
+                            <i class="fab fa-github text-4xl text-white"></i>
+                            <i class="fab fa-gitlab text-4xl text-orange-500"></i>
+                        </div>
+                        <h3 class="font-medium text-lg">CI/CD Pipelines</h3>
+                        <p class="text-xs text-dark-muted mt-2">GitHub Actions, GitLab CI, CodePipeline</p>
                     </div>
-                    <h3 class="font-medium text-lg">Cloud Platforms</h3>
-                    <p class="text-xs text-dark-muted mt-2">AWS & Azure Services</p>
                 </div>
 
-                <!-- Monitoring -->
-                <div class="glass p-6 rounded-2xl hover:bg-white/5 transition-all group border border-accent-pink/20">
-                    <i class="fas fa-chart-line text-4xl mb-4 text-accent-pink group-hover:text-white transition-colors"></i>
-                    <h3 class="font-medium text-lg">Observability</h3>
-                    <p class="text-xs text-dark-muted mt-2">Prometheus, Grafana, CloudWatch</p>
-                </div>
-
-                <!-- Scripting -->
-                <div class="glass p-6 rounded-2xl hover:bg-white/5 transition-all group border border-accent-yellow/20">
-                    <div class="flex justify-center gap-4 mb-4">
-                        <i class="fab fa-python text-4xl text-accent-yellow"></i>
-                        <i class="fas fa-terminal text-4xl text-green-500"></i>
+                <div class="reveal glass tilt-card p-6 rounded-2xl border border-accent-orange/20" style="transition-delay:.15s">
+                    <div class="lift">
+                        <div class="flex justify-center gap-4 mb-4">
+                            <i class="fab fa-aws text-4xl text-accent-orange"></i>
+                            <i class="fab fa-microsoft text-4xl text-blue-400"></i>
+                        </div>
+                        <h3 class="font-medium text-lg">Cloud Platforms</h3>
+                        <p class="text-xs text-dark-muted mt-2">AWS &amp; Azure Services</p>
                     </div>
-                    <h3 class="font-medium text-lg">Scripting</h3>
-                    <p class="text-xs text-dark-muted mt-2">Python, Bash, Automation</p>
                 </div>
 
-                <!-- Containers -->
-                <div class="glass p-6 rounded-2xl hover:bg-white/5 transition-all group border border-blue-400/20">
-                    <i class="fab fa-docker text-4xl mb-4 text-blue-400 group-hover:text-white transition-colors"></i>
-                    <h3 class="font-medium text-lg">Container</h3>
-                    <p class="text-xs text-dark-muted mt-2">Docker, Docker Compose</p>
+                <div class="reveal glass tilt-card p-6 rounded-2xl border border-accent-pink/20">
+                    <div class="lift">
+                        <i class="fas fa-chart-line text-4xl mb-4 text-accent-pink"></i>
+                        <h3 class="font-medium text-lg">Observability</h3>
+                        <p class="text-xs text-dark-muted mt-2">Prometheus, Grafana, CloudWatch</p>
+                    </div>
                 </div>
 
-                 <!-- OS -->
-                 <div class="glass p-6 rounded-2xl hover:bg-white/5 transition-all group border border-gray-500/20">
-                    <i class="fab fa-linux text-4xl mb-4 text-gray-300 group-hover:text-white transition-colors"></i>
-                    <h3 class="font-medium text-lg">Linux Ops</h3>
-                    <p class="text-xs text-dark-muted mt-2">RHEL, Ubuntu, Debian</p>
+                <div class="reveal glass tilt-card p-6 rounded-2xl border border-accent-yellow/20" style="transition-delay:.05s">
+                    <div class="lift">
+                        <div class="flex justify-center gap-4 mb-4">
+                            <i class="fab fa-python text-4xl text-accent-yellow"></i>
+                            <i class="fas fa-terminal text-4xl text-green-500"></i>
+                        </div>
+                        <h3 class="font-medium text-lg">Scripting</h3>
+                        <p class="text-xs text-dark-muted mt-2">Python, Bash, Automation</p>
+                    </div>
+                </div>
+
+                <div class="reveal glass tilt-card p-6 rounded-2xl border border-blue-400/20" style="transition-delay:.1s">
+                    <div class="lift">
+                        <i class="fab fa-docker text-4xl mb-4 text-blue-400"></i>
+                        <h3 class="font-medium text-lg">Container</h3>
+                        <p class="text-xs text-dark-muted mt-2">Docker, Docker Compose</p>
+                    </div>
+                </div>
+
+                <div class="reveal glass tilt-card p-6 rounded-2xl border border-gray-500/20" style="transition-delay:.15s">
+                    <div class="lift">
+                        <i class="fab fa-linux text-4xl mb-4 text-gray-300"></i>
+                        <h3 class="font-medium text-lg">Linux Ops</h3>
+                        <p class="text-xs text-dark-muted mt-2">RHEL, Ubuntu, Debian</p>
+                    </div>
                 </div>
 
             </div>
@@ -361,101 +358,90 @@
     </section>
 
     <!-- Projects -->
-    <section id="projects" class="relative z-10 py-20 scroll-mt-24">
+    <section id="projects" class="relative z-10 py-24 scroll-mt-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">Ausgewählte <span class="gradient-text">Projekte</span></h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                
-                <!-- Project 1: Kubernetes & GitOps -->
-                <div class="glass rounded-2xl p-8 hover:-translate-y-2 transition-transform duration-300 border border-blue-500/30 lg:col-span-2">
-                    <div class="flex justify-between items-start mb-6">
-                        <div class="p-3 bg-blue-500/10 rounded-xl text-blue-400">
-                            <i class="fas fa-dharmachakra text-3xl"></i>
+            <div class="text-center mb-12 reveal">
+                <p class="eyebrow text-xs font-mono text-accent-blue uppercase mb-3">// Projekte</p>
+                <h2 class="text-3xl md:text-4xl font-bold">Ausgewählte <span class="gradient-text">Projekte</span></h2>
+                <p class="text-dark-muted mt-3">Reale Hands-on-Projekte — von Cluster-Setup bis Multi-Cloud-Pipeline</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 tilt-wrap">
+
+                <div class="reveal glass tilt-card rounded-2xl p-8 border border-blue-500/30 lg:col-span-2">
+                    <div class="lift">
+                        <div class="flex justify-between items-start mb-6">
+                            <div class="p-3 bg-blue-500/10 rounded-xl text-blue-400"><i class="fas fa-dharmachakra text-3xl"></i></div>
+                            <span class="px-3 py-1 bg-blue-500/10 text-blue-400 text-xs font-bold rounded-full border border-blue-500/20">GitOps & K8s</span>
                         </div>
-                        <span class="px-3 py-1 bg-blue-500/10 text-blue-400 text-xs font-bold rounded-full border border-blue-500/20">GitOps & K8s</span>
+                        <h3 class="text-2xl font-bold mb-3">Kubernetes Cluster & GitOps Deployment</h3>
+                        <p class="text-dark-muted mb-6">Microservices-Architektur auf einem Kubernetes-Cluster — mit <strong class="text-white">GitOps</strong>-Prinzipien für deklaratives, kontinuierliches Deployment direkt aus Git.</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 text-sm text-dark-muted">
+                            <div class="flex items-center gap-2"><i class="fas fa-check text-blue-400"></i> K8s Cluster Setup (EKS/Kops)</div>
+                            <div class="flex items-center gap-2"><i class="fas fa-check text-blue-400"></i> Helm Charts Management</div>
+                            <div class="flex items-center gap-2"><i class="fas fa-check text-blue-400"></i> ArgoCD für GitOps</div>
+                            <div class="flex items-center gap-2"><i class="fas fa-check text-blue-400"></i> Monitoring mit Prometheus/Grafana</div>
+                        </div>
+                        <a href="https://github.com/mahdisharbaf/k8s-gitops-platform-project" target="_blank" class="px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg text-sm font-medium transition-colors border border-white/10 inline-flex items-center">
+                            <i class="fab fa-github mr-2"></i> Source Code
+                        </a>
                     </div>
-                    <h3 class="text-2xl font-bold mb-3">Kubernetes Cluster & GitOps Deployment</h3>
-                    <p class="text-dark-muted mb-6">
-                        Bereitstellung einer Microservices-Architektur auf einem Kubernetes-Cluster. Implementierung von <strong>GitOps</strong> Prinzipien für kontinuierliches Deployment.
-                    </p>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 text-sm text-dark-muted">
-                        <div class="flex items-center gap-2"><i class="fas fa-check text-blue-400"></i> K8s Cluster Setup (EKS/Kops)</div>
-                        <div class="flex items-center gap-2"><i class="fas fa-check text-blue-400"></i> Helm Charts Management</div>
-                        <div class="flex items-center gap-2"><i class="fas fa-check text-blue-400"></i> ArgoCD für GitOps</div>
-                        <div class="flex items-center gap-2"><i class="fas fa-check text-blue-400"></i> Monitoring mit Prometheus/Grafana</div>
-                    </div>
-                    <a href="https://github.com/mahdisharbaf/k8s-gitops-platform-project" target="_blank" class="px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg text-sm font-medium transition-colors border border-white/10 inline-flex items-center">
-                        <i class="fab fa-github mr-2"></i> Source Code
-                    </a>
                 </div>
 
-                <!-- Project 2: Infrastructure as Code -->
-                <div class="glass rounded-2xl p-8 hover:-translate-y-2 transition-transform duration-300 border border-accent-purple/20">
-                    <div class="p-3 bg-accent-purple/10 rounded-xl text-accent-purple w-fit mb-6">
-                        <i class="fas fa-code-branch text-2xl"></i>
+                <div class="reveal glass tilt-card rounded-2xl p-8 border border-accent-purple/20" style="transition-delay:.05s">
+                    <div class="lift">
+                        <div class="p-3 bg-accent-purple/10 rounded-xl text-accent-purple w-fit mb-6"><i class="fas fa-code-branch text-2xl"></i></div>
+                        <h3 class="text-xl font-bold mb-3">IaC mit Terraform & Ansible</h3>
+                        <p class="text-dark-muted text-sm mb-6">Vollständig automatisierte Infrastruktur-Provisionierung auf AWS mit Terraform und Konfigurationsmanagement mit Ansible — reproduzierbar und versioniert.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs px-2 py-1 rounded bg-dark-bg border border-white/5">Terraform</span>
+                            <span class="text-xs px-2 py-1 rounded bg-dark-bg border border-white/5">Ansible</span>
+                            <span class="text-xs px-2 py-1 rounded bg-dark-bg border border-white/5">AWS VPC</span>
+                        </div>
+                        <a href="https://github.com/mahdisharbaf/aws-terraform-ansible-iac" target="_blank" class="text-accent-blue text-sm hover:underline"><i class="fab fa-github"></i> Code ansehen</a>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">IaC mit Terraform & Ansible</h3>
-                    <p class="text-dark-muted text-sm mb-6">
-                        Vollständige Automatisierung der Infrastruktur-Bereitstellung (Provisioning) auf AWS mit Terraform und Konfigurationsmanagement mit Ansible.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="text-xs px-2 py-1 rounded bg-dark-bg border border-white/5">Terraform</span>
-                        <span class="text-xs px-2 py-1 rounded bg-dark-bg border border-white/5">Ansible</span>
-                        <span class="text-xs px-2 py-1 rounded bg-dark-bg border border-white/5">AWS VPC</span>
-                    </div>
-                    <a href="https://github.com/mahdisharbaf/aws-terraform-ansible-iac" target="_blank" class="text-accent-blue text-sm hover:underline"><i class="fab fa-github"></i> Code ansehen</a>
                 </div>
 
-                <!-- Project 3: End-to-End CI/CD -->
-                <div class="glass rounded-2xl p-8 hover:-translate-y-2 transition-transform duration-300 border border-accent-orange/20">
-                    <div class="p-3 bg-accent-orange/10 rounded-xl text-accent-orange w-fit mb-6">
-                        <i class="fab fa-gitlab text-2xl"></i>
+                <div class="reveal glass tilt-card rounded-2xl p-8 border border-accent-orange/20">
+                    <div class="lift">
+                        <div class="p-3 bg-accent-orange/10 rounded-xl text-accent-orange w-fit mb-6"><i class="fab fa-gitlab text-2xl"></i></div>
+                        <h3 class="text-xl font-bold mb-3">Multi-Cloud CI/CD Pipeline</h3>
+                        <p class="text-dark-muted text-sm mb-6">Robuste Pipelines mit GitHub Actions und GitLab CI: automatisierte Tests, Docker-Builds und Deployment nach Staging/Production.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs px-2 py-1 rounded bg-dark-bg border border-white/5">GitHub Actions</span>
+                            <span class="text-xs px-2 py-1 rounded bg-dark-bg border border-white/5">Python Tests</span>
+                            <span class="text-xs px-2 py-1 rounded bg-dark-bg border border-white/5">SonarQube</span>
+                        </div>
+                        <a href="https://github.com/mahdisharbaf/proton/tree/gitlab-vprocicode" target="_blank" class="text-accent-blue text-sm hover:underline"><i class="fab fa-github"></i> Code ansehen</a>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Multi-Cloud CI/CD Pipeline</h3>
-                    <p class="text-dark-muted text-sm mb-6">
-                        Entwicklung robuster Pipelines mit GitHub Actions und GitLab CI. Automatisierte Tests, Docker Builds und Deployment auf Staging/Production.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="text-xs px-2 py-1 rounded bg-dark-bg border border-white/5">GitHub Actions</span>
-                        <span class="text-xs px-2 py-1 rounded bg-dark-bg border border-white/5">Python Tests</span>
-                        <span class="text-xs px-2 py-1 rounded bg-dark-bg border border-white/5">SonarQube</span>
-                    </div>
-                    <a href="https://github.com/mahdisharbaf/proton/tree/gitlab-vprocicode" target="_blank" class="text-accent-blue text-sm hover:underline"><i class="fab fa-github"></i> Code ansehen</a>
                 </div>
 
-                <!-- Project 4: AWS Lift & Shift -->
-                <div class="glass rounded-2xl p-8 hover:-translate-y-2 transition-transform duration-300">
-                    <div class="p-3 bg-accent-orange/10 rounded-xl text-accent-orange w-fit mb-6">
-                        <i class="fab fa-aws text-2xl"></i>
+                <div class="reveal glass tilt-card rounded-2xl p-8 border border-white/5" style="transition-delay:.05s">
+                    <div class="lift">
+                        <div class="p-3 bg-accent-orange/10 rounded-xl text-accent-orange w-fit mb-6"><i class="fab fa-aws text-2xl"></i></div>
+                        <h3 class="text-xl font-bold mb-3">AWS Migration (Lift & Shift)</h3>
+                        <p class="text-dark-muted text-sm mb-6">Migration einer vProfile-Applikation mit EC2, ELB und Auto Scaling. DNS-Management via Route 53.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs px-2 py-1 rounded bg-dark-bg border border-white/5">EC2</span>
+                            <span class="text-xs px-2 py-1 rounded bg-dark-bg border border-white/5">ELB</span>
+                            <span class="text-xs px-2 py-1 rounded bg-dark-bg border border-white/5">Auto Scaling</span>
+                        </div>
+                        <a href="https://github.com/mahdisharbaf/proton/tree/awsliftandshift" target="_blank" class="text-accent-blue text-sm hover:underline"><i class="fab fa-github"></i> Code ansehen</a>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">AWS Migration (Lift & Shift)</h3>
-                    <p class="text-dark-muted text-sm mb-6">
-                        Migration einer vProfile Applikation mittels EC2, ELB und Auto Scaling. DNS Management via Route 53.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="text-xs px-2 py-1 rounded bg-dark-bg border border-white/5">EC2</span>
-                        <span class="text-xs px-2 py-1 rounded bg-dark-bg border border-white/5">ELB</span>
-                        <span class="text-xs px-2 py-1 rounded bg-dark-bg border border-white/5">Auto Scaling</span>
-                    </div>
-                    <a href="https://github.com/mahdisharbaf/proton/tree/awsliftandshift" target="_blank" class="text-accent-blue text-sm hover:underline"><i class="fab fa-github"></i> Code ansehen</a>
                 </div>
 
-                <!-- Project 5: Azure Portfolio -->
-                <div class="glass rounded-2xl p-8 hover:-translate-y-2 transition-transform duration-300">
-                    <div class="p-3 bg-blue-500/10 rounded-xl text-blue-400 w-fit mb-6">
-                        <i class="fab fa-microsoft text-2xl"></i>
+                <div class="reveal glass tilt-card rounded-2xl p-8 border border-white/5" style="transition-delay:.1s">
+                    <div class="lift">
+                        <div class="p-3 bg-blue-500/10 rounded-xl text-blue-400 w-fit mb-6"><i class="fab fa-microsoft text-2xl"></i></div>
+                        <h3 class="text-xl font-bold mb-3">Azure Portfolio (Live)</h3>
+                        <p class="text-dark-muted text-sm mb-6">Diese Webseite! Gehostet auf einer Azure VM, dockerisiert und via GitHub Actions CI/CD deployed.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs px-2 py-1 rounded bg-dark-bg border border-white/5">Azure</span>
+                            <span class="text-xs px-2 py-1 rounded bg-dark-bg border border-white/5">Docker</span>
+                            <span class="text-xs px-2 py-1 rounded bg-dark-bg border border-white/5">Actions</span>
+                        </div>
+                        <a href="https://github.com/mahdisharbaf/my-resume-site" target="_blank" class="text-accent-blue text-sm hover:underline"><i class="fab fa-github"></i> Code ansehen</a>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Azure Portfolio (Live)</h3>
-                    <p class="text-dark-muted text-sm mb-6">
-                        Diese Webseite! Gehostet auf Azure VM, Dockerisiert und deployed via GitHub Actions CI/CD.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="text-xs px-2 py-1 rounded bg-dark-bg border border-white/5">Azure</span>
-                        <span class="text-xs px-2 py-1 rounded bg-dark-bg border border-white/5">Docker</span>
-                        <span class="text-xs px-2 py-1 rounded bg-dark-bg border border-white/5">Actions</span>
-                    </div>
-                    <a href="https://github.com/mahdisharbaf/my-resume-site" target="_blank" class="text-accent-blue text-sm hover:underline"><i class="fab fa-github"></i> Code ansehen</a>
                 </div>
 
             </div>
@@ -463,54 +449,45 @@
     </section>
 
     <!-- Experience Timeline -->
-    <section id="experience" class="relative z-10 py-20 bg-dark-bg/50 scroll-mt-24">
+    <section id="experience" class="relative z-10 py-24 scroll-mt-24">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center">Beruflicher <span class="text-accent-blue">Werdegang</span></h2>
-            
+            <div class="text-center mb-16 reveal">
+                <p class="eyebrow text-xs font-mono text-accent-blue uppercase mb-3">// Werdegang</p>
+                <h2 class="text-3xl md:text-4xl font-bold">Beruflicher <span class="gradient-text">Werdegang</span></h2>
+            </div>
+
             <div class="relative border-l-2 border-white/10 ml-3 md:ml-6 space-y-12">
-                
-                <!-- 🟢 Job 1 (NEU: Junior DevOps Engineer) 🟢 -->
-                <div class="relative pl-8 md:pl-12 group">
-                    <div class="absolute -left-[9px] top-0 w-5 h-5 rounded-full bg-accent-blue border-4 border-dark-bg group-hover:scale-125 transition-transform"></div>
+
+                <div class="reveal relative pl-8 md:pl-12 group">
+                    <div class="absolute -left-[9px] top-0 w-5 h-5 rounded-full bg-accent-blue border-4 border-dark-bg group-hover:scale-125 transition-transform shadow-[0_0_14px_rgba(56,189,248,0.7)]"></div>
                     <span class="text-xs font-mono text-accent-blue mb-1 block">10/2025 - Heute</span>
                     <h3 class="text-xl font-bold text-white">Praxisprojekte (Cloud & DevOps)</h3>
                     <p class="text-sm text-dark-muted mb-4">Selbststudium / Remote</p>
-                    <p class="text-gray-400 text-sm leading-relaxed">
-                        Fokus auf Cloud-native Infrastrukturen, Automatisierung und CI/CD. Bereitstellung von K8s-Clustern, IaC mit Terraform/Ansible, AWS-Migrationen und Implementierung von GitOps-Workflows.
-                    </p>
+                    <p class="text-gray-400 text-sm leading-relaxed">Fokus auf Cloud-native Infrastrukturen, Automatisierung und CI/CD: Bereitstellung von K8s-Clustern, IaC mit Terraform/Ansible, AWS-Migrationen und Implementierung von GitOps-Workflows.</p>
                 </div>
 
-                <!-- Job 2 -->
-                <div class="relative pl-8 md:pl-12 group">
+                <div class="reveal relative pl-8 md:pl-12 group" style="transition-delay:.05s">
                     <div class="absolute -left-[9px] top-0 w-5 h-5 rounded-full bg-dark-card border-4 border-white/10"></div>
                     <span class="text-xs font-mono text-dark-muted mb-1 block">09/2021 - 09/2024</span>
                     <h3 class="text-xl font-bold text-white">Netzwerk-Infrastruktur & Sicherheit (Freelance)</h3>
                     <p class="text-sm text-dark-muted mb-4">Remote</p>
-                    <p class="text-gray-400 text-sm leading-relaxed">
-                        Administration von Linux-Servern (Ubuntu, CentOS) und Automatisierung mit Bash/Python. Container-Deployments (u.a. n8n, VPN) mittels Docker & Docker Compose sowie Server-Hardening.
-                    </p>
+                    <p class="text-gray-400 text-sm leading-relaxed">Administration von Linux-Servern (Ubuntu, CentOS) und Automatisierung mit Bash/Python. Container-Deployments (u.a. n8n, VPN) mit Docker & Docker Compose sowie Server-Hardening.</p>
                 </div>
 
-                <!-- Job 3 -->
-                <div class="relative pl-8 md:pl-12 group">
+                <div class="reveal relative pl-8 md:pl-12 group" style="transition-delay:.1s">
                     <div class="absolute -left-[9px] top-0 w-5 h-5 rounded-full bg-dark-card border-4 border-white/10"></div>
                     <span class="text-xs font-mono text-dark-muted mb-1 block">04/2017 - 08/2021</span>
                     <h3 class="text-xl font-bold text-white">IT-Projektkoordinator & Systemsupport</h3>
                     <p class="text-sm text-dark-muted mb-4">RahaPharma.co, Isfahan</p>
-                    <p class="text-gray-400 text-sm leading-relaxed">
-                        Koordination digitaler Transformationsprojekte und Automatisierung administrativer Aufgaben zur Effizienzsteigerung (ca. 20%).
-                    </p>
+                    <p class="text-gray-400 text-sm leading-relaxed">Koordination digitaler Transformationsprojekte und Automatisierung administrativer Aufgaben zur Effizienzsteigerung (ca. 20%).</p>
                 </div>
 
-                <!-- Job 4 -->
-                <div class="relative pl-8 md:pl-12 group">
+                <div class="reveal relative pl-8 md:pl-12 group" style="transition-delay:.15s">
                     <div class="absolute -left-[9px] top-0 w-5 h-5 rounded-full bg-dark-card border-4 border-white/10"></div>
                     <span class="text-xs font-mono text-dark-muted mb-1 block">05/2015 - 03/2017</span>
                     <h3 class="text-xl font-bold text-white">Junior IT-Support Spezialist</h3>
                     <p class="text-sm text-dark-muted mb-4">Adak Pharmed, Tehran</p>
-                    <p class="text-gray-400 text-sm leading-relaxed">
-                        Technischer Support und Troubleshooting für Endanwender (Hardware/Software). Unterstützung bei Einrichtung und Wartung lokaler Netzwerke (LAN/WLAN).
-                    </p>
+                    <p class="text-gray-400 text-sm leading-relaxed">Technischer Support und Troubleshooting für Endanwender (Hardware/Software). Einrichtung und Wartung lokaler Netzwerke (LAN/WLAN).</p>
                 </div>
 
             </div>
@@ -520,35 +497,25 @@
     <!-- Footer -->
     <footer class="relative z-10 py-12 border-t border-white/5 bg-dark-card/30">
         <div class="max-w-7xl mx-auto px-4 text-center">
-            
+
             <div id="ausbildung" class="mb-12 scroll-mt-24">
-                <h3 class="text-2xl font-bold mb-6 text-white">Ausbildung & Zertifikate</h3>
+                <h3 class="text-2xl font-bold mb-6 text-white reveal">Ausbildung & Zertifikate</h3>
                 <div class="flex flex-col md:flex-row justify-center gap-6 text-left max-w-4xl mx-auto">
-                    
-                    <!-- Bachelor Degree -->
-                    <div class="glass p-6 rounded-xl flex-1 border border-white/5 relative overflow-hidden group hover:border-accent-blue/50 transition-colors">
-                        <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                            <i class="fas fa-university text-6xl text-white"></i>
-                        </div>
+
+                    <div class="reveal glass p-6 rounded-xl flex-1 border border-white/5 relative overflow-hidden group hover:border-accent-blue/50 transition-colors">
+                        <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity"><i class="fas fa-university text-6xl text-white"></i></div>
                         <div class="text-accent-blue text-sm mb-1">10/2011 - 04/2015</div>
                         <div class="font-bold text-xl text-white mb-1">Elektrotechnik B.Sc.</div>
                         <div class="text-dark-muted text-sm mb-4">Azad-Universität Tabriz, Iran</div>
-                        <div class="inline-flex items-center px-3 py-1 rounded-full bg-accent-blue/10 text-accent-blue text-xs font-semibold border border-accent-blue/20">
-                            <i class="fas fa-check-circle mr-2"></i> Anerkannt durch ZAB
-                        </div>
+                        <div class="inline-flex items-center px-3 py-1 rounded-full bg-accent-blue/10 text-accent-blue text-xs font-semibold border border-accent-blue/20"><i class="fas fa-check-circle mr-2"></i> Anerkannt durch ZAB</div>
                     </div>
 
-                    <!-- DevOps Certificate -->
-                    <div class="glass p-6 rounded-xl flex-1 border border-white/5 relative overflow-hidden group hover:border-accent-blue/50 transition-colors">
-                        <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                            <i class="fas fa-certificate text-6xl text-white"></i>
-                        </div>
+                    <div class="reveal glass p-6 rounded-xl flex-1 border border-white/5 relative overflow-hidden group hover:border-accent-blue/50 transition-colors" style="transition-delay:.08s">
+                        <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity"><i class="fas fa-certificate text-6xl text-white"></i></div>
                         <div class="text-accent-blue text-sm mb-1">03/2026</div>
                         <div class="font-bold text-xl text-white mb-1">Decoding DevOps (64h)</div>
                         <div class="text-dark-muted text-sm mb-4">Udemy Certification</div>
-                        <a href="https://www.udemy.com/certificate/UC-9eb156d8-bcb9-475f-b123-286aa09a9d33/" target="_blank" class="inline-flex items-center px-3 py-1 rounded-full bg-accent-blue/10 text-accent-blue text-xs font-semibold border border-accent-blue/20 hover:bg-accent-blue hover:text-dark-bg transition-colors">
-                            <i class="fas fa-external-link-alt mr-2"></i> Zertifikat ansehen
-                        </a>
+                        <a href="https://www.udemy.com/certificate/UC-9eb156d8-bcb9-475f-b123-286aa09a9d33/" target="_blank" class="inline-flex items-center px-3 py-1 rounded-full bg-accent-blue/10 text-accent-blue text-xs font-semibold border border-accent-blue/20 hover:bg-accent-blue hover:text-dark-bg transition-colors"><i class="fas fa-external-link-alt mr-2"></i> Zertifikat ansehen</a>
                     </div>
 
                 </div>
@@ -559,9 +526,7 @@
                 <a href="https://github.com/mahdisharbaf" class="text-2xl text-dark-muted hover:text-white transition-colors"><i class="fab fa-github"></i></a>
                 <a href="mailto:mehdi.sharbaf187@gmail.com" class="text-2xl text-dark-muted hover:text-accent-green transition-colors"><i class="fas fa-envelope"></i></a>
             </div>
-            <p class="text-dark-muted text-sm mb-2">
-                © <script>document.write(new Date().getFullYear())</script> Mahdi Sharbaf Movassaghpour. Hosted on Azure.
-            </p>
+            <p class="text-dark-muted text-sm mb-2">© <script>document.write(new Date().getFullYear())</script> Mahdi Sharbaf Movassaghpour. Hosted on Azure.</p>
             <a href="javascript:void(0)" onclick="openImpressum()" class="text-xs text-dark-muted hover:text-white underline">Impressum</a>
         </div>
     </footer>
@@ -570,16 +535,13 @@
     <div id="impressum-modal" class="fixed inset-0 z-[100] hidden overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
         <div class="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
             <div class="fixed inset-0 bg-dark-bg/90 transition-opacity backdrop-blur-sm" onclick="closeImpressum()"></div>
-            
             <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
-
             <div class="inline-block align-bottom glass rounded-2xl text-left overflow-hidden shadow-2xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full border border-white/10">
                 <div class="px-6 py-6 text-gray-300">
                     <div class="flex justify-between items-center mb-6">
                         <h3 class="text-xl font-bold text-white">Impressum</h3>
                         <button onclick="closeImpressum()" class="text-gray-400 hover:text-white"><i class="fas fa-times"></i></button>
                     </div>
-                    
                     <div class="space-y-4 text-sm">
                         <div>
                             <p class="font-bold text-white mb-1">Angaben gemäß § 5 TMG</p>
@@ -595,22 +557,304 @@
                     </div>
                 </div>
                 <div class="px-6 py-4 bg-white/5 sm:flex sm:flex-row-reverse">
-                    <button type="button" class="w-full inline-flex justify-center rounded-lg border border-transparent shadow-sm px-4 py-2 bg-accent-blue text-base font-medium text-dark-bg hover:bg-white sm:ml-3 sm:w-auto sm:text-sm" onclick="closeImpressum()">
-                        Schließen
-                    </button>
+                    <button type="button" class="w-full inline-flex justify-center rounded-lg border border-transparent shadow-sm px-4 py-2 bg-accent-blue text-base font-medium text-dark-bg hover:bg-white sm:ml-3 sm:w-auto sm:text-sm" onclick="closeImpressum()">Schließen</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- 🟢 اضافه شدن توابع باز و بسته کردن Impressum -->
     <script>
-        function openImpressum() {
-            document.getElementById('impressum-modal').classList.remove('hidden');
+        function openImpressum() { document.getElementById('impressum-modal').classList.remove('hidden'); }
+        function closeImpressum() { document.getElementById('impressum-modal').classList.add('hidden'); }
+    </script>
+
+    <!-- ===================== 3D WebGL Scene + Interactions ===================== -->
+    <script data-cfasync="false">
+    (function () {
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const isMobile = window.matchMedia('(max-width: 768px)').matches;
+
+        /* ---------- Scroll progress bar ---------- */
+        const bar = document.getElementById('scroll-progress');
+        function docProgress() {
+            const h = document.documentElement;
+            const max = (h.scrollHeight - h.clientHeight) || 1;
+            return Math.min(1, Math.max(0, h.scrollTop / max));
         }
-        function closeImpressum() {
-            document.getElementById('impressum-modal').classList.add('hidden');
+        function updateBar() { bar.style.width = (docProgress() * 100) + '%'; }
+        window.addEventListener('scroll', updateBar, { passive: true });
+        updateBar();
+
+        /* ---------- Scroll reveal ---------- */
+        const revealEls = document.querySelectorAll('.reveal');
+        if ('IntersectionObserver' in window) {
+            const io = new IntersectionObserver((entries) => {
+                entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('revealed'); io.unobserve(e.target); } });
+            }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+            revealEls.forEach(el => io.observe(el));
+        } else {
+            revealEls.forEach(el => el.classList.add('revealed'));
         }
+
+        /* ---------- 3D tilt cards ---------- */
+        if (!isMobile && !reduceMotion) {
+            document.querySelectorAll('.tilt-card').forEach(card => {
+                const max = 10;
+                card.addEventListener('mousemove', (e) => {
+                    const r = card.getBoundingClientRect();
+                    const px = (e.clientX - r.left) / r.width - 0.5;
+                    const py = (e.clientY - r.top) / r.height - 0.5;
+                    card.style.transform = `rotateY(${px * max}deg) rotateX(${-py * max}deg) translateZ(6px)`;
+                    card.style.boxShadow = '0 30px 60px -20px rgba(56,189,248,0.25)';
+                });
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = '';
+                    card.style.boxShadow = '';
+                });
+            });
+        }
+
+        /* ---------- Three.js scene ---------- */
+        if (typeof THREE === 'undefined') return;
+        const canvas = document.getElementById('bg-canvas');
+        let renderer;
+        try {
+            renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: !isMobile });
+        } catch (err) { return; }
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        renderer.setSize(window.innerWidth, window.innerHeight);
+
+        const scene = new THREE.Scene();
+        scene.fog = new THREE.FogExp2(0x0a0f1f, 0.028);
+
+        const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 200);
+        camera.position.set(0, 0, 20);
+
+        scene.add(new THREE.AmbientLight(0xffffff, 0.55));
+        const light1 = new THREE.PointLight(0x38bdf8, 2.2, 120); light1.position.set(14, 12, 16); scene.add(light1);
+        const light2 = new THREE.PointLight(0x818cf8, 2.0, 120); light2.position.set(-16, -8, 8); scene.add(light2);
+
+        // Root group that we rotate on scroll
+        const root = new THREE.Group();
+        scene.add(root);
+
+        /* --- Particle starfield --- */
+        const PCOUNT = isMobile ? 1100 : 2600;
+        const pGeo = new THREE.BufferGeometry();
+        const pPos = new Float32Array(PCOUNT * 3);
+        for (let i = 0; i < PCOUNT; i++) {
+            pPos[i*3]   = (Math.random() - 0.5) * 80;
+            pPos[i*3+1] = (Math.random() - 0.5) * 60;
+            pPos[i*3+2] = (Math.random() - 0.5) * 60;
+        }
+        pGeo.setAttribute('position', new THREE.BufferAttribute(pPos, 3));
+        const pMat = new THREE.PointsMaterial({ color: 0x9fc7ff, size: 0.09, transparent: true, opacity: 0.7, depthWrite: false });
+        const particles = new THREE.Points(pGeo, pMat);
+        scene.add(particles);
+
+        /* --- Network nodes + dynamic connecting lines --- */
+        const NODE_COUNT = isMobile ? 36 : 64;
+        const nodeBase = [];
+        for (let i = 0; i < NODE_COUNT; i++) {
+            nodeBase.push({
+                x: (Math.random() - 0.5) * 26,
+                y: (Math.random() - 0.5) * 18,
+                z: (Math.random() - 0.5) * 14,
+                px: Math.random() * Math.PI * 2,
+                py: Math.random() * Math.PI * 2,
+                pz: Math.random() * Math.PI * 2
+            });
+        }
+        const nodePosArr = new Float32Array(NODE_COUNT * 3);
+        const nodeGeo = new THREE.BufferGeometry();
+        nodeGeo.setAttribute('position', new THREE.BufferAttribute(nodePosArr, 3));
+        const nodeMat = new THREE.PointsMaterial({ color: 0x38bdf8, size: 0.32, transparent: true, opacity: 0.95, depthWrite: false });
+        const nodePoints = new THREE.Points(nodeGeo, nodeMat);
+        root.add(nodePoints);
+
+        const MAX_SEG = NODE_COUNT * NODE_COUNT;
+        const linePos = new Float32Array(MAX_SEG * 6);
+        const lineGeo = new THREE.BufferGeometry();
+        lineGeo.setAttribute('position', new THREE.BufferAttribute(linePos, 3));
+        const lineMat = new THREE.LineBasicMaterial({ color: 0x38bdf8, transparent: true, opacity: 0.16 });
+        const lines = new THREE.LineSegments(lineGeo, lineMat);
+        root.add(lines);
+        const LINK_DIST = 6.0;
+
+        /* --- Floating tech-logo tiles (Linux, Kubernetes, Docker, ...) --- */
+        const logos = [];
+        function makeLogoTexture(glyph, color, weight, family) {
+            const S = 256;
+            const cv = document.createElement('canvas');
+            cv.width = cv.height = S;
+            const ctx = cv.getContext('2d');
+            ctx.clearRect(0, 0, S, S);
+            ctx.font = weight + ' 150px "' + family + '"';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillStyle = color;
+            ctx.shadowColor = color;
+            ctx.shadowBlur = 30;
+            ctx.fillText(glyph, S / 2, S / 2 + 6);   // glow pass
+            ctx.shadowBlur = 10;
+            ctx.fillText(glyph, S / 2, S / 2 + 6);   // crisp pass
+            const tex = new THREE.CanvasTexture(cv);
+            tex.anisotropy = 4;
+            return tex;
+        }
+        // [ FontAwesome glyph, brand color, font weight, font family ]
+        const LOGO_DEFS = [
+            ['', '#FCC624', '400', 'Font Awesome 6 Brands'], // Linux (Tux)
+            ['', '#326CE5', '900', 'Font Awesome 6 Free'],   // Kubernetes (Helm/wheel)
+            ['', '#2496ED', '400', 'Font Awesome 6 Brands'], // Docker
+            ['', '#FFD43B', '400', 'Font Awesome 6 Brands'], // Python
+            ['', '#FF9900', '400', 'Font Awesome 6 Brands'], // AWS
+            ['', '#00A4EF', '400', 'Font Awesome 6 Brands'], // Microsoft / Azure
+            ['', '#f0f6fc', '400', 'Font Awesome 6 Brands'], // GitHub
+            ['', '#FC6D26', '400', 'Font Awesome 6 Brands'], // GitLab
+            ['', '#E95420', '400', 'Font Awesome 6 Brands'], // Ubuntu
+            ['', '#F05032', '400', 'Font Awesome 6 Brands'], // Git
+            ['', '#5FA04E', '400', 'Font Awesome 6 Brands'], // Node.js
+            ['', '#EE0000', '400', 'Font Awesome 6 Brands'], // Red Hat
+        ];
+        function buildLogos() {
+            const defs = isMobile ? LOGO_DEFS.slice(0, 7) : LOGO_DEFS;
+            const N = defs.length;
+            defs.forEach((d, idx) => {
+                const tex = makeLogoTexture(d[0], d[1], d[2], d[3]);
+                const mat = new THREE.MeshBasicMaterial({ map: tex, transparent: true, opacity: 0.92, depthWrite: false, side: THREE.DoubleSide });
+                const size = 2.6 + Math.random() * 1.3;
+                const mesh = new THREE.Mesh(new THREE.PlaneGeometry(size, size), mat);
+                const ang = (idx / N) * Math.PI * 2 + Math.random() * 0.4;
+                const rad = 12 + Math.random() * 6;
+                mesh.position.set(Math.cos(ang) * rad, (Math.random() - 0.5) * 16, Math.sin(ang) * rad - 4);
+                mesh.userData = {
+                    floatPhase: Math.random() * Math.PI * 2,
+                    floatAmp: 0.6 + Math.random() * 0.8,
+                    swing: 0.25 + Math.random() * 0.2,
+                    baseY: mesh.position.y
+                };
+                root.add(mesh);
+                logos.push(mesh);
+            });
+        }
+        // Build only after the icon webfonts are ready (otherwise glyphs render as boxes)
+        if (document.fonts && document.fonts.load) {
+            Promise.all([
+                document.fonts.load('400 150px "Font Awesome 6 Brands"'),
+                document.fonts.load('900 150px "Font Awesome 6 Free"')
+            ]).then(function () { setTimeout(buildLogos, 60); }).catch(buildLogos);
+        } else {
+            buildLogos();
+        }
+
+        /* --- Mouse parallax --- */
+        let mx = 0, my = 0, tmx = 0, tmy = 0;
+        if (!isMobile) {
+            window.addEventListener('mousemove', (e) => {
+                tmx = (e.clientX / window.innerWidth - 0.5);
+                tmy = (e.clientY / window.innerHeight - 0.5);
+            }, { passive: true });
+        }
+
+        /* --- Color theme stops across scroll --- */
+        const stops = [
+            new THREE.Color(0x38bdf8), // sky
+            new THREE.Color(0x818cf8), // indigo
+            new THREE.Color(0xf472b6), // pink
+            new THREE.Color(0x4ade80)  // green
+        ];
+        function themeColor(t) {
+            const seg = t * (stops.length - 1);
+            const i = Math.min(stops.length - 2, Math.floor(seg));
+            const f = seg - i;
+            return stops[i].clone().lerp(stops[i+1], f);
+        }
+
+        /* --- Resize --- */
+        function onResize() {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        }
+        window.addEventListener('resize', onResize);
+
+        /* --- Render loop --- */
+        let running = true;
+        document.addEventListener('visibilitychange', () => { running = !document.hidden; if (running) loop(); });
+
+        let smoothScroll = 0;
+        const clock = new THREE.Clock();
+
+        function loop() {
+            if (!running) return;
+            requestAnimationFrame(loop);
+            const t = clock.getElapsedTime();
+            const target = docProgress();
+            smoothScroll += (target - smoothScroll) * 0.06;
+            const sp = smoothScroll;
+
+            // Animate network nodes
+            for (let i = 0; i < NODE_COUNT; i++) {
+                const n = nodeBase[i];
+                nodePosArr[i*3]   = n.x + Math.sin(t*0.4 + n.px) * 1.6;
+                nodePosArr[i*3+1] = n.y + Math.cos(t*0.35 + n.py) * 1.4;
+                nodePosArr[i*3+2] = n.z + Math.sin(t*0.3 + n.pz) * 1.2;
+            }
+            nodeGeo.attributes.position.needsUpdate = true;
+
+            // Rebuild connecting lines
+            let s = 0;
+            for (let i = 0; i < NODE_COUNT; i++) {
+                const ax = nodePosArr[i*3], ay = nodePosArr[i*3+1], az = nodePosArr[i*3+2];
+                for (let j = i + 1; j < NODE_COUNT; j++) {
+                    const dx = ax - nodePosArr[j*3], dy = ay - nodePosArr[j*3+1], dz = az - nodePosArr[j*3+2];
+                    if (dx*dx + dy*dy + dz*dz < LINK_DIST*LINK_DIST) {
+                        linePos[s++] = ax; linePos[s++] = ay; linePos[s++] = az;
+                        linePos[s++] = nodePosArr[j*3]; linePos[s++] = nodePosArr[j*3+1]; linePos[s++] = nodePosArr[j*3+2];
+                    }
+                }
+            }
+            lineGeo.setDrawRange(0, s / 3);
+            lineGeo.attributes.position.needsUpdate = true;
+
+            // Animate floating tech logos (gentle bob + facing swing for 3D depth)
+            for (const m of logos) {
+                const u = m.userData;
+                m.position.y = u.baseY + Math.sin(t * 0.6 + u.floatPhase) * u.floatAmp;
+                m.rotation.y = Math.sin(t * 0.4 + u.floatPhase) * u.swing;
+                m.rotation.x = Math.cos(t * 0.3 + u.floatPhase) * (u.swing * 0.5);
+            }
+
+            // Scroll-driven camera + root rotation
+            root.rotation.y = t * 0.02 + sp * Math.PI * 1.6;
+            root.rotation.x = sp * 0.5;
+            particles.rotation.y = t * 0.01;
+
+            // smooth mouse
+            mx += (tmx - mx) * 0.05; my += (tmy - my) * 0.05;
+            camera.position.x = Math.sin(sp * Math.PI * 2) * 4 + mx * 4;
+            camera.position.y = -sp * 3 + (-my * 3);
+            camera.position.z = 20 - sp * 7;
+            camera.lookAt(0, -sp * 2, 0);
+
+            // Theme color shift
+            const c = themeColor(sp);
+            light1.color.copy(c);
+            nodeMat.color.copy(c);
+            lineMat.color.copy(c);
+            const fogC = c.clone().multiplyScalar(0.08);
+            scene.fog.color.setRGB(0.04 + fogC.r, 0.06 + fogC.g, 0.12 + fogC.b);
+
+            renderer.render(scene, camera);
+        }
+
+        // Kick off
+        requestAnimationFrame(() => {
+            canvas.classList.add('ready');
+            loop();
+        });
+    })();
     </script>
 </body>
 </html>

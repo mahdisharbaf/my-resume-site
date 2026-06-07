@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahdi Sharbaf | Cloud & DevOps Engineer</title>
+    
+    <!-- 🔴 لوگو در تب مرورگر -->
+    <link rel="icon" type="image/png" href="logo.png">
+    
+    <!-- 🟢 Standard SEO Meta Tags 🟢 -->
+    <!-- این تگ‌ها به گوگل اجازه می‌دهند سایت شما را در نتایج جستجو نشان دهد -->
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="Portfolio von Mahdi Sharbaf, Cloud & DevOps Engineer in Deutschland. Spezialisiert auf Kubernetes, Terraform, AWS, Azure, CI/CD und GitOps.">
+    <meta name="keywords" content="Mahdi Sharbaf, DevOps Engineer, Cloud Engineer, Kubernetes, Terraform, AWS, Azure, GitOps, München, Deutschland, IT Freelancer">
+    <meta name="author" content="Mahdi Sharbaf Movassaghpour">
+    <link rel="canonical" href="https://mahdi-sharbaf.me/">
+    
+    <!-- Meta Tags for Social Preview (Open Graph) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mahdi-sharbaf.me/">
+    <meta property="og:title" content="Mahdi Sharbaf | Cloud & DevOps Engineer">
+    <meta property="og:description" content="Portfolio eines Cloud & DevOps Engineers. Spezialisiert auf Kubernetes, Terraform, AWS, Azure und GitOps.">
+    <meta property="og:image" content="https://mahdi-sharbaf.me/small.jpg">
+    
+    <!-- 🟢 Structured Data (JSON-LD) 🟢 -->
+    <!-- این کد به گوگل می‌فهماند که شما دقیقاً چه کسی هستید تا در نتایج جستجو بهتر نمایش داده شوید -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Mahdi Sharbaf Movassaghpour",
+      "alternateName": "Mahdi Sharbaf",
+      "url": "https://mahdi-sharbaf.me/",
+      "image": "https://mahdi-sharbaf.me/small.jpg",
+      "jobTitle": "Cloud & DevOps Engineer",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Freelance"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "München",
+        "addressCountry": "DE"
+      },
+      "sameAs": [
+        "https://linkedin.com/in/mahdi-sharbaf-movassaghpour",
+        "https://github.com/mahdisharbaf"
+      ]
+    }
+    </script>
+
+    <!-- 🟢 رفع مشکل Cloudflare: اضافه شدن data-cfasync="false" 🟢 -->
+    <script src="https://cdn.tailwindcss.com" data-cfasync="false"></script>
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <script data-cfasync="false">
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        dark: {
+                            bg: '#0f172a',      // Slate 900
+                            card: '#1e293b',    // Slate 800
+                            text: '#f8fafc',    // Slate 50
+                            muted: '#94a3b8'    // Slate 400
+                        },
+                        accent: {
+                            blue: '#38bdf8',    // Sky 400
+                            purple: '#818cf8',  // Indigo 400
+                            green: '#4ade80',   // Green 400
+                            orange: '#fb923c',  // Orange 400
+                            red: '#f87171',     // Red 400
+                            yellow: '#facc15',   // Yellow 400
+                            pink: '#f472b6'     // Pink 400
+                        }
+                    },
+                    animation: {
+                        'blob': 'blob 10s infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+
+        // 🟢 تابع هوشمند: دانلود PDF + انتقال به صفحه HTML
+        function downloadAndRedirect(event) {
+            event.preventDefault();
+
+            // 1. شروع دانلود فایل PDF
+            const link = document.createElement('a');
+            link.href = 'Lebenslauf.pdf';
+            link.download = 'Lebenslauf - Mahdi Sharbaf Movassaghpour.pdf';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+
+            // 2. انتقال کاربر به صفحه رزومه دیجیتال (cv.html) بعد از 800 میلی‌ثانیه
+            setTimeout(() => {
+                window.location.href = 'cv.html';
+            }, 800);
+        }
+
+        // 🟢 توابع منوی یکپارچه (موبایل و دسکتاپ)
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+        function closeMobileMenu() {
+            document.getElementById('mobile-menu').classList.add('hidden');
+        }
+    </script>
+
+    <style>
+        .glass {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475569;
+        }
+    </style>
+</head>
+<body class="bg-dark-bg text-dark-text selection:bg-accent-blue selection:text-white overflow-x-hidden relative">
+
+    <div class="fixed inset-0 w-full h-full pointer-events-none z-0 overflow-hidden">
+        <div class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-accent-blue/20 rounded-full mix-blend-screen filter blur-[100px] animate-blob"></div>
+        <div class="absolute top-0 right-1/4 w-[500px] h-[500px] bg-accent-purple/20 rounded-full mix-blend-screen filter blur-[100px] animate-blob animation-delay-2000"></div>
+        <div class="absolute -bottom-32 left-1/3 w-[500px] h-[500px] bg-accent-orange/10 rounded-full mix-blend-screen filter blur-[100px] animate-blob animation-delay-4000"></div>
+    </div>
+
+    <!-- 🟢 Navigation 🟢 -->
+    <nav class="fixed w-full z-50 glass border-b-0 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Logo Section -->
+                <div class="flex items-center">
+                    <a href="#" class="flex-shrink-0 flex items-center hover:scale-105 transition-transform duration-300">
+                        <img src="logo.png" alt="Mahdi Sharbaf Logo" class="h-12 md:h-14 w-auto object-contain drop-shadow-[0_0_15px_rgba(56,189,248,0.6)]" onerror="this.style.display='none'">
+                    </a>
+                </div>
+                
+                <!-- 🟢 دکمه‌های سمت راست (کارت و منو) یکپارچه برای همه دستگاه‌ها 🟢 -->
+                <div class="flex items-center gap-3">
+                    <!-- Card Button -->
+                    <a href="DigitalBusinessCard.html" target="_blank" class="text-accent-purple border border-accent-purple/50 bg-accent-purple/10 hover:bg-accent-purple hover:text-dark-bg transition-all px-3 py-1.5 lg:px-4 lg:py-2 rounded-lg text-sm font-bold flex items-center gap-2 shadow-[0_0_10px_rgba(129,140,248,0.2)]">
+                        <i class="fas fa-qrcode"></i> Card
+                    </a>
+                    
+                    <!-- Menu Toggle Button (دکمه شیشه‌ای و کاملاً واضح) -->
+                    <button onclick="toggleMobileMenu()" class="text-white border border-white/20 bg-white/10 hover:bg-white/20 hover:text-accent-blue transition-all px-3 py-1.5 lg:px-4 lg:py-2 ml-1 rounded-lg flex items-center gap-2 shadow-lg backdrop-blur-md">
+                        <span class="hidden md:inline-block text-sm font-bold tracking-widest uppercase">Menu</span>
+                        <i class="fas fa-bars text-lg"></i>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 🟢 منوی کشویی یکپارچه (نمایش در دسکتاپ و موبایل پس از کلیک) 🟢 -->
+        <div id="mobile-menu" class="hidden absolute top-20 left-0 w-full glass border-t border-white/10 flex flex-col items-center py-8 space-y-6 shadow-2xl backdrop-blur-xl">
+            <a href="#video" onclick="closeMobileMenu()" class="text-white hover:text-accent-blue text-lg font-semibold tracking-wide transition-colors">Video Vorstellung</a>
+            <a href="#skills" onclick="closeMobileMenu()" class="text-white hover:text-accent-blue text-lg font-semibold tracking-wide transition-colors">Technische Fähigkeiten</a>
+            <a href="#projects" onclick="closeMobileMenu()" class="text-white hover:text-accent-blue text-lg font-semibold tracking-wide transition-colors">Projekte</a>
+            <a href="#experience" onclick="closeMobileMenu()" class="text-white hover:text-accent-blue text-lg font-semibold tracking-wide transition-colors">Beruflicher Werdegang</a>
+            <a href="#ausbildung" onclick="closeMobileMenu()" class="text-white hover:text-accent-blue text-lg font-semibold tracking-wide transition-colors">Ausbildung & Zertifikate</a>
+            <a href="#kontakt" onclick="closeMobileMenu()" class="text-white hover:text-accent-blue text-lg font-semibold tracking-wide transition-colors">Kontakt</a>
+            
+            <a href="DigitalBusinessCard.html" target="_blank" onclick="closeMobileMenu()" class="mt-6 text-accent-purple border border-accent-purple/50 bg-accent-purple/10 px-8 py-3 rounded-full text-base font-bold flex items-center gap-2 hover:bg-accent-purple hover:text-dark-bg transition-all">
+                <i class="fas fa-qrcode"></i> Digital Card
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <main id="about" class="relative z-10 pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto scroll-mt-24">
+        <div class="flex flex-col-reverse lg:flex-row items-center justify-between gap-12">
+            <div class="text-center lg:text-left lg:w-1/2">
+                <div class="inline-flex items-center px-3 py-1 rounded-full border border-accent-blue/30 bg-accent-blue/10 text-accent-blue text-sm font-medium mb-6 animate-float">
+                    <span class="flex h-2 w-2 rounded-full bg-accent-blue mr-2 animate-pulse"></span>
+                    Open to Work: Cloud & DevOps (Bundesweit verfügbar)
+                </div>
+                
+                <h1 class="text-5xl lg:text-7xl font-extrabold tracking-tight mb-6 leading-tight">
+                    Cloud Native & <br>
+                    <span class="gradient-text">GitOps Expert</span>
+                </h1>
+                
+                <p class="mt-4 text-xl text-dark-muted leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                    Hi, ich bin <strong>Mahdi Sharbaf</strong>. <br>
+                    Ich automatisiere Infrastruktur mit <strong>Terraform & Ansible</strong>, orchestriere Container mit <strong>Kubernetes</strong> und baue sichere CI/CD Pipelines.
+                </p>
+                
+                <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    <a href="cv.html" onclick="downloadAndRedirect(event)" class="px-8 py-4 rounded-xl bg-accent-blue text-dark-bg font-bold hover:bg-white transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(56,189,248,0.5)] flex items-center justify-center gap-2">
+                        <i class="fas fa-download"></i> Lebenslauf (CV)
+                    </a>
+                    <a href="#projects" class="px-8 py-4 rounded-xl glass hover:bg-white/10 transition-all border border-white/10 flex items-center justify-center gap-2">
+                        Meine Projekte
+                    </a>
+                </div>
+            </div>
+
+            <div class="lg:w-1/2 flex justify-center relative">
+                <div class="absolute inset-0 bg-gradient-to-r from-accent-blue to-accent-purple opacity-20 blur-3xl rounded-full"></div>
+                <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-full p-2 glass animate-float">
+                    <img src="small.jpg" alt="Mahdi Sharbaf" 
+                         class="w-full h-full rounded-full object-cover border-4 border-accent-blue/20 shadow-2xl"
+                         onerror="this.src='https://placehold.co/400x400/1e293b/ffffff?text=Mahdi'">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Video Section (YouTube Shorts) -->
+    <section id="video" class="relative z-10 py-16 scroll-mt-24">
+        <div class="max-w-sm mx-auto px-4">
+            <div class="glass rounded-3xl p-2 md:p-3 border border-accent-purple/20 shadow-[0_0_50px_rgba(129,140,248,0.2)]">
+                <div class="relative w-full aspect-[9/16] rounded-2xl overflow-hidden bg-black">
+                    <div class="absolute inset-0 flex items-center justify-center text-center p-8 bg-dark-card/50">
+                        <div>
+                            <i class="fab fa-youtube text-5xl text-red-500 mb-4"></i>
+                            <h3 class="text-xl font-bold mb-2">Video Vorstellung</h3>
+                            <p class="text-dark-muted text-sm">Hier wird das Short-Video geladen.</p>
+                        </div>
+                    </div>
+                    <!-- لینک ویدیوی شورت شما -->
+                    <iframe 
+                        class="absolute inset-0 w-full h-full"
+                        src="https://www.youtube.com/embed/RoVlKp2Om3U?rel=0&modestbranding=1" 
+                        title="Mahdi Introduction Short" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack -->
+    <section id="skills" class="relative z-10 py-20 bg-dark-bg/50 scroll-mt-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Technische <span class="text-accent-blue">Fähigkeiten</span></h2>
+                <p class="text-dark-muted">Modernes Toolset für Cloud-Native Infrastrukturen</p>
+            </div>
+
+            <!-- Grid Layout für Skills -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                
+                <!-- IaC (Terraform & Ansible) -->
+                <div class="glass p-6 rounded-2xl hover:bg-white/5 transition-all group border border-accent-purple/20">
+                    <div class="flex justify-center gap-4 mb-4">
+                        <i class="fas fa-code-branch text-4xl text-accent-purple"></i>
+                        <i class="fas fa-server text-4xl text-gray-400"></i>
+                    </div>
+                    <h3 class="font-medium text-lg">IaC & Config Mgmt</h3>
+                    <p class="text-xs text-dark-muted mt-2">Terraform, Ansible, Packer</p>
+                </div>
+
+                <!-- Orchestration (K8s) -->
+                <div class="glass p-6 rounded-2xl hover:bg-white/5 transition-all group border border-blue-500/20">
+                    <i class="fas fa-dharmachakra text-4xl mb-4 text-blue-500 group-hover:text-white transition-colors"></i>
+                    <h3 class="font-medium text-lg">Kubernetes</h3>
+                    <p class="text-xs text-dark-muted mt-2">K8s Clusters, Helm, GitOps</p>
+                </div>
+
+                <!-- CI/CD -->
+                <div class="glass p-6 rounded-2xl hover:bg-white/5 transition-all group border border-accent-orange/20">
+                    <div class="flex justify-center gap-4 mb-4">
+                        <i class="fab fa-github text-4xl text-white"></i>
+                        <i class="fab fa-gitlab text-4xl text-orange-500"></i>
+                    </div>
+                    <h3 class="font-medium text-lg">CI/CD Pipelines</h3>
+                    <p class="text-xs text-dark-muted mt-2">GitHub Actions, GitLab CI, AWS CodePipeline</p>
+                </div>
+
+                <!-- Cloud -->
+                <div class="glass p-6 rounded-2xl hover:bg-white/5 transition-all group border border-accent-orange/20">
+                    <div class="flex justify-center gap-4 mb-4">
+                        <i class="fab fa-aws text-4xl text-accent-orange"></i>
+                        <i class="fab fa-microsoft text-4xl text-blue-400"></i>
+                    </div>
+                    <h3 class="font-medium text-lg">Cloud Platforms</h3>
+                    <p class="text-xs text-dark-muted mt-2">AWS & Azure Services</p>
+                </div>
+
+                <!-- Monitoring -->
+                <div class="glass p-6 rounded-2xl hover:bg-white/5 transition-all group border border-accent-pink/20">
+                    <i class="fas fa-chart-line text-4xl mb-4 text-accent-pink group-hover:text-white transition-colors"></i>
+                    <h3 class="font-medium text-lg">Observability</h3>
+                    <p class="text-xs text-dark-muted mt-2">Prometheus, Grafana, CloudWatch</p>
+                </div>
+
+                <!-- Scripting -->
+                <div class="glass p-6 rounded-2xl hover:bg-white/5 transition-all group border border-accent-yellow/20">
+                    <div class="flex justify-center gap-4 mb-4">
+                        <i class="fab fa-python text-4xl text-accent-yellow"></i>
+                        <i class="fas fa-terminal text-4xl text-green-500"></i>
+                    </div>
+                    <h3 class="font-medium text-lg">Scripting</h3>
+                    <p class="text-xs text-dark-muted mt-2">Python, Bash, Automation</p>
+                </div>
+
+                <!-- Containers -->
+                <div class="glass p-6 rounded-2xl hover:bg-white/5 transition-all group border border-blue-400/20">
+                    <i class="fab fa-docker text-4xl mb-4 text-blue-400 group-hover:text-white transition-colors"></i>
+                    <h3 class="font-medium text-lg">Container</h3>
+                    <p class="text-xs text-dark-muted mt-2">Docker, Docker Compose</p>
+                </div>
+
+                 <!-- OS -->
+                 <div class="glass p-6 rounded-2xl hover:bg-white/5 transition-all group border border-gray-500/20">
+                    <i class="fab fa-linux text-4xl mb-4 text-gray-300 group-hover:text-white transition-colors"></i>
+                    <h3 class="font-medium text-lg">Linux Ops</h3>
+                    <p class="text-xs text-dark-muted mt-2">RHEL, Ubuntu, Debian</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="relative z-10 py-20 scroll-mt-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">Ausgewählte <span class="gradient-text">Projekte</span></h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Project 1: Kubernetes & GitOps -->
+                <div class="glass rounded-2xl p-8 hover:-translate-y-2 transition-transform duration-300 border border-blue-500/30 lg:col-span-2">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="p-3 bg-blue-500/10 rounded-xl text-blue-400">
+                            <i class="fas fa-dharmachakra text-3xl"></i>
+                        </div>
+                        <span class="px-3 py-1 bg-blue-500/10 text-blue-400 text-xs font-bold rounded-full border border-blue-500/20">GitOps & K8s</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Kubernetes Cluster & GitOps Deployment</h3>
+                    <p class="text-dark-muted mb-6">
+                        Bereitstellung einer Microservices-Architektur auf einem Kubernetes-Cluster. Implementierung von <strong>GitOps</strong> Prinzipien für kontinuierliches Deployment.
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 text-sm text-dark-muted">
+                        <div class="flex items-center gap-2"><i class="fas fa-check text-blue-400"></i> K8s Cluster Setup (EKS/Kops)</div>
+                        <div class="flex items-center gap-2"><i class="fas fa-check text-blue-400"></i> Helm Charts Management</div>
+                        <div class="flex items-center gap-2"><i class="fas fa-check text-blue-400"></i> ArgoCD für GitOps</div>
+                        <div class="flex items-center gap-2"><i class="fas fa-check text-blue-400"></i> Monitoring mit Prometheus/Grafana</div>
+                    </div>
+                    <a href="https://github.com/mahdisharbaf/k8s-gitops-platform-project" target="_blank" class="px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg text-sm font-medium transition-colors border border-white/10 inline-flex items-center">
+                        <i class="fab fa-github mr-2"></i> Source Code
+                    </a>
+                </div>
+
+                <!-- Project 2: Infrastructure as Code -->
+                <div class="glass rounded-2xl p-8 hover:-translate-y-2 transition-transform duration-300 border border-accent-purple/20">
+                    <div class="p-3 bg-accent-purple/10 rounded-xl text-accent-purple w-fit mb-6">
+                        <i class="fas fa-code-branch text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">IaC mit Terraform & Ansible</h3>
+                    <p class="text-dark-muted text-sm mb-6">
+                        Vollständige Automatisierung der Infrastruktur-Bereitstellung (Provisioning) auf AWS mit Terraform und Konfigurationsmanagement mit Ansible.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-xs px-2 py-1 rounded bg-dark-bg border border-white/5">Terraform</span>
+                        <span class="text-xs px-2 py-1 rounded bg-dark-bg border border-white/5">Ansible</span>
+                        <span class="text-xs px-2 py-1 rounded bg-dark-bg border border-white/5">AWS VPC</span>
+                    </div>
+                    <a href="https://github.com/mahdisharbaf/aws-terraform-ansible-iac" target="_blank" class="text-accent-blue text-sm hover:underline"><i class="fab fa-github"></i> Code ansehen</a>
+                </div>
+
+                <!-- Project 3: End-to-End CI/CD -->
+                <div class="glass rounded-2xl p-8 hover:-translate-y-2 transition-transform duration-300 border border-accent-orange/20">
+                    <div class="p-3 bg-accent-orange/10 rounded-xl text-accent-orange w-fit mb-6">
+                        <i class="fab fa-gitlab text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Multi-Cloud CI/CD Pipeline</h3>
+                    <p class="text-dark-muted text-sm mb-6">
+                        Entwicklung robuster Pipelines mit GitHub Actions und GitLab CI. Automatisierte Tests, Docker Builds und Deployment auf Staging/Production.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-xs px-2 py-1 rounded bg-dark-bg border border-white/5">GitHub Actions</span>
+                        <span class="text-xs px-2 py-1 rounded bg-dark-bg border border-white/5">Python Tests</span>
+                        <span class="text-xs px-2 py-1 rounded bg-dark-bg border border-white/5">SonarQube</span>
+                    </div>
+                    <a href="https://github.com/mahdisharbaf/proton/tree/gitlab-vprocicode" target="_blank" class="text-accent-blue text-sm hover:underline"><i class="fab fa-github"></i> Code ansehen</a>
+                </div>
+
+                <!-- Project 4: AWS Lift & Shift -->
+                <div class="glass rounded-2xl p-8 hover:-translate-y-2 transition-transform duration-300">
+                    <div class="p-3 bg-accent-orange/10 rounded-xl text-accent-orange w-fit mb-6">
+                        <i class="fab fa-aws text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">AWS Migration (Lift & Shift)</h3>
+                    <p class="text-dark-muted text-sm mb-6">
+                        Migration einer vProfile Applikation mittels EC2, ELB und Auto Scaling. DNS Management via Route 53.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-xs px-2 py-1 rounded bg-dark-bg border border-white/5">EC2</span>
+                        <span class="text-xs px-2 py-1 rounded bg-dark-bg border border-white/5">ELB</span>
+                        <span class="text-xs px-2 py-1 rounded bg-dark-bg border border-white/5">Auto Scaling</span>
+                    </div>
+                    <a href="https://github.com/mahdisharbaf/proton/tree/awsliftandshift" target="_blank" class="text-accent-blue text-sm hover:underline"><i class="fab fa-github"></i> Code ansehen</a>
+                </div>
+
+                <!-- Project 5: Azure Portfolio -->
+                <div class="glass rounded-2xl p-8 hover:-translate-y-2 transition-transform duration-300">
+                    <div class="p-3 bg-blue-500/10 rounded-xl text-blue-400 w-fit mb-6">
+                        <i class="fab fa-microsoft text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Azure Portfolio (Live)</h3>
+                    <p class="text-dark-muted text-sm mb-6">
+                        Diese Webseite! Gehostet auf Azure VM, Dockerisiert und deployed via GitHub Actions CI/CD.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-xs px-2 py-1 rounded bg-dark-bg border border-white/5">Azure</span>
+                        <span class="text-xs px-2 py-1 rounded bg-dark-bg border border-white/5">Docker</span>
+                        <span class="text-xs px-2 py-1 rounded bg-dark-bg border border-white/5">Actions</span>
+                    </div>
+                    <a href="https://github.com/mahdisharbaf/my-resume-site" target="_blank" class="text-accent-blue text-sm hover:underline"><i class="fab fa-github"></i> Code ansehen</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Timeline -->
+    <section id="experience" class="relative z-10 py-20 bg-dark-bg/50 scroll-mt-24">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center">Beruflicher <span class="text-accent-blue">Werdegang</span></h2>
+            
+            <div class="relative border-l-2 border-white/10 ml-3 md:ml-6 space-y-12">
+                
+                <!-- 🟢 Job 1 (NEU: Junior DevOps Engineer) 🟢 -->
+                <div class="relative pl-8 md:pl-12 group">
+                    <div class="absolute -left-[9px] top-0 w-5 h-5 rounded-full bg-accent-blue border-4 border-dark-bg group-hover:scale-125 transition-transform"></div>
+                    <span class="text-xs font-mono text-accent-blue mb-1 block">10/2025 - Heute</span>
+                    <h3 class="text-xl font-bold text-white">Praxisprojekte (Cloud & DevOps)</h3>
+                    <p class="text-sm text-dark-muted mb-4">Selbststudium / Remote</p>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Fokus auf Cloud-native Infrastrukturen, Automatisierung und CI/CD. Bereitstellung von K8s-Clustern, IaC mit Terraform/Ansible, AWS-Migrationen und Implementierung von GitOps-Workflows.
+                    </p>
+                </div>
+
+                <!-- Job 2 -->
+                <div class="relative pl-8 md:pl-12 group">
+                    <div class="absolute -left-[9px] top-0 w-5 h-5 rounded-full bg-dark-card border-4 border-white/10"></div>
+                    <span class="text-xs font-mono text-dark-muted mb-1 block">09/2021 - 09/2024</span>
+                    <h3 class="text-xl font-bold text-white">Netzwerk-Infrastruktur & Sicherheit (Freelance)</h3>
+                    <p class="text-sm text-dark-muted mb-4">Remote</p>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Administration von Linux-Servern (Ubuntu, CentOS) und Automatisierung mit Bash/Python. Container-Deployments (u.a. n8n, VPN) mittels Docker & Docker Compose sowie Server-Hardening.
+                    </p>
+                </div>
+
+                <!-- Job 3 -->
+                <div class="relative pl-8 md:pl-12 group">
+                    <div class="absolute -left-[9px] top-0 w-5 h-5 rounded-full bg-dark-card border-4 border-white/10"></div>
+                    <span class="text-xs font-mono text-dark-muted mb-1 block">04/2017 - 08/2021</span>
+                    <h3 class="text-xl font-bold text-white">IT-Projektkoordinator & Systemsupport</h3>
+                    <p class="text-sm text-dark-muted mb-4">RahaPharma.co, Isfahan</p>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Koordination digitaler Transformationsprojekte und Automatisierung administrativer Aufgaben zur Effizienzsteigerung (ca. 20%).
+                    </p>
+                </div>
+
+                <!-- Job 4 -->
+                <div class="relative pl-8 md:pl-12 group">
+                    <div class="absolute -left-[9px] top-0 w-5 h-5 rounded-full bg-dark-card border-4 border-white/10"></div>
+                    <span class="text-xs font-mono text-dark-muted mb-1 block">05/2015 - 03/2017</span>
+                    <h3 class="text-xl font-bold text-white">Junior IT-Support Spezialist</h3>
+                    <p class="text-sm text-dark-muted mb-4">Adak Pharmed, Tehran</p>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Technischer Support und Troubleshooting für Endanwender (Hardware/Software). Unterstützung bei Einrichtung und Wartung lokaler Netzwerke (LAN/WLAN).
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="relative z-10 py-12 border-t border-white/5 bg-dark-card/30">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            
+            <div id="ausbildung" class="mb-12 scroll-mt-24">
+                <h3 class="text-2xl font-bold mb-6 text-white">Ausbildung & Zertifikate</h3>
+                <div class="flex flex-col md:flex-row justify-center gap-6 text-left max-w-4xl mx-auto">
+                    
+                    <!-- Bachelor Degree -->
+                    <div class="glass p-6 rounded-xl flex-1 border border-white/5 relative overflow-hidden group hover:border-accent-blue/50 transition-colors">
+                        <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                            <i class="fas fa-university text-6xl text-white"></i>
+                        </div>
+                        <div class="text-accent-blue text-sm mb-1">10/2011 - 04/2015</div>
+                        <div class="font-bold text-xl text-white mb-1">Elektrotechnik B.Sc.</div>
+                        <div class="text-dark-muted text-sm mb-4">Azad-Universität Tabriz, Iran</div>
+                        <div class="inline-flex items-center px-3 py-1 rounded-full bg-accent-blue/10 text-accent-blue text-xs font-semibold border border-accent-blue/20">
+                            <i class="fas fa-check-circle mr-2"></i> Anerkannt durch ZAB
+                        </div>
+                    </div>
+
+                    <!-- DevOps Certificate -->
+                    <div class="glass p-6 rounded-xl flex-1 border border-white/5 relative overflow-hidden group hover:border-accent-blue/50 transition-colors">
+                        <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                            <i class="fas fa-certificate text-6xl text-white"></i>
+                        </div>
+                        <div class="text-accent-blue text-sm mb-1">03/2026</div>
+                        <div class="font-bold text-xl text-white mb-1">Decoding DevOps (64h)</div>
+                        <div class="text-dark-muted text-sm mb-4">Udemy Certification</div>
+                        <a href="https://www.udemy.com/certificate/UC-9eb156d8-bcb9-475f-b123-286aa09a9d33/" target="_blank" class="inline-flex items-center px-3 py-1 rounded-full bg-accent-blue/10 text-accent-blue text-xs font-semibold border border-accent-blue/20 hover:bg-accent-blue hover:text-dark-bg transition-colors">
+                            <i class="fas fa-external-link-alt mr-2"></i> Zertifikat ansehen
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+            <div id="kontakt" class="flex justify-center space-x-8 mb-8 scroll-mt-24">
+                <a href="https://linkedin.com/in/mahdi-sharbaf-movassaghpour" class="text-2xl text-dark-muted hover:text-accent-blue transition-colors"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/mahdisharbaf" class="text-2xl text-dark-muted hover:text-white transition-colors"><i class="fab fa-github"></i></a>
+                <a href="mailto:mehdi.sharbaf187@gmail.com" class="text-2xl text-dark-muted hover:text-accent-green transition-colors"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p class="text-dark-muted text-sm mb-2">
+                © <script>document.write(new Date().getFullYear())</script> Mahdi Sharbaf Movassaghpour. Hosted on Azure.
+            </p>
+            <a href="javascript:void(0)" onclick="openImpressum()" class="text-xs text-dark-muted hover:text-white underline">Impressum</a>
+        </div>
+    </footer>
+
+    <!-- Impressum Modal -->
+    <div id="impressum-modal" class="fixed inset-0 z-[100] hidden overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <div class="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
+            <div class="fixed inset-0 bg-dark-bg/90 transition-opacity backdrop-blur-sm" onclick="closeImpressum()"></div>
+            
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+
+            <div class="inline-block align-bottom glass rounded-2xl text-left overflow-hidden shadow-2xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full border border-white/10">
+                <div class="px-6 py-6 text-gray-300">
+                    <div class="flex justify-between items-center mb-6">
+                        <h3 class="text-xl font-bold text-white">Impressum</h3>
+                        <button onclick="closeImpressum()" class="text-gray-400 hover:text-white"><i class="fas fa-times"></i></button>
+                    </div>
+                    
+                    <div class="space-y-4 text-sm">
+                        <div>
+                            <p class="font-bold text-white mb-1">Angaben gemäß § 5 TMG</p>
+                            <p>Mahdi Sharbaf Movassaghpour<br>Adolf-Baeyer-Damm 34<br>81735 München<br>Deutschland</p>
+                        </div>
+                        <div>
+                            <p class="font-bold text-white mb-1">Kontakt</p>
+                            <p>Telefon: +49 1573 6980335<br>E-Mail: mehdi.sharbaf187@gmail.com</p>
+                        </div>
+                        <div class="text-xs text-gray-500 mt-4">
+                            <p>Haftungsausschluss: Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für die Inhalte externer Links. Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="px-6 py-4 bg-white/5 sm:flex sm:flex-row-reverse">
+                    <button type="button" class="w-full inline-flex justify-center rounded-lg border border-transparent shadow-sm px-4 py-2 bg-accent-blue text-base font-medium text-dark-bg hover:bg-white sm:ml-3 sm:w-auto sm:text-sm" onclick="closeImpressum()">
+                        Schließen
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 🟢 اضافه شدن توابع باز و بسته کردن Impressum -->
+    <script>
+        function openImpressum() {
+            document.getElementById('impressum-modal').classList.remove('hidden');
+        }
+        function closeImpressum() {
+            document.getElementById('impressum-modal').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
